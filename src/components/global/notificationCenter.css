@@ -1,0 +1,69 @@
+
+    .notificationButton {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: #333333;
+      background: #dddddd;
+      border: none !important;
+      outline: none !important;
+      border-radius: 10px;
+    }
+    .notificationButton:hover {
+      cursor: pointer;
+      background: #cccccc;
+      border: none !important;
+      outline: none !important;
+    }
+    .notificationButton:active {
+      background: #cccccc;
+      border: none !important;
+      outline: none !important;
+    }
+    .notificationButton:hover .iconNormal {
+      display: none;
+    }
+    .notificationButton:active .iconNormal {
+      display: none;
+    }
+    .notificationButton:hover .iconActive {
+      display: block;
+    }
+    .notificationButton:active .iconActive {
+      display: block;
+    }
+    .iconActive {
+      display: none;
+    }
+    .icon-button__badge {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 15px;
+      height: 15px;
+      background: red;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .popupBlockNotification {
+      background-color: #dddddd;
+    }
+    .popupBlockNotification.arrow-top:after {
+      content: " ";
+      position: absolute;
+      right: 10px;
+      top: -15px;
+      border-top: none;
+      border-bottom: 15px solid #dddddd;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+    }
