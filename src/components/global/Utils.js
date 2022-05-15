@@ -201,7 +201,6 @@ export const ColorRender = (type) => {
     var tempTemplate = colorCodeTemplate;
     var colorLoad1 = document.querySelector('#colorLoader1');
     var colorLoad2 = document.querySelector('#colorLoader2');
-    console.log(colorLoad1);
     document.documentElement.style.setProperty('--loader1-color', colorLoad1?.value);
     document.documentElement.style.setProperty('--loader2-color', colorLoad2?.value);
     tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1);
