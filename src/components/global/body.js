@@ -219,42 +219,42 @@ function Body() {
           <h2>HTML Color Codes</h2>
           <div className="col-12 p-3">
             <a href="https://htmlcolorcodes.com" target="blank">
-              <img loading="lazy" src="/img/htmlcolor-logo.png" alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/htmlcolor-logo.png" alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
-              <img loading="lazy" src="/img/html-beautifier.png" alt="html beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/html-beautifier.png" alt="html beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
-              <img loading="lazy" src="/img/css-beautifier.png" alt="css beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/css-beautifier.png" alt="css beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
-              <img loading="lazy" src="/img/js-beautifier.png" alt="javascript beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/js-beautifier.png" alt="javascript beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://pagespeed.web.dev/" target="blank">
-              <img loading="lazy" src="/img/pageinsight-logo.png" alt="pagespeed" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/pageinsight-logo.png" alt="pagespeed" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://tinypng.com/" target="blank">
-              <img loading="lazy" src="/img/tinypng-logo.png" alt="tinypng logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src="../../assets/tinypng-logo.png" alt="tinypng logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
