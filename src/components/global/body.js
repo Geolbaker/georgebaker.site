@@ -1,4 +1,14 @@
 import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode} from './Utils.js';
+import background1 from '../../assets/background1.webp';
+import background2 from '../../assets/background2.webp';
+import background3 from '../../assets/background3.webp';
+import cssBeautifier from '../../assets/css-beautifier.webp';
+import htmlBeautifier from '../../assets/html-beautifier.webp';
+import htmlcolorLogo from '../../assets/htmlcolor-logo.webp';
+import jsBeautifier from '../../assets/js-beautifier.webp';
+import pageinsightLogo from '../../assets/PageInsight-logo.webp';
+import tinypngLogo from '../../assets/tinypng-logo.webp';
+
 
 function Body() {
   return (
@@ -219,42 +229,42 @@ function Body() {
           <h2>HTML Color Codes</h2>
           <div className="col-12 p-3">
             <a href="https://htmlcolorcodes.com" target="blank">
-              <img loading="lazy" src="../../assets/htmlcolor-logo.png" alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={htmlcolorLogo} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
-              <img loading="lazy" src="../../assets/html-beautifier.png" alt="html beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={htmlBeautifier} alt="html beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
-              <img loading="lazy" src="../../assets/css-beautifier.png" alt="css beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={cssBeautifier} alt="css beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
-              <img loading="lazy" src="../../assets/js-beautifier.png" alt="javascript beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={jsBeautifier} alt="javascript beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://pagespeed.web.dev/" target="blank">
-              <img loading="lazy" src="../../assets/pageinsight-logo.png" alt="pagespeed" className="w-100 image-responsive"/>
+              <img loading="lazy" src={pageinsightLogo} alt="pagespeed" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://tinypng.com/" target="blank">
-              <img loading="lazy" src="../../assets/tinypng-logo.png" alt="tinypng logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={tinypngLogo} alt="tinypng logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
