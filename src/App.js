@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />} />
         <Route path="/fontSizes" element={<FontSizes />} />
-        <Navigate path="/404.oops" element={<FourOneFour />}/>
+        <Route element={<FourOneFour />}/>
       </Routes>
     </div>
 
