@@ -17,9 +17,9 @@ function App() {
       <PlaceholderCodeModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/fontSizes" element={<FontSizes />} />
-        <Route element={<FourOneFour />}/>
+        <Route path="/" component={Body} />
+        <Route path="/fontSizes" component={FontSizes} />
+        <Route path="*" component={FourOneFour}/>
       </Routes>
     </div>
 
