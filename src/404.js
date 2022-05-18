@@ -1,8 +1,8 @@
-import Img from './assets.js';
+import Img from './components/global/assets.js';
 
-function NotFound() {
+function FourOneFour() {
   return (
-    <div id="not-found">
+    <div id="404">
       <div className="w-100 d-flex justify-content-center overflow-hidden align-items-center">
         <img src={Img[1]} style={{height: "calc(100vh - 3.5rem)", objectFit: 'cover', width: "100vw"}}/>
         <div className="drop-shadow">
@@ -14,4 +14,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default FourOneFour;

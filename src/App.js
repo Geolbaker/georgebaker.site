@@ -5,7 +5,7 @@ import NotificationCenterModal from './components/modals/notificationCenterModal
 import PlaceholderCodeModal from './components/modals/placeholderCodeModal.js';
 import Body from './components/global/body.js';
 import FontSizes from './components/global/font-sizes.js';
-import NotFound from './components/global/notfound.js';
+import FourOneFour from './404.js';
 import './components/global/secrets.js';
 import { BrowserRouter, Routes, Route,} from "react-router-dom";
 
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />} />
         <Route path="/fontSizes" element={<FontSizes />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<FourOneFour />} />
       </Routes>
     </div>
 
