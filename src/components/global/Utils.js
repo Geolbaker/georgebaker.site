@@ -15,20 +15,20 @@ import $ from 'jquery';
 //    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
 //
 
-var toggle = 0;
+var togglePlaceholder = 0;
 export const PlaceholderToggle = () => {
-  if (toggle == 0) {
+  if (togglePlaceholder === 0) {
     document.querySelector("#placeholder-content")?.classList?.add('d-none');
     document.querySelector("#advert-content")?.classList?.add('d-flex');
     document.querySelector("#placeholder-content")?.classList?.remove('d-flex');
     document.querySelector("#advert-content")?.classList?.remove('d-none');
-    toggle++;
-  } else if (toggle !== 0) {
+    togglePlaceholder++;
+  } else if (togglePlaceholder !== 0) {
     document.querySelector("#placeholder-content")?.classList?.add('d-flex');
     document.querySelector("#advert-content")?.classList?.add('d-none');
     document.querySelector("#placeholder-content")?.classList?.remove('d-none');
     document.querySelector("#advert-content")?.classList?.remove('d-flex');
-    toggle = 0;
+    togglePlaceholder = 0;
   }
 
 }
@@ -55,7 +55,7 @@ export const OpenNofiticationCenter = () => {
   var notificationTab = document.querySelector("#notificationCenterDiv");
   var iconActive = document.querySelector(".iconActive");
   var iconNormal = document.querySelector(".iconNormal");
-  if (toggleNotification == 0) {
+  if (toggleNotification === 0) {
     notificationTab.classList.add("d-block");
     notificationTab.classList.remove("d-none");
     iconActive.classList.add("d-block");
@@ -64,7 +64,7 @@ export const OpenNofiticationCenter = () => {
     iconNormal.classList.remove("d-block");
     toggleNotification++;
   }
-  else if (toggleNotification == 1) {
+  else if (toggleNotification === 1) {
     notificationTab.classList.add("d-none");
     notificationTab.classList.remove("d-block");
     iconNormal.classList.add("d-block");
@@ -128,7 +128,7 @@ export const CreateDateCode = (boolean) => {
   //get information from dropdown
   var dateTimeSelector = document.querySelector('input[type="datetime-local"]');
   //find the modal element
-  var htmlDateElementModal = document.querySelector('#contentDateCode');
+  // var htmlDateElementModal = document.querySelector('#contentDateCode');
   //convert date dropdown info into javascript timestamp
   var insertDateTime = dateTimeSelector?.valueAsNumber;
   //create a temp template
@@ -145,7 +145,7 @@ export const CreateDateCode = (boolean) => {
   !insertDateTime
    ? $('#contentDateCode').append(noDateTimeTemplate)
    : $('#contentDateCode').append(tempDateTemplate);
-}
+};
 
 // ██████╗ ██████╗ ██╗      ██████╗ ██████╗
 // ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗
@@ -195,29 +195,38 @@ $("#colorLoader2").on("input",function () {
   document.documentElement.style.setProperty('--loader2-color', $(this).val());
 });
 
-export const ColorRender = (type) => {
+export const ColorLiveupdate = (event) => {
+  if (event.target.id === "colorLoader1") {
+    document.documentElement.style.setProperty("--loader1-color", event.target.value);
+  }
+  else if (event.target.id === "colorLoader2") {
+    document.documentElement.style.setProperty("--loader2-color", event.target.value);
+  }
+};
 
-  if (type == "chosen") {
+export const ColorRender = (type) => {
+  if (type === "chosen") {
     var tempTemplate = colorCodeTemplate;
     var colorLoad1 = document.querySelector('#colorLoader1');
     var colorLoad2 = document.querySelector('#colorLoader2');
+    console.log(colorLoad1.value);
     document.documentElement.style.setProperty('--loader1-color', colorLoad1?.value);
     document.documentElement.style.setProperty('--loader2-color', colorLoad2?.value);
     tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1);
     tempTemplate = tempTemplate.replaceAll('{{color2}}',colorLoad2);
-    $("#colorLoaderModal").html(tempTemplate);
+    $("#colorLoaderModal")?.html(tempTemplate);
   }
-  else if (type == "generic") {
+  else if (type === "generic") {
     document.documentElement.style.setProperty('--loader1-color', "#E5E6E4");
     document.documentElement.style.setProperty('--loader2-color', "#ECECEB");
     var tempTemplate = colorCodeTemplate;
     tempTemplate = tempTemplate.replaceAll('{{color1}}',"#E5E6E4");
     tempTemplate = tempTemplate.replaceAll('{{color2}}',"#ECECEB");
-    $("#colorLoaderModal").html(tempTemplate);
+    $("#colorLoaderModal")?.html(tempTemplate);
   }
 
 
-}
+};
 // colorLoaderModal
 // #E5E6E4 grey color 1
 // #ECECEB grey color 2
@@ -242,23 +251,23 @@ $("#popup-slider").on("input",function () {
       $("#popUpValue").text($(this).val()+" Seconds");
     });
 
-var toggle = 0;
+var togglePopup = 0;
 export const PopupToggle = () =>  {
   var popupSliderValue = document.querySelector('#popup-slider')?.value;
   var waitAmount = popupSliderValue+'000';
-  if (toggle == 0) {
+  if (togglePopup === 0) {
     setTimeout(function(){
       var div = document.querySelector("#popupDiv");
       div.classList.add("animate__backInRight");
       div.classList.remove("d-none", "animate__backOutRight");
-      toggle ++;
+      togglePopup ++;
     },waitAmount);
   }
-  else if (toggle == 1) {
+  else if (togglePopup === 1) {
     var div = document.querySelector("#popupDiv");
     div.classList.remove("animate__backInRight");
     div.classList.add("animate__backOutRight");
-    toggle = 0;
+    togglePopup = 0;
   }
 }
 

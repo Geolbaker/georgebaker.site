@@ -11,3 +11,156 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+    .notificationButton {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: #333333;
+      background: #dddddd;
+      border: none !important;
+      outline: none !important;
+      border-radius: 10px;
+    }
+    .notificationButton:hover {
+      cursor: pointer;
+      background: #cccccc;
+      border: none !important;
+      outline: none !important;
+    }
+    .notificationButton:active {
+      background: #cccccc;
+      border: none !important;
+      outline: none !important;
+    }
+    .notificationButton:hover .iconNormal {
+      display: none;
+    }
+    .notificationButton:active .iconNormal {
+      display: none;
+    }
+    .notificationButton:hover .iconActive {
+      display: block;
+    }
+    .notificationButton:active .iconActive {
+      display: block;
+    }
+    .iconActive {
+      display: none;
+    }
+    .icon-button__badge {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 15px;
+      height: 15px;
+      background: red;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .popupBlockNotification {
+      background-color: #dddddd;
+    }
+    .popupBlockNotification.arrow-top:after {
+      content: " ";
+      position: absolute;
+      right: 10px;
+      top: -15px;
+      border-top: none;
+      border-bottom: 15px solid #dddddd;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+    }
+
+    #notificationCenterDiv {
+      right: -2rem;
+      top: 2rem;
+      z-index: 2000;
+      width: 35%;
+    }
+
+
+    .popupBlockNotification {
+      border-radius: 8px;
+      filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
+    }
+
+    :root {
+          --loader1-color: #D1FFF6;
+          --loader2-color: #FFB6F1;
+        }
+
+        .loader .carousel-inner .carousel-item div {
+          animation: flash 2s infinite;
+        }
+
+        .loader .advert-title-placeholder,
+        .loader-content {
+          animation: flash 2s infinite;
+          font-weight: 800;
+          font-size: 1.5rem;
+          border-radius: 18px;
+        }
+
+        .loader .advert-content-placeholder {
+          animation: flash 2s infinite;
+          font-size: 1.2rem;
+        }
+
+        @keyframes flash {
+          0% {
+            color: var(--loader1-color);
+            background: var(--loader1-color);
+          }
+
+          50% {
+            color: var(--loader2-color);
+            background: var(--loader2-color);
+          }
+
+          100% {
+            color: var(--loader1-color);
+            background: var(--loader1-color);
+          }
+        }
+
+        .advert-title {
+          font-size: 1.35rem;
+          display: block !important;
+        }
+
+        .advert-content {
+          background: #F2F3F2;
+          border-radius: 18px;
+          font-size: 1.35rem;
+          display: block !important;
+        }
+        h2 {
+          margin-bottom: 2rem;
+        }
+        .popupBlock.arrow-right:after {
+          content: " ";
+          position: absolute;
+          right: -15px;
+          top: 75px;
+          border-top: 15px solid transparent;
+          border-right: none;
+          border-left: 15px solid #17a2b8;
+          border-bottom: 15px solid transparent;
+        }
+        .closePopup {
+          position: absolute;
+          top: 0;
+          right: 0.3rem;
+          padding: 0.5rem !important;
+        }

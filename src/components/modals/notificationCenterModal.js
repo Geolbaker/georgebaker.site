@@ -1,4 +1,3 @@
-import './notificationCenterModal.css';
 import {OpenNofiticationCenter} from '../global/Utils.js';
 
 function NotificationCenterModal(){

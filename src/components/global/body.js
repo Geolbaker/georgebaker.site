@@ -1,13 +1,5 @@
-import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode} from './Utils.js';
-import background1 from '../../assets/background1.webp';
-import background2 from '../../assets/background2.webp';
-import background3 from '../../assets/background3.webp';
-import cssBeautifier from '../../assets/css-beautifier.webp';
-import htmlBeautifier from '../../assets/html-beautifier.webp';
-import htmlcolorLogo from '../../assets/htmlcolor-logo.webp';
-import jsBeautifier from '../../assets/js-beautifier.webp';
-import pageinsightLogo from '../../assets/PageInsight-logo.webp';
-import tinypngLogo from '../../assets/tinypng-logo.webp';
+import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode, ColorLiveupdate} from './Utils.js';
+import assets from './assets.js';
 
 
 function Body() {
@@ -50,11 +42,11 @@ function Body() {
               </div>
             </div>
             <br/>
-            <input type="color" id="colorLoader1" name="head" defaultValue="#D1FFF6"/>
-            <input type="color" id="colorLoader2" name="head" defaultValue="#FFB6F1"/>
+            <input type="color" id="colorLoader1" name="head" defaultValue="#D1FFF6" onChange={ColorLiveupdate}/>
+            <input type="color" id="colorLoader2" name="head" defaultValue="#FFB6F1" onChange={ColorLiveupdate}/>
             <br/><br/>
-            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={ColorRender('chosen')}> Chosen Color</button>
-            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={ColorRender('generic')}> Generic Color</button>
+            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender('chosen')}> Chosen Color</button>
+            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender("generic")}> Generic Color</button>
             <button className="btn btn-primary m-2" onClick={PlaceholderToggle}> Add Content Toggle</button>
           </div>
         </div>
@@ -229,42 +221,42 @@ function Body() {
           <h2>HTML Color Codes</h2>
           <div className="col-12 p-3">
             <a href="https://htmlcolorcodes.com" target="blank">
-              <img loading="lazy" src={htmlcolorLogo} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[5]} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
-              <img loading="lazy" src={htmlBeautifier} alt="html beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[4]} alt="html beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
-              <img loading="lazy" src={cssBeautifier} alt="css beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[3]} alt="css beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
-              <img loading="lazy" src={jsBeautifier} alt="javascript beautifier logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[6]} alt="javascript beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://pagespeed.web.dev/" target="blank">
-              <img loading="lazy" src={pageinsightLogo} alt="pagespeed" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[7]} alt="pagespeed" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
           <div className="col-12 p-3">
             <a href="https://tinypng.com/" target="blank">
-              <img loading="lazy" src={tinypngLogo} alt="tinypng logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[8]} alt="tinypng logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
