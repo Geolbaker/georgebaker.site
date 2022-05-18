@@ -7,7 +7,7 @@ import Body from './components/global/body.js';
 import FontSizes from './components/global/font-sizes.js';
 import FourOneFour from './404.js';
 import './components/global/secrets.js';
-import { BrowserRouter, Routes, Route,} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Redirect} from "react-router-dom";
 
 
 function App() {
