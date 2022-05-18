@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />} />
         <Route path="/fontSizes" element={<FontSizes />} />
-        <Route path="/*">
+        <Route path="/404.oops">
           <Redirect to={<FourOneFour />} />
         </Route>
       </Routes>
