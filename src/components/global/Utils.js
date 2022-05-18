@@ -212,8 +212,8 @@ export const ColorRender = (type) => {
     console.log(colorLoad1.value);
     document.documentElement.style.setProperty('--loader1-color', colorLoad1?.value);
     document.documentElement.style.setProperty('--loader2-color', colorLoad2?.value);
-    tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1);
-    tempTemplate = tempTemplate.replaceAll('{{color2}}',colorLoad2);
+    tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1.value);
+    tempTemplate = tempTemplate.replaceAll('{{color2}}',colorLoad2.value);
     $("#colorLoaderModal")?.html(tempTemplate);
   }
   else if (type === "generic") {

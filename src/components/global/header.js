@@ -1,4 +1,5 @@
-import NotificationCenter from './notificationCenter.js'
+import NotificationCenter from './notificationCenter.js';
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,20 +13,20 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span>
-                </a>
+                <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#helpfulCode">Helpful Code</a>
+                <Link className="nav-link" to="/#helpfulCode">Helpful Code</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#colours">Branding and Colours</a>
+                <Link className="nav-link" to="/#colours">Branding and Colours</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#externalWebsites">External Websites</a>
+                <Link className="nav-link" to="/#externalWebsites">External Websites</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/fontSizes"><strong>Font Sizes</strong></a>
+                <Link className="nav-link" to="/fontSizes"><strong>Font Sizes</strong></Link>
               </li>
 
             </ul>
