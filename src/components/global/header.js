@@ -17,13 +17,13 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/#helpfulCode">Helpful Code</Link>
+                <a className="nav-link" href="#helpfulCode">Helpful Code</a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/#colours">Branding and Colours</Link>
+                <a className="nav-link" href="#colours">Branding and Colours</a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/#externalWebsites">External Websites</Link>
+                <a className="nav-link" href="#externalWebsites">External Websites</a>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/fontSizes"><strong>Font Sizes</strong></Link>
