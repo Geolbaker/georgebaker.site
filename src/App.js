@@ -7,7 +7,7 @@ import Body from './components/global/body.js';
 import FontSizes from './components/global/font-sizes.js';
 import FourOneFour from './404.js';
 import './components/global/secrets.js';
-import { BrowserRouter, Routes, Route, Redirect} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 
 
 function App() {
@@ -19,9 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />} />
         <Route path="/fontSizes" element={<FontSizes />} />
-        <Route path="/404.oops">
-          <Redirect to={<FourOneFour />} />
-        </Route>
+        <Navigate path="/404.oops" element={<FourOneFour />}/>
       </Routes>
     </div>
 
