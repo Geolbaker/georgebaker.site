@@ -247,9 +247,9 @@ export const ColorRender = (type) => {
 //
 
 
-$("#popup-slider").on("input",function () {
-      $("#popUpValue").text($(this).val()+" Seconds");
-    });
+export const PopupDelayTime = (event) => {
+  $("#popUpdefaultValue").text(event.target.value+" Seconds");
+};
 
 var togglePopup = 0;
 export const PopupToggle = () =>  {

@@ -1,13 +1,84 @@
-import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode, ColorLiveupdate} from './Utils.js';
+import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode, ColorLiveupdate, PopupDelayTime} from './Utils.js';
 import assets from './assets.js';
 
 
 function Body() {
   return (
     <div id="body">
+    <div className="container-fluid d-flex justify-content-center">
+      <div className="row w-100 text-center" id="externalWebsites">
+        <div className="col-12 mt-5">
+          <h2>External Websites</h2>
+        </div>
+
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <h2>Dev Docs</h2>
+          <div className="col-12 p-3">
+            <a href="https://github.com/University-of-Lincoln-SU/External-Developer-Docs" target="blank">
+              <img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="github Logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <h2>Form Submit</h2>
+          <div className="col-12 p-3">
+            <a href="https://formsubmit.co/" target="blank">
+              <img loading="lazy" src="https://formsubmit.co/image/logo.png" alt="formsubmit logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <h2>HTML Color Codes</h2>
+          <div className="col-12 p-3">
+            <a href="https://htmlcolorcodes.com" target="blank">
+              <img loading="lazy" src={assets[5]} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <div className="col-12 p-3">
+            <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
+              <img loading="lazy" src={assets[4]} alt="html beautifier logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <div className="col-12 p-3">
+            <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
+              <img loading="lazy" src={assets[3]} alt="css beautifier logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <div className="col-12 p-3">
+            <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
+              <img loading="lazy" src={assets[6]} alt="javascript beautifier logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <div className="col-12 p-3">
+            <a href="https://pagespeed.web.dev/" target="blank">
+              <img loading="lazy" src={assets[7]} alt="pagespeed" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+          <div className="col-12 p-3">
+            <a href="https://tinypng.com/" target="blank">
+              <img loading="lazy" src={assets[8]} alt="tinypng logo" className="w-100 image-responsive"/>
+            </a>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
       <div className="container-fluid d-flex justify-content-center">
       <div className="row w-100 text-center" id="helpfulCode">
-        <div className="col-12 mt-5">
+        <div className="col-12 mt-2">
           <h2>Helpful Code</h2>
         </div>
         <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
@@ -113,7 +184,7 @@ function Body() {
           <div className="col-12 text-center bg-white rounded pb-4">
             <h2 className="pt-3">Pop-up - Set Time</h2>
             <div className="col-12 d-flex flex-wrap align-content-center flex-column">
-              <input type="range" id="popup-slider" name="time-s" min="1" max="30" defaultValue="5"/>
+              <input type="range" id="popup-slider" name="time-s" min="1" max="30" defaultValue="5" onChange={PopupDelayTime}/>
               <p id="popUpdefaultValue">5 Seconds</p>
               <button className="btn btn-primary m-2" onClick={PopupToggle}>Show Popup</button>
               <button className="btn btn-primary m-2" data-toggle="modal" data-target="#popupCodeModal" onClick={PopupCode}>Show Code</button>
@@ -195,77 +266,7 @@ function Body() {
           </div>
       </div>
     </div>
-    <div className="container-fluid d-flex justify-content-center">
-      <div className="row w-100 text-center" id="externalWebsites">
-        <div className="col-12 mt-2">
-          <h2>External Websites</h2>
-        </div>
 
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>Dev Docs</h2>
-          <div className="col-12 p-3">
-            <a href="https://github.com/University-of-Lincoln-SU/External-Developer-Docs" target="blank">
-              <img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="github Logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>Form Submit</h2>
-          <div className="col-12 p-3">
-            <a href="https://formsubmit.co/" target="blank">
-              <img loading="lazy" src="https://formsubmit.co/image/logo.png" alt="formsubmit logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>HTML Color Codes</h2>
-          <div className="col-12 p-3">
-            <a href="https://htmlcolorcodes.com" target="blank">
-              <img loading="lazy" src={assets[5]} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 p-3">
-            <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
-              <img loading="lazy" src={assets[4]} alt="html beautifier logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 p-3">
-            <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
-              <img loading="lazy" src={assets[3]} alt="css beautifier logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 p-3">
-            <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
-              <img loading="lazy" src={assets[6]} alt="javascript beautifier logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 p-3">
-            <a href="https://pagespeed.web.dev/" target="blank">
-              <img loading="lazy" src={assets[7]} alt="pagespeed" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 p-3">
-            <a href="https://tinypng.com/" target="blank">
-              <img loading="lazy" src={assets[8]} alt="tinypng logo" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-
-
-
-
-      </div>
-    </div>
   </div>
 
   );
