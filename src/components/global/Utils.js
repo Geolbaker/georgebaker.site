@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import { request } from "@octokit/request"
+
 
 // ██████╗ ██╗      █████╗  ██████╗███████╗██╗  ██╗ ██████╗ ██╗     ██████╗ ███████╗██████╗
 // ██╔══██╗██║     ██╔══██╗██╔════╝██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝██╔══██╗
@@ -52,6 +54,8 @@ export const PlaceholderToggle = () => {
 
 var toggleNotification = 0;
 export const OpenNofiticationCenter = () => {
+
+  //notification function
   var notificationTab = document.querySelector("#notificationCenterDiv");
   var iconActive = document.querySelector(".iconActive");
   var iconNormal = document.querySelector(".iconNormal");
@@ -314,3 +318,44 @@ export const PopupCode = () =>  {
   $("#contentPopupCode").html(tempTemplate);
 
 }
+
+
+
+function cookieCreation(type, result) {
+
+  var cname; var cvalue;
+  if (type === "notification") {
+    const date = new Date();
+    //first 30 value is number of days
+    date.setTime(date.getTime() + (30*24*60*60*1000));
+    let expires = "expires="+ date.toUTCString();
+    cname = "notificationLastAccessed";
+    cvalue = Date.now();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+    console.log(document.cookie);
+
+
+
+
+    let tempTime = result.data[0].published_at;
+    let lastReleaseDate = Date.parse(tempTime);
+    console.log(lastReleaseDate);
+  }
+}
+
+
+$( document ).ready(async function() {
+  const result = await request({
+    method: "GET",
+    url: "/repos/{owner}/{repo}/releases",
+    headers: {
+      authorization: "token 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",
+    },
+    owner: "Geolbaker",
+    repo: "georgereactsite",
+  });
+  console.log(result);
+
+  //cookie set and check
+  cookieCreation("notification", result);
+});

@@ -128,8 +128,8 @@ function Body() {
               <label>Select date:</label>
               <input className="col-12 col-xl-8 m-2" type="datetime-local" id="selectedDateTime" name="selectedDateTime"
                   defaultValue="2022-01-01T01:00" min="2010-01-01T00:00" max="2090-12-31T24:00"/>
-              <button className="btn btn-primary col-12 col-xl-8 m-2" onClick={CreateDateCode(true)} data-toggle="modal" data-target="#contentDateModal">Enable Code</button>
-              <button className="btn btn-primary col-12 col-xl-8 m-2" onClick={CreateDateCode(false)} data-toggle="modal" data-target="#contentDateModal">Disable Code</button>
+              <button className="btn btn-primary col-12 col-xl-8 m-2" onClick={() => CreateDateCode(true)} data-toggle="modal" data-target="#contentDateModal">Enable Code</button>
+              <button className="btn btn-primary col-12 col-xl-8 m-2" onClick={() => CreateDateCode(false)} data-toggle="modal" data-target="#contentDateModal">Disable Code</button>
             </div>
           </div>
         </div>

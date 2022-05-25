@@ -4,6 +4,8 @@
   "homepage": "https://react.georgebaker.site",
   "private": true,
   "dependencies": {
+    "@octokit/core": "^3.6.0",
+    "@octokit/request": "^5.6.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
