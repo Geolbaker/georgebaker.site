@@ -1,4 +1,4 @@
-import {OpenNofiticationCenter} from '../global/Utils.js';
+import {OpenNofiticationCenter, NotificationClear} from '../global/Utils.js';
 
 function NotificationCenterModal(){
   return (
@@ -7,7 +7,9 @@ function NotificationCenterModal(){
         <button type="button" className="close closePopup" onClick={OpenNofiticationCenter}>
           <span aria-hidden="true">&times;</span>
         </button>
-        Notification
+        <div id="notificationContent">
+
+        </div>
 
       </div>
     </div>

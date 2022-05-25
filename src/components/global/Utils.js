@@ -35,50 +35,6 @@ export const PlaceholderToggle = () => {
 
 }
 
-
-
-
-// ███╗   ██╗ ██████╗ ████████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-// ████╗  ██║██╔═══██╗╚══██╔══╝██║██╔════╝██║██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-// ██╔██╗ ██║██║   ██║   ██║   ██║█████╗  ██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║
-// ██║╚██╗██║██║   ██║   ██║   ██║██╔══╝  ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-// ██║ ╚████║╚██████╔╝   ██║   ██║██║     ██║╚██████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-// ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-//
-//  ██████╗███████╗███╗   ██╗████████╗███████╗██████╗
-// ██╔════╝██╔════╝████╗  ██║╚══██╔══╝██╔════╝██╔══██╗
-// ██║     █████╗  ██╔██╗ ██║   ██║   █████╗  ██████╔╝
-// ██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗
-// ╚██████╗███████╗██║ ╚████║   ██║   ███████╗██║  ██║
-//  ╚═════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
-
-var toggleNotification = 0;
-export const OpenNofiticationCenter = () => {
-
-  //notification function
-  var notificationTab = document.querySelector("#notificationCenterDiv");
-  var iconActive = document.querySelector(".iconActive");
-  var iconNormal = document.querySelector(".iconNormal");
-  if (toggleNotification === 0) {
-    notificationTab.classList.add("d-block");
-    notificationTab.classList.remove("d-none");
-    iconActive.classList.add("d-block");
-    iconNormal.classList.add("d-none");
-    iconActive.classList.remove("d-none");
-    iconNormal.classList.remove("d-block");
-    toggleNotification++;
-  }
-  else if (toggleNotification === 1) {
-    notificationTab.classList.add("d-none");
-    notificationTab.classList.remove("d-block");
-    iconNormal.classList.add("d-block");
-    iconActive.classList.add("d-none");
-    iconNormal.classList.remove("d-none");
-    iconActive.classList.remove("d-block");
-    toggleNotification = 0;
-  }
-}
-
 // ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
 // ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝
 // ██║     ██████╔╝█████╗  ███████║   ██║   █████╗
@@ -320,42 +276,165 @@ export const PopupCode = () =>  {
 }
 
 
+// ██████╗ ██████╗  ██████╗ ██╗  ██╗██╗███████╗
+// ██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝██║██╔════╝
+// ██║     ██║   ██║██║   ██║█████╔╝ ██║█████╗
+// ██║     ██║   ██║██║   ██║██╔═██╗ ██║██╔══╝
+// ╚██████╗╚██████╔╝╚██████╔╝██║  ██╗██║███████╗
+// ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝
+//
+// ███╗   ███╗ ██████╗ ███╗   ██╗███████╗████████╗███████╗██████╗
+// ████╗ ████║██╔═══██╗████╗  ██║██╔════╝╚══██╔══╝██╔════╝██╔══██╗
+// ██╔████╔██║██║   ██║██╔██╗ ██║███████╗   ██║   █████╗  ██████╔╝
+// ██║╚██╔╝██║██║   ██║██║╚██╗██║╚════██║   ██║   ██╔══╝  ██╔══██╗
+// ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║███████║   ██║   ███████╗██║  ██║
+// ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+//
 
-function cookieCreation(type, result) {
-
-  var cname; var cvalue;
-  if (type === "notification") {
-    const date = new Date();
-    //first 30 value is number of days
-    date.setTime(date.getTime() + (30*24*60*60*1000));
-    let expires = "expires="+ date.toUTCString();
-    cname = "notificationLastAccessed";
-    cvalue = Date.now();
-    document.cookie = cname + "=" + cvalue + ";" + expires;
-    console.log(document.cookie);
 
 
+$(document).ready(function() {
+  NotificationAPIPopulate();
+});
 
 
-    let tempTime = result.data[0].published_at;
-    let lastReleaseDate = Date.parse(tempTime);
-    console.log(lastReleaseDate);
+async function NotificationAPIPopulate() {
+
+  const result = await request({
+    method: "GET",
+    url: "/repos/{owner}/{repo}/releases",
+    owner: "Geolbaker",
+    repo: "georgereactsite",
+  });
+
+  //cookie check
+  notificationCheck(result);
+
+  $(result.data).each(function(index, value) {
+      populateList(index, value)
+
+  })
+}
+
+const notificationTemplate =
+`
+<div class="w-100 notificationEntry" data-value="{{date}}">
+  {{notificationReleaseName}}
+  <span class="rounded-circle bg-danger float-right" id="notificationNotViewed" style="width: 15px; height: 15px"></span>
+</div>
+
+`;
+
+function populateList(index, data){
+
+  var temp = notificationTemplate;
+  //get the date from the latest release
+  let tempTime = data.published_at;
+  //format the date to a better format
+  tempTime = Date.parse(tempTime);
+
+  temp = temp.replace('{{notificationReleaseName}}', data.name);
+  temp = temp.replace('{{date}}', tempTime);
+
+  $("#notificationContent").append(temp);
+}
+
+
+
+function notificationCheck(result) {
+
+  //get the date from the latest release
+  let tempTime = result.data[0].published_at;
+  //format the date to a better format
+  let lastReleaseDate = Date.parse(tempTime);
+  //get the latest cookie from the document and format it correctly to match
+  var cookieTime = document.cookie.replace(/\D/g,'');
+
+  //check for whether to dispaly the notification
+  if (cookieTime > lastReleaseDate) {
+    document.querySelector('#newNotification').classList.add('d-block');
+    document.querySelector('#newNotification').classList.remove('d-none');
+  }
+  else {
+    document.querySelector('#newNotification').classList.remove('d-block');
+    document.querySelector('#newNotification').classList.add('d-none');
+  }
+}
+
+ 
+  $('.notificationEntry').on('click', function () {
+    console.log("hello");
+  });
+
+  // //create a new cookie
+  // const date = new Date();
+  // //first 30 value is number of days
+  // date.setTime(date.getTime() + (30*24*60*60*1000));
+  // let expires = "expires="+ date.toUTCString();
+  // cvalue = Date.now();
+  // document.cookie = "notificationLastAccessed=" + cvalue + ";" + expires;
+
+
+// ███╗   ██╗ ██████╗ ████████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+// ████╗  ██║██╔═══██╗╚══██╔══╝██║██╔════╝██║██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+// ██╔██╗ ██║██║   ██║   ██║   ██║█████╗  ██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║
+// ██║╚██╗██║██║   ██║   ██║   ██║██╔══╝  ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+// ██║ ╚████║╚██████╔╝   ██║   ██║██║     ██║╚██████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+// ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ╚═╝╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+//
+//  ██████╗███████╗███╗   ██╗████████╗███████╗██████╗
+// ██╔════╝██╔════╝████╗  ██║╚══██╔══╝██╔════╝██╔══██╗
+// ██║     █████╗  ██╔██╗ ██║   ██║   █████╗  ██████╔╝
+// ██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗
+// ╚██████╗███████╗██║ ╚████║   ██║   ███████╗██║  ██║
+//  ╚═════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+var toggleNotification = 0;
+export const OpenNofiticationCenter = () => {
+
+
+  //notification function
+  var notificationTab = document.querySelector("#notificationCenterDiv");
+  var iconActive = document.querySelector(".iconActive");
+  var iconNormal = document.querySelector(".iconNormal");
+  if (toggleNotification === 0) {
+    notificationTab.classList.add("d-block");
+    notificationTab.classList.remove("d-none");
+    iconActive.classList.add("d-block");
+    iconNormal.classList.add("d-none");
+    iconActive.classList.remove("d-none");
+    iconNormal.classList.remove("d-block");
+    toggleNotification++;
+  }
+  else if (toggleNotification === 1) {
+    notificationTab.classList.add("d-none");
+    notificationTab.classList.remove("d-block");
+    iconNormal.classList.add("d-block");
+    iconActive.classList.add("d-none");
+    iconNormal.classList.remove("d-none");
+    iconActive.classList.remove("d-block");
+    toggleNotification = 0;
   }
 }
 
 
-$( document ).ready(async function() {
-  const result = await request({
-    method: "GET",
-    url: "/repos/{owner}/{repo}/releases",
-    headers: {
-      authorization: "token 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",
-    },
-    owner: "Geolbaker",
-    repo: "georgereactsite",
-  });
-  console.log(result);
 
-  //cookie set and check
-  cookieCreation("notification", result);
-});
+
+// ███████╗ ██████╗ ███╗   ██╗████████╗
+// ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝
+// █████╗  ██║   ██║██╔██╗ ██║   ██║
+// ██╔══╝  ██║   ██║██║╚██╗██║   ██║
+// ██║     ╚██████╔╝██║ ╚████║   ██║
+// ╚═╝      ╚═════╝ ╚═╝  ╚═══╝   ╚═╝
+//
+// ██╗   ██╗██████╗ ██████╗  █████╗ ████████╗███████╗██████╗
+// ██║   ██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+// ██║   ██║██████╔╝██║  ██║███████║   ██║   █████╗  ██████╔╝
+// ██║   ██║██╔═══╝ ██║  ██║██╔══██║   ██║   ██╔══╝  ██╔══██╗
+// ╚██████╔╝██║     ██████╔╝██║  ██║   ██║   ███████╗██║  ██║
+//  ╚═════╝ ╚═╝     ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+//
+
+export const FontSizeTextUpdater = (event) => {
+  $("#fontTitle").text(event.target.value+" Rem");
+};

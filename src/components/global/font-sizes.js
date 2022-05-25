@@ -1,3 +1,5 @@
+import {FontSizeTextUpdater} from './Utils.js';
+
 function FontSizes() {
   return (
     <div id="font-sizes">
@@ -6,7 +8,7 @@ function FontSizes() {
               <div className="col-12 mt-5">
                 <h2>Variable Font Sizes</h2>
               </div>
-              <input className="w-75" type="range" min="0.1" max="2.5" defaultValue="1" id="slider" step="0.05" />
+              <input className="w-75" onChange={FontSizeTextUpdater} type="range" min="0.1" max="2.5" defaultValue="1" id="slider" step="0.05" />
               <p id="fontPara" className="col-12 text-center" style={{fontSize: "1rem"}}>
                 <span id="fontTitle">1rem</span>
                 <br />
