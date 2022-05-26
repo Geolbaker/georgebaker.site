@@ -280,7 +280,7 @@ export const PopupCode = () =>  {
 // ██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝██║██╔════╝
 // ██║     ██║   ██║██║   ██║█████╔╝ ██║█████╗
 // ██║     ██║   ██║██║   ██║██╔═██╗ ██║██╔══╝
-// ╚██████╗╚██████╔╝╚██████╔╝██║  ██╗██║███████╗
+// ╚██████╗╚██████╔╝╚██████╔╝██║  ██╗██║███████╗ not really cookies though
 // ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝
 //
 // ███╗   ███╗ ██████╗ ███╗   ██╗███████╗████████╗███████╗██████╗
@@ -292,54 +292,72 @@ export const PopupCode = () =>  {
 //
 
 
+export const NotificationCheck = (event, type) => {
+  //get the local storage at the beginning
+  var originalLocalStorage = localStorage.getItem('notifications');
+  var onlineNotificationList = [];
 
-$(document).ready(function() {
-  NotificationAPIPopulate();
+  // console.log(event);
+  // console.log(onlineNotificationList)
+  // console.log(originalLocalStorage);
+
+  if (type === 'initialCheck') {
+    console.log("initial check");
+    $.each(event, function(index, value) {
+      onlineNotificationList.push(value.id);
+    })
+
+    function areEqual(array1, array2) {
+      if (array1?.length === array2?.length) {
+        return array1?.every(element => {
+          if (array2?.includes(element)) {
+            return true;
+          }
+
+          return false;
+        });
+      }
+
+      return false;
+    }
+
+    var notificationAllSeen = areEqual(onlineNotificationList, originalLocalStorage);
+    console.log(notificationAllSeen);
+
+    //check to see if the local storage is populated
+    if (!originalLocalStorage) {
+      console.log("no storage")
+      //if nothing is in local storage set all notifications to be unseen
+      document.querySelector('#newNotification').classList.add('d-block');
+      document.querySelector('#newNotification').classList.remove('d-none');
+    } else if (!notificationAllSeen) {
+      console.log("false");
+    }
+  }
+  else if (type === 'onClick') {
+    if (!originalLocalStorage) {originalLocalStorage = "[]";}
+    //parse the local storage into a list
+    var notificationList = JSON.parse(originalLocalStorage);
+
+    if (notificationList?.indexOf(event) > -1) {
+      console.log("already there")
+    }
+    else {
+      //add the id of the currently clicked event to local storage
+      notificationList.push(event);
+      localStorage.setItem('notifications', JSON.stringify(notificationList));
+    }
+  }
+}
+
+
+//remove local storage completely using enter key
+$(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        localStorage.removeItem('notifications');
+        alert('Local Storage Reset');
+    }
 });
-
-
-async function NotificationAPIPopulate() {
-
-  const result = await request({
-    method: "GET",
-    url: "/repos/{owner}/{repo}/releases",
-    owner: "Geolbaker",
-    repo: "georgereactsite",
-  });
-
-  //cookie check
-  notificationCheck(result);
-
-  $(result.data).each(function(index, value) {
-      populateList(index, value)
-
-  })
-}
-
-const notificationTemplate =
-`
-<div class="w-100 notificationEntry" data-value="{{date}}">
-  {{notificationReleaseName}}
-  <span class="rounded-circle bg-danger float-right" id="notificationNotViewed" style="width: 15px; height: 15px"></span>
-</div>
-
-`;
-
-function populateList(index, data){
-
-  var temp = notificationTemplate;
-  //get the date from the latest release
-  let tempTime = data.published_at;
-  //format the date to a better format
-  tempTime = Date.parse(tempTime);
-
-  temp = temp.replace('{{notificationReleaseName}}', data.name);
-  temp = temp.replace('{{date}}', tempTime);
-
-  $("#notificationContent").append(temp);
-}
-
-
 
 function notificationCheck(result) {
 
@@ -360,11 +378,6 @@ function notificationCheck(result) {
     document.querySelector('#newNotification').classList.add('d-none');
   }
 }
-
- 
-  $('.notificationEntry').on('click', function () {
-    console.log("hello");
-  });
 
   // //create a new cookie
   // const date = new Date();
