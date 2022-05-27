@@ -291,38 +291,47 @@ export const PopupCode = () =>  {
 // ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 //
 
+var originalApi;
 
 export const NotificationCheck = (event, type) => {
+  //function to compare things
+  function areEqual(array1, array2) {
+    if (array1?.length === array2?.length) {
+      return array1?.every(element => {
+        if (array2?.includes(element)) {
+
+            return true;
+        }
+
+        return false;
+      });
+    }
+
+    return false;
+  }
+
   //get the local storage at the beginning
   var originalLocalStorage = localStorage.getItem('notifications');
   var onlineNotificationList = [];
-
   // console.log(event);
   // console.log(onlineNotificationList)
   // console.log(originalLocalStorage);
+  // console.log(originalApi)
 
   if (type === 'initialCheck') {
-    console.log("initial check");
-    $.each(event, function(index, value) {
+    originalApi = event;
+    //run through all the entries
+    $.each(originalApi, function(index, value) {
+      //create a list of all online notifications
       onlineNotificationList.push(value.id);
     })
+    var temp = JSON.parse(originalLocalStorage);
+    //check whether they are seen
+    var notificationAllSeen = areEqual(onlineNotificationList, temp);
+    // console.log(notificationAllSeen);
+    // console.log(onlineNotificationList);
+    // console.log(temp);
 
-    function areEqual(array1, array2) {
-      if (array1?.length === array2?.length) {
-        return array1?.every(element => {
-          if (array2?.includes(element)) {
-            return true;
-          }
-
-          return false;
-        });
-      }
-
-      return false;
-    }
-
-    var notificationAllSeen = areEqual(onlineNotificationList, originalLocalStorage);
-    console.log(notificationAllSeen);
 
     //check to see if the local storage is populated
     if (!originalLocalStorage) {
@@ -330,22 +339,80 @@ export const NotificationCheck = (event, type) => {
       //if nothing is in local storage set all notifications to be unseen
       document.querySelector('#newNotification').classList.add('d-block');
       document.querySelector('#newNotification').classList.remove('d-none');
-    } else if (!notificationAllSeen) {
+    } else if (notificationAllSeen === false) {
       console.log("false");
+      //if nothing is in local storage set all notifications to be unseen
+      document.querySelector('#newNotification').classList.add('d-block');
+      document.querySelector('#newNotification').classList.remove('d-none');
+    } else if (notificationAllSeen) {
+      //if nothing is in local storage set all notifications to be unseen
+      document.querySelector('#newNotification').classList.remove('d-block');
+      document.querySelector('#newNotification').classList.add('d-none');
+
     }
   }
+  //if clicked
   else if (type === 'onClick') {
+    //if there has never been any entries add a temp array
     if (!originalLocalStorage) {originalLocalStorage = "[]";}
     //parse the local storage into a list
     var notificationList = JSON.parse(originalLocalStorage);
+    //run through all the entries
+    $.each(originalApi, function(index, value) {
+      //create a list of all online notifications
+      onlineNotificationList.push(value.id);
+    })
 
+    //check whether the current id was within the local storage list
     if (notificationList?.indexOf(event) > -1) {
-      console.log("already there")
+      //the notification was already within the viewed
+      return false;
     }
     else {
-      //add the id of the currently clicked event to local storage
+      //add the id of the currently clicked event to local storage and remove styling
       notificationList.push(event);
+      document.querySelector('#id' + event).classList.remove('bg-info');
       localStorage.setItem('notifications', JSON.stringify(notificationList));
+      var originalLocalStorage = localStorage.getItem('notifications');
+      var temp = JSON.parse(originalLocalStorage);
+      //check whether they are seen
+      var notificationAllSeen = areEqual(onlineNotificationList, temp);
+      if (!notificationAllSeen) {
+        return false;
+      }
+      else {
+        document.querySelector('#newNotification').classList.remove('d-block');
+        document.querySelector('#newNotification').classList.add('d-none');
+      }
+    }
+  }
+  //if openedNotificationCenter
+  else if (type === 'openedNotificationCenter') {
+    originalLocalStorage = localStorage.getItem('notifications');
+    //run through all the entries
+    $.each(originalApi, function(index, value) {
+      //create a list of all online notifications
+      onlineNotificationList.push(value.id);
+    })
+    //function to compare things
+    function areWithin(array1, array2) {
+        //check through each element of the local storage and compare to online
+        array2.forEach(element => {
+          //if it DOESNT find the entry
+          if(!array1.includes(element)){
+            return false;
+          } else{
+            //else if it DOES find the entry in the list (notification seen)
+            document.querySelector('#id' + element).classList.remove('bg-info');
+          }
+        });
+    }
+    var temp = JSON.parse(originalLocalStorage);
+    //check whether they are seen
+    if (!temp) {
+      return false;
+    } else {
+      areWithin(onlineNotificationList, temp);
     }
   }
 }
@@ -405,6 +472,7 @@ function notificationCheck(result) {
 var toggleNotification = 0;
 export const OpenNofiticationCenter = () => {
 
+  NotificationCheck('', 'openedNotificationCenter');
 
   //notification function
   var notificationTab = document.querySelector("#notificationCenterDiv");

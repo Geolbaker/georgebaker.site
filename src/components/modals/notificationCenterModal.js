@@ -15,7 +15,7 @@ function NotificationCenterModal(){
       })
   },[]);
   const users=userData.map((data,id)=>{
-    return <div key={id} id={data.id} className="notificationEntry" onClick={() => NotificationCheck(data.id, 'onClick')}>
+    return <div key={id} id={"id" + data.id} className="notificationEntry bg-info" onClick={() => NotificationCheck(data.id, 'onClick')}>
               <h2>{data.name} </h2>
               <p>{data.id}</p>
             </div>
