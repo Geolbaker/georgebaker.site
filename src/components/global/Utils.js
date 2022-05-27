@@ -335,12 +335,12 @@ export const NotificationCheck = (event, type) => {
 
     //check to see if the local storage is populated
     if (!originalLocalStorage) {
-      console.log("no storage")
+      // console.log("no storage")
       //if nothing is in local storage set all notifications to be unseen
       document.querySelector('#newNotification').classList.add('d-block');
       document.querySelector('#newNotification').classList.remove('d-none');
     } else if (notificationAllSeen === false) {
-      console.log("false");
+      // console.log("false");
       //if nothing is in local storage set all notifications to be unseen
       document.querySelector('#newNotification').classList.add('d-block');
       document.querySelector('#newNotification').classList.remove('d-none');
