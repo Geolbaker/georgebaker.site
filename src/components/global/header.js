@@ -14,16 +14,12 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active dropdown">
-                <Link className="nav-link dropdown-toggle nav-link-home" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Home <span className="sr-only">(current)</span>
-                </Link>
-                <div className="dropdown-menu" style={{width: "10rem"}} aria-labelledby="navbarDropdown">
-                  <a className="nav-link nav-link-home" href="#helpfulCode">Helpful Code</a>
-                  <a className="nav-link nav-link-home" href="#colours">Branding and Colours</a>
-                  <a className="nav-link nav-link-home" href="#externalWebsites">External Websites</a>
-                </div>
+              <li className="nav-item">
+                <Link className="nav-link" to="/"><strong>Home</strong></Link>
               </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/tools"><strong>Tools</strong></Link>
+                </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/fontSizes"><strong>Font Sizes</strong></Link>
               </li>

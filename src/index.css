@@ -46,6 +46,10 @@ code {
   border-color: var(--colorPalet-containerAlt) !important;
 }
 
+.dropdown-menu {
+  background-color: var(--colorPalet-container) !important;
+}
+
 .bg-light {
   background-color: var(--colorPalet-header) !important;
 }
