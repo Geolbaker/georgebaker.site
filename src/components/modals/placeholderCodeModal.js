@@ -1,7 +1,7 @@
 
 function PlaceholderCodeModal(){
   return (
-    <div className="modal" id="placeholderModal" tabIndex="-1" role="dialog" aria-labelledby="placeholderModal" aria-hidden="true">
+    <div className="modal mt-5" id="placeholderModal" tabIndex="-1" role="dialog" aria-labelledby="placeholderModal" aria-hidden="true">
     <div className="modal-dialog" role="document">
       <div className="modal-content">
         <div className="modal-header">

@@ -371,7 +371,8 @@ export const NotificationCheck = (event, type) => {
     else {
       //add the id of the currently clicked event to local storage and remove styling
       notificationList.push(event);
-      document.querySelector('#id' + event).classList.remove('bg-info');
+      document.querySelector('#id' + event).classList.remove('notificationEntryNew');
+      document.querySelector('#id' + event).classList.add('notificationEntrySeen');
       localStorage.setItem('notifications', JSON.stringify(notificationList));
       var originalLocalStorage = localStorage.getItem('notifications');
       var temp = JSON.parse(originalLocalStorage);
@@ -403,7 +404,8 @@ export const NotificationCheck = (event, type) => {
             return false;
           } else{
             //else if it DOES find the entry in the list (notification seen)
-            document.querySelector('#id' + element).classList.remove('bg-info');
+            document.querySelector('#id' + element).classList.remove('notificationEntryNew');
+            document.querySelector('#id' + element).classList.add('notificationEntrySeen');
           }
         });
     }
@@ -478,6 +480,9 @@ export const OpenNofiticationCenter = () => {
   var notificationTab = document.querySelector("#notificationCenterDiv");
   var iconActive = document.querySelector(".iconActive");
   var iconNormal = document.querySelector(".iconNormal");
+  if (toggleNotification === 0 && toggleColorPalette === 1) {
+    OpenColorPalette();
+  }
   if (toggleNotification === 0) {
     notificationTab.classList.add("d-block");
     notificationTab.classList.remove("d-none");
@@ -518,4 +523,82 @@ export const OpenNofiticationCenter = () => {
 
 export const FontSizeTextUpdater = (event) => {
   $("#fontTitle").text(event.target.value+" Rem");
+  $("#fontPara").css("font-size", event.target.valueAsNumber+"rem");
+};
+
+
+
+
+// ██████╗ ██████╗ ██╗      ██████╗ ██████╗
+// ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗
+// ██║     ██║   ██║██║     ██║   ██║██████╔╝
+// ██║     ██║   ██║██║     ██║   ██║██╔══██╗
+// ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║
+// ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+//
+// ██████╗  █████╗ ██╗     ███████╗████████╗████████╗███████╗
+// ██╔══██╗██╔══██╗██║     ██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝
+// ██████╔╝███████║██║     █████╗     ██║      ██║   █████╗
+// ██╔═══╝ ██╔══██║██║     ██╔══╝     ██║      ██║   ██╔══╝
+// ██║     ██║  ██║███████╗███████╗   ██║      ██║   ███████╗
+// ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚══════╝
+//
+
+var toggleColorPalette = 0;
+export const OpenColorPalette = () => {
+  var colorPaletteModal = document.querySelector("#colorPaletteModal");
+  var colorIconActive = document.querySelector(".colorIconActive");
+  var colorIconNormal = document.querySelector(".colorIconNormal");
+  if (toggleColorPalette === 0 && toggleNotification === 1) {
+    OpenNofiticationCenter();
+  }
+  if (toggleColorPalette === 0) {
+    colorPaletteModal.classList.add("d-block");
+    colorPaletteModal.classList.remove("d-none");
+    colorIconActive.classList.add("d-block");
+    colorIconNormal.classList.add("d-none");
+    colorIconActive.classList.remove("d-none");
+    colorIconNormal.classList.remove("d-block");
+    toggleColorPalette++;
+  }
+  else if (toggleColorPalette === 1) {
+    colorPaletteModal.classList.add("d-none");
+    colorPaletteModal.classList.remove("d-block");
+    colorIconNormal.classList.add("d-block");
+    colorIconActive.classList.add("d-none");
+    colorIconNormal.classList.remove("d-none");
+    colorIconActive.classList.remove("d-block");
+    toggleColorPalette = 0;
+  }
+};
+
+
+export const ChangeColorPalette = (event) => {
+  console.log(event);
+  if (event === 'botanical') {
+    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(114 144 141)');
+    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(123 156 152)');
+    document.documentElement.style.setProperty("--colorPalet-text", 'rgb(233 241 243)');
+    document.documentElement.style.setProperty("--colorPalet-header", 'rgb(73 87 85)');
+    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(73 87 85 / 50%)');
+    document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(196 225 216)');
+
+  }
+  else if (event = 'normal') {
+    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
+    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235 / 100%)');
+    document.documentElement.style.setProperty("--colorPalet-text", 'rgb(0 0 0)');
+    document.documentElement.style.setProperty("--colorPalet-header", 'rgb(255 255 255)');
+    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
+    document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(105, 182, 213)');
+  }
+  // --colorPalet-background: rgb(236 236 235 / 100%);
+  // --colorPalet-backgroundAlt: rgb(255 255 255);
+  // --colorPalet-text: rgb(0 0 0);
+  // --colorPalet-textAlt: rgb(255 255 255);
+  // --colorPalet-header: rgb(255 255 255);
+  // --colorPalet-container: rgb(255 255 255);
+  // --colorPalet-containerAlt: rgb(38 57 77 / 50%);
+
+
 };

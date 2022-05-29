@@ -15,17 +15,14 @@ function NotificationCenterModal(){
       })
   },[]);
   const users=userData.map((data,id)=>{
-    return <div key={id} id={"id" + data.id} className="notificationEntry bg-info" onClick={() => NotificationCheck(data.id, 'onClick')}>
-              <h2>{data.name} </h2>
-              <p>{data.id}</p>
+    return <div key={id} id={"id" + data.id} className="notificationEntryNew notificationEntry p-3" onClick={() => NotificationCheck(data.id, 'onClick')}>
+              <p className="m-2"><strong>New Release</strong> {data.name}</p>
             </div>
   });
   return (
-    <div id="notificationCenterDiv" className="position-absolute m-5 d-none animate__animated">
-      <div className="p-5 popupBlockNotification arrow-top">
-        <button type="button" className="close closePopup" onClick={OpenNofiticationCenter}>
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div id="notificationCenterDiv" className="container position-fixed m-5 d-none">
+    <div className="position-fixed w-100 h-100" style={{top: "0", left: "0"}} onClick={OpenNofiticationCenter}></div>
+      <div className=" popupBlockNotification arrow-top">
         <div id="notificationContent">
           <>
             {users}

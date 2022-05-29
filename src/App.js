@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/global/header.js';
 import NotificationCenterModal from './components/modals/notificationCenterModal.js';
+import ColorPaletteModal from './components/modals/colorPaletteModal.js';
 import PlaceholderCodeModal from './components/modals/placeholderCodeModal.js';
 import TimedDisplayModal from './components/modals/timedDisplayModal.js';
 import PopupCodeModal from './components/modals/popupCodeModal.js';
@@ -17,6 +18,7 @@ function App() {
   return (
     <div id="home" >
       <NotificationCenterModal  />
+      <ColorPaletteModal  />
       <PlaceholderCodeModal />
       <TimedDisplayModal />
       <PopupCodeModal />

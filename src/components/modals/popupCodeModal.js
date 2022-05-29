@@ -2,7 +2,7 @@
 function PopupCodeModal(){
   return (
 
-  <div className="modal" id="popupCodeModal" tabIndex="-1" role="dialog" aria-labelledby="popupCodeModal" aria-hidden="true">
+  <div className="modal mt-5" id="popupCodeModal" tabIndex="-1" role="dialog" aria-labelledby="popupCodeModal" aria-hidden="true">
     <div className="modal-dialog" role="document">
       <div className="modal-content">
         <div className="modal-header">

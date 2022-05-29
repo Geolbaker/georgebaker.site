@@ -5,65 +5,62 @@ import assets from './assets.js';
 function Body() {
   return (
     <div id="body">
-    <div className="container-fluid d-flex justify-content-center">
-      <div className="row w-100 text-center" id="externalWebsites">
+    <div className="container d-flex justify-content-center pt-5">
+      <div className="row w-100 text-center justify-content-center align-items-center" id="externalWebsites">
         <div className="col-12 mt-5">
           <h2>External Websites</h2>
         </div>
 
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>Dev Docs</h2>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
-            <a href="https://github.com/University-of-Lincoln-SU/External-Developer-Docs" target="blank">
+            <a href="https://github.com/" target="blank">
               <img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="github Logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>Form Submit</h2>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://formsubmit.co/" target="blank">
               <img loading="lazy" src="https://formsubmit.co/image/logo.png" alt="formsubmit logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
-          <h2>HTML Color Codes</h2>
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://htmlcolorcodes.com" target="blank">
               <img loading="lazy" src={assets[5]} alt="htmlcolorcodes logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/html-formatter.html" target="blank">
               <img loading="lazy" src={assets[4]} alt="html beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/css-beautifier.html" target="blank">
               <img loading="lazy" src={assets[3]} alt="css beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://www.freeformatter.com/javascript-beautifier.html" target="blank">
               <img loading="lazy" src={assets[6]} alt="javascript beautifier logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://pagespeed.web.dev/" target="blank">
               <img loading="lazy" src={assets[7]} alt="pagespeed" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-5 p-1 pt-3">
+        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
             <a href="https://tinypng.com/" target="blank">
               <img loading="lazy" src={assets[8]} alt="tinypng logo" className="w-100 image-responsive"/>
@@ -76,13 +73,13 @@ function Body() {
 
       </div>
     </div>
-      <div className="container-fluid d-flex justify-content-center">
-      <div className="row w-100 text-center" id="helpfulCode">
+      <div className="container d-flex justify-content-center">
+      <div className="row w-100 text-center justify-content-center" id="helpfulCode">
         <div className="col-12 mt-2">
           <h2>Helpful Code</h2>
         </div>
         <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 text-center bg-white rounded pb-4">
+          <div className="col-12 text-center bg-white rounded pb-4 containerShadow">
             <h2 className="pt-3">Skeleton Placeholders</h2>
             <div className="row d-flex flex-wrap justify-content-center" id="placeholder-content">
               <div className="col-6 loader w-100 m-0 mb-1">
@@ -116,13 +113,13 @@ function Body() {
             <input type="color" id="colorLoader1" name="head" defaultValue="#D1FFF6" onChange={ColorLiveupdate}/>
             <input type="color" id="colorLoader2" name="head" defaultValue="#FFB6F1" onChange={ColorLiveupdate}/>
             <br/><br/>
-            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender('chosen')}> Chosen Color</button>
-            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender("generic")}> Generic Color</button>
+            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender('chosen')}> Chosen</button>
+            <button className="btn btn-primary m-2" data-toggle="modal" data-target="#placeholderModal" onClick={() => ColorRender("generic")}> Grey</button>
             <button className="btn btn-primary m-2" onClick={PlaceholderToggle}> Add Content Toggle</button>
           </div>
         </div>
         <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 text-center bg-white rounded pb-4">
+          <div className="col-12 text-center bg-white rounded pb-4 containerShadow">
             <h2 className="pt-3">Timed Display Enabler</h2>
             <div className="col-12 d-flex flex-wrap align-content-center flex-column">
               <label>Select date:</label>
@@ -134,54 +131,7 @@ function Body() {
           </div>
         </div>
         <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 text-center bg-white rounded pb-4">
-            <h2 className="pt-3">Lazy Loading Code</h2>
-            <div className="col-12 d-flex flex-wrap align-content-center flex-column">
-              <p>
-                <strong>
-                  Lazy Loading CSS Links in Header
-                </strong><br/>
-                media="none" onload="if(media!=='all')media='all'"
-              </p>
-              <p>
-                <strong>
-                  Lazy Loading Fonts in Header
-                </strong><br/>
-                rel="preload"
-              </p>
-              <p>
-                <strong>
-                  Lazy Loading Images
-                </strong><br/>
-                loading="lazy"
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 text-center bg-white rounded pb-4">
-            <h2 className="pt-3">SEO Best Practices</h2>
-            <div className="col-12 d-flex flex-wrap align-content-center flex-column">
-              <p>
-                <strong>
-                  Add to all external links
-                </strong><br/>
-                rel="nofollow"
-              </p>
-              <p>
-                Add ALT tags to all Images
-              </p>
-              <p>
-                Add a Unique Title to every page
-              </p>
-              <p>
-                Only use <strong>One</strong> H1 Tag
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-lg-6 col-xl-4 w-100 p-md-5 p-1 pt-3">
-          <div className="col-12 text-center bg-white rounded pb-4">
+          <div className="col-12 text-center bg-white rounded pb-4 containerShadow">
             <h2 className="pt-3">Pop-up - Set Time</h2>
             <div className="col-12 d-flex flex-wrap align-content-center flex-column">
               <input type="range" id="popup-slider" name="time-s" min="1" max="30" defaultValue="5" onChange={PopupDelayTime}/>
@@ -197,8 +147,8 @@ function Body() {
 
       </div>
     </div>
-    <div className="container-fluid d-flex justify-content-center">
-      <div className="row w-100 text-center" id="colours">
+    <div className="container d-flex justify-content-center">
+      <div className="row w-100 text-center justify-content-center" id="colours">
         <div className="col-12 mt-2">
           <h2>Branding And Colours</h2>
         </div>
