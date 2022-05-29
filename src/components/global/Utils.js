@@ -582,15 +582,30 @@ export const ChangeColorPalette = (event) => {
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(73 87 85)');
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(73 87 85 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(196 225 216)');
-
   }
-  else if (event = 'normal') {
+  else if (event === 'normal') {
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235 / 100%)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(0 0 0)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(255 255 255)');
     document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(105, 182, 213)');
+  }
+  else if (event === 'witchgirl') {
+    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(231 200 190)');
+    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(243 219 218)');
+    document.documentElement.style.setProperty("--colorPalet-text", 'rgb(86 120 106)');
+    document.documentElement.style.setProperty("--colorPalet-header", 'rgb(220 180 167)');
+    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(220 180 167 / 50%)');
+    document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(214 241 222)');
+  }
+  else if (event === 'alpine') {
+    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(118 115 140)');
+    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(108 104 127)');
+    document.documentElement.style.setProperty("--colorPalet-text", 'rgb(255 255 255)');
+    document.documentElement.style.setProperty("--colorPalet-header", 'rgb(119 115 140)');
+    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(119 115 140 / 50%)');
+    document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(201 193 245)');
   }
   // --colorPalet-background: rgb(236 236 235 / 100%);
   // --colorPalet-backgroundAlt: rgb(255 255 255);
