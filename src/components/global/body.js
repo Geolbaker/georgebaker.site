@@ -55,15 +55,8 @@ function Body() {
         </div>
         <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
           <div className="col-12 p-3">
-            <a href="https://pagespeed.web.dev/" target="blank">
-              <img loading="lazy" src={assets[7]} alt="pagespeed" className="w-100 image-responsive"/>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-4 w-100 p-md-4 p-1 pt-2">
-          <div className="col-12 p-3">
             <a href="https://tinypng.com/" target="blank">
-              <img loading="lazy" src={assets[8]} alt="tinypng logo" className="w-100 image-responsive"/>
+              <img loading="lazy" src={assets[7]} alt="tinypng logo" className="w-100 image-responsive"/>
             </a>
           </div>
         </div>

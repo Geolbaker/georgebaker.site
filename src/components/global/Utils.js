@@ -424,37 +424,12 @@ export const NotificationCheck = (event, type) => {
 $(document).on('keypress',function(e) {
     if(e.which == 13) {
         localStorage.removeItem('notifications');
+        localStorage.removeItem('theme');
+
         alert('Local Storage Reset');
     }
 });
 
-function notificationCheck(result) {
-
-  //get the date from the latest release
-  let tempTime = result.data[0].published_at;
-  //format the date to a better format
-  let lastReleaseDate = Date.parse(tempTime);
-  //get the latest cookie from the document and format it correctly to match
-  var cookieTime = document.cookie.replace(/\D/g,'');
-
-  //check for whether to dispaly the notification
-  if (cookieTime > lastReleaseDate) {
-    document.querySelector('#newNotification').classList.add('d-block');
-    document.querySelector('#newNotification').classList.remove('d-none');
-  }
-  else {
-    document.querySelector('#newNotification').classList.remove('d-block');
-    document.querySelector('#newNotification').classList.add('d-none');
-  }
-}
-
-  // //create a new cookie
-  // const date = new Date();
-  // //first 30 value is number of days
-  // date.setTime(date.getTime() + (30*24*60*60*1000));
-  // let expires = "expires="+ date.toUTCString();
-  // cvalue = Date.now();
-  // document.cookie = "notificationLastAccessed=" + cvalue + ";" + expires;
 
 
 // ███╗   ██╗ ██████╗ ████████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
@@ -475,6 +450,7 @@ var toggleNotification = 0;
 export const OpenNofiticationCenter = () => {
 
   NotificationCheck('', 'openedNotificationCenter');
+
 
   //notification function
   var notificationTab = document.querySelector("#notificationCenterDiv");
@@ -574,46 +550,54 @@ export const OpenColorPalette = () => {
 
 
 export const ChangeColorPalette = (event) => {
-  console.log(event);
-  if (event === 'botanical') {
+  var themeName;
+  if (!event) {
+    themeName = localStorage.getItem('theme');
+  }
+  else if (event) {
+    themeName = event;
+  }
+
+  if (themeName === 'botanical') {
     document.documentElement.style.setProperty("--colorPalet-container", 'rgb(114 144 141)');
     document.documentElement.style.setProperty("--colorPalet-background", 'rgb(123 156 152)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(233 241 243)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(73 87 85)');
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(73 87 85 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(196 225 216)');
+    localStorage.removeItem('theme');
+    localStorage.setItem('theme', themeName);
   }
-  else if (event === 'normal') {
+  else if (themeName === 'normal') {
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235 / 100%)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(0 0 0)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(255 255 255)');
     document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(105, 182, 213)');
+    localStorage.removeItem('theme');
+    localStorage.setItem('theme', themeName);
   }
-  else if (event === 'witchgirl') {
+  else if (themeName === 'witchgirl') {
     document.documentElement.style.setProperty("--colorPalet-container", 'rgb(231 200 190)');
     document.documentElement.style.setProperty("--colorPalet-background", 'rgb(243 219 218)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(86 120 106)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(220 180 167)');
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(220 180 167 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(214 241 222)');
+    localStorage.removeItem('theme');
+    localStorage.setItem('theme', themeName);
   }
-  else if (event === 'alpine') {
+  else if (themeName === 'alpine') {
     document.documentElement.style.setProperty("--colorPalet-container", 'rgb(118 115 140)');
     document.documentElement.style.setProperty("--colorPalet-background", 'rgb(108 104 127)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(255 255 255)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(119 115 140)');
     document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(119 115 140 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(201 193 245)');
+    localStorage.removeItem('theme');
+    localStorage.setItem('theme', themeName);
   }
-  // --colorPalet-background: rgb(236 236 235 / 100%);
-  // --colorPalet-backgroundAlt: rgb(255 255 255);
-  // --colorPalet-text: rgb(0 0 0);
-  // --colorPalet-textAlt: rgb(255 255 255);
-  // --colorPalet-header: rgb(255 255 255);
-  // --colorPalet-container: rgb(255 255 255);
-  // --colorPalet-containerAlt: rgb(38 57 77 / 50%);
 
 
 };

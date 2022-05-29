@@ -5,7 +5,6 @@ import cssBeautifier from '../../assets/css-beautifier.webp';
 import htmlBeautifier from '../../assets/html-beautifier.webp';
 import htmlcolorLogo from '../../assets/htmlcolor-logo.webp';
 import jsBeautifier from '../../assets/js-beautifier.webp';
-import pageinsightLogo from '../../assets/PageInsight-logo.webp';
 import tinypngLogo from '../../assets/tinypng-logo.webp';
 
 export default [
@@ -16,6 +15,5 @@ export default [
   htmlBeautifier,
   htmlcolorLogo,
   jsBeautifier,
-  pageinsightLogo,
   tinypngLogo
 ];
