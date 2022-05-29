@@ -220,10 +220,20 @@ code {
       width: 35%;
     }
 
-    .colorPalette {
-      width: 20rem;
+    .colorPaletteSelection {
+
+      transition: box-shadow 1s ease;
+      transition: font-size 1s ease;
     }
 
+    .colorPaletteSelection:hover {
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      cursor: pointer;
+      font-size: 2rem;
+      transition: box-shadow 1s ease;
+      transition: font-size 1s ease;
+    }
+  
 
     .popupBlockNotification {
       border-radius: 8px;
