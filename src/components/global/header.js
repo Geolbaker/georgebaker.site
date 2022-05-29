@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-light position-fixed w-100" style={{zIndex: "2000"}}>
+    <header className="bg-light position-fixed w-100" style={{zIndex: "300"}}>
         <nav className="container navbar navbar-expand-lg navbar-light">
           <Link className="navbar-brand" to="/">Web Tools</Link>
           <NotificationCenter />

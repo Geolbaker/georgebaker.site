@@ -7,9 +7,9 @@ function ColorPaletteModal(){
   },[]);
   return (
     <div id="colorPaletteModal" className="container position-fixed m-5 d-none">
-    <div className="position-fixed w-100 h-100" style={{top: "0", left: "0"}} onClick={OpenColorPalette}></div>
+      <div className="position-fixed w-100 h-100" style={{top: "0", left: "0"}} onClick={OpenColorPalette}></div>
       <div className=" popupBlockColor arrow-top">
-        <div id="colorPaletteContent">
+        <div id="colorPaletteContent position-relative" style={{zIndex: "200"}}>
 
         <div className="colorPalette" onClick={() => ChangeColorPalette('normal')}>
           <div className="d-flex p-4">
