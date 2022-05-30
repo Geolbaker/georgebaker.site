@@ -11,7 +11,7 @@ import SidePopup from '../../modals/sidePopup.js';
 import assets from '../assets.js';
 
 
-function Body() {
+function Tools() {
   return (
     <div id="tools">
     <NotificationCenterModal  />
@@ -232,4 +232,4 @@ function Body() {
 
 }
 
-export default Body;
+export default Tools;

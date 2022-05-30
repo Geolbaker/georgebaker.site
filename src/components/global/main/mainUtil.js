@@ -38,9 +38,11 @@ export const Mouse = () => {
   //stop mouse from showing
   document.documentElement.style.setProperty('--cursor-type', 'none');
 
+  //set the mouse size
   mouse.style.setProperty('--size', size+'px');
   mouseF.style.setProperty('--size', sizeF+'px');
 
+  //everytime the mouse moves, update the page position and the mouse position
   window.addEventListener('mousemove', function(e) {
     pageX = e.clientX;
     pageY = e.clientY;
@@ -48,6 +50,7 @@ export const Mouse = () => {
     mouse.style.top = e.clientY-size/2+'px';
   });
 
+  //create the loop to run the "animation" for the mouse follow
   function loop() {
     mouseX = lerp(mouseX, pageX, followSpeed);
     mouseY = lerp(mouseY, pageY, followSpeed);
@@ -58,10 +61,13 @@ export const Mouse = () => {
 
   loop();
 
+
+  //create the variables for the mouse click
   let startY;
   let endY;
   let clicked = false;
 
+  //setup the "animations" for the mouse click
   function mousedown(e) {
     gsap.to(mouse, {scale: 4.5});
     gsap.to(mouseF, {scale: .4});
@@ -80,6 +86,8 @@ export const Mouse = () => {
       endY = null;
     }
   }
+
+  //main event listeners
   window.addEventListener('mousedown', mousedown, false);
   window.addEventListener('touchstart', mousedown, false);
   window.addEventListener('touchmove', function(e) {
