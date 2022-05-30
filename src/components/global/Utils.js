@@ -529,8 +529,8 @@ export const OpenColorPalette = () => {
     OpenNofiticationCenter();
   }
   if (toggleColorPalette === 0) {
-    colorPaletteModal.classList.add("d-block");
-    colorPaletteModal.classList.remove("d-none");
+    colorPaletteModal.classList.add("visible");
+    colorPaletteModal.classList.remove("invisible");
     colorIconActive.classList.add("d-block");
     colorIconNormal.classList.add("d-none");
     colorIconActive.classList.remove("d-none");
@@ -538,8 +538,8 @@ export const OpenColorPalette = () => {
     toggleColorPalette++;
   }
   else if (toggleColorPalette === 1) {
-    colorPaletteModal.classList.add("d-none");
-    colorPaletteModal.classList.remove("d-block");
+    colorPaletteModal.classList.add("invisible");
+    colorPaletteModal.classList.remove("visible");
     colorIconNormal.classList.add("d-block");
     colorIconActive.classList.add("d-none");
     colorIconNormal.classList.remove("d-none");
@@ -569,11 +569,11 @@ export const ChangeColorPalette = (event) => {
     localStorage.setItem('theme', themeName);
   }
   else if (themeName === 'normal') {
-    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
-    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235 / 100%)');
+    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
+    document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235)');
     document.documentElement.style.setProperty("--colorPalet-text", 'rgb(0 0 0)');
     document.documentElement.style.setProperty("--colorPalet-header", 'rgb(255 255 255)');
-    document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
+    document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
     document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(105, 182, 213)');
     localStorage.removeItem('theme');
     localStorage.setItem('theme', themeName);
