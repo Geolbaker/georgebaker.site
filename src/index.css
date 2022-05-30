@@ -10,6 +10,7 @@ body {
 * {
   transition: color 1s ease;
   transition: background-color 1s ease;
+  cursor: none;
 }
 
 :root {
@@ -24,7 +25,6 @@ body {
       --colorPalet-container: #fff;
       --colorPalet-containerAlt: rgb(38 57 77 / 50%);
       --colorPalet-mainLight : rgb(105, 182, 213);
-
     }
 
 code {
@@ -372,7 +372,7 @@ code {
           top: -200px;
         }
         .circle {
-          background-color: #fee7d3;
+          background-color: var(--colorPalet-container);
           border-radius: 50%;
           cursor: pointer;
           height: 380px;
@@ -406,23 +406,4 @@ code {
           left: -16px;
           top: 144px;
           width: 466px;
-        }
-        .divider {
-          background-color: #ca6060;
-          height: 1px;
-          width: 160px;
-        }
-        .name {
-          color: #404245;
-          font-size: 36px;
-          font-weight: 600;
-          margin-top: 16px;
-          text-align: center;
-        }
-        .title {
-          color: #6e6e6e;
-          font-family: arial;
-          font-size: 14px;
-          font-style: italic;
-          margin-top: 4px;
         }

@@ -1,10 +1,26 @@
-import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode, ColorLiveupdate, PopupDelayTime} from './Utils.js';
-import assets from './assets.js';
+import {ColorRender, PlaceholderToggle, CreateDateCode, PopupToggle, PopupCode, ColorLiveupdate, PopupDelayTime} from '../Utils.js';
+
+import Header from '../header.js';
+import NotificationCenterModal from '../../modals/notificationCenterModal.js';
+import ColorPaletteModal from '../../modals/colorPaletteModal.js';
+import PlaceholderCodeModal from '../../modals/placeholderCodeModal.js';
+import TimedDisplayModal from '../../modals/timedDisplayModal.js';
+import PopupCodeModal from '../../modals/popupCodeModal.js';
+import SidePopup from '../../modals/sidePopup.js';
+
+import assets from '../assets.js';
 
 
 function Body() {
   return (
-    <div id="body">
+    <div id="tools">
+    <NotificationCenterModal  />
+    <ColorPaletteModal  />
+    <PlaceholderCodeModal />
+    <TimedDisplayModal />
+    <PopupCodeModal />
+    <SidePopup />
+    <Header />
     <div className="container d-flex justify-content-center pt-5">
       <div className="row w-100 text-center justify-content-center align-items-center" id="externalWebsites">
         <div className="col-12 mt-5">

@@ -1,4 +1,4 @@
-import {OpenColorPalette} from './Utils.js';
+import {OpenColorPalette} from '../Utils.js';
 
 function ColorPaletteSelector() {
   return (

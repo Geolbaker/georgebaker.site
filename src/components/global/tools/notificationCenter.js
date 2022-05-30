@@ -1,4 +1,4 @@
-import {OpenNofiticationCenter} from './Utils.js';
+import {OpenNofiticationCenter} from '../Utils.js';
 
 function NotificationCenter() {
   return (

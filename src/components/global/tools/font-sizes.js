@@ -1,8 +1,23 @@
-import {FontSizeTextUpdater} from './Utils.js';
+import {FontSizeTextUpdater} from '../Utils.js';
+
+import Header from '../header.js';
+import NotificationCenterModal from '../../modals/notificationCenterModal.js';
+import ColorPaletteModal from '../../modals/colorPaletteModal.js';
+import PlaceholderCodeModal from '../../modals/placeholderCodeModal.js';
+import TimedDisplayModal from '../../modals/timedDisplayModal.js';
+import PopupCodeModal from '../../modals/popupCodeModal.js';
+import SidePopup from '../../modals/sidePopup.js';
 
 function FontSizes() {
   return (
     <div id="font-sizes">
+    <NotificationCenterModal  />
+    <ColorPaletteModal  />
+    <PlaceholderCodeModal />
+    <TimedDisplayModal />
+    <PopupCodeModal />
+    <SidePopup />
+    <Header />
       <div className="container-fluid d-flex justify-content-center">
             <div className="row w-100 text-center justify-content-center mt-5" id="helpfulCode">
               <div className="col-12 mt-5">

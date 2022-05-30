@@ -1,5 +1,5 @@
-import NotificationCenter from './notificationCenter.js';
-import ColorPaletteSelector from './colorPaletteSelector.js';
+import NotificationCenter from './tools/notificationCenter.js';
+import ColorPaletteSelector from './tools/colorPaletteSelector.js';
 import { Link } from "react-router-dom";
 
 function Header() {
