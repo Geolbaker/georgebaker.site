@@ -1,49 +1,58 @@
 import $ from 'jquery';
 import {gsap, Power4} from 'gsap';
 
-export const Cursor = () => {
+export const Mouse = () => {
 
-
+  //linear interpretation function
   function lerp(start, end, amount) {
     return (1-amount)*start+amount*end
   }
 
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor';
+  //create a div called mouse to replace mouse
+  const mouse = document.createElement('div');
+  mouse.className = 'mouse';
 
-  const cursorF = document.createElement('div');
-  cursorF.className = 'cursor-f';
-  let cursorX = 0;
-  let cursorY = 0;
+  //create a div called mouse-follow to follow mouse
+  const mouseF = document.createElement('div');
+  mouseF.className = 'mouse-follow';
+
+  //initiate variables
   let pageX = 0;
   let pageY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
   let size = 8;
   let sizeF = 36;
-  let followSpeed = .16;
+  let followSpeed = .13;
 
-  document.body.appendChild(cursor);
-  document.body.appendChild(cursorF);
+  //add the divs to the main
+  document.body.appendChild(mouse);
+  document.body.appendChild(mouseF);
 
+  //remove styling of mouse
   if ('ontouchstart' in window) {
-    cursor.style.display = 'none';
-    cursorF.style.display = 'none';
+    mouse.style.display = 'none';
+    mouseF.style.display = 'none';
   }
 
-  cursor.style.setProperty('--size', size+'px');
-  cursorF.style.setProperty('--size', sizeF+'px');
+  //stop mouse from showing
+  document.documentElement.style.setProperty('--cursor-type', 'none');
+
+  mouse.style.setProperty('--size', size+'px');
+  mouseF.style.setProperty('--size', sizeF+'px');
 
   window.addEventListener('mousemove', function(e) {
     pageX = e.clientX;
     pageY = e.clientY;
-    cursor.style.left = e.clientX-size/2+'px';
-    cursor.style.top = e.clientY-size/2+'px';
+    mouse.style.left = e.clientX-size/2+'px';
+    mouse.style.top = e.clientY-size/2+'px';
   });
 
   function loop() {
-    cursorX = lerp(cursorX, pageX, followSpeed);
-    cursorY = lerp(cursorY, pageY, followSpeed);
-    cursorF.style.top = cursorY - sizeF/2 + 'px';
-    cursorF.style.left = cursorX - sizeF/2 + 'px';
+    mouseX = lerp(mouseX, pageX, followSpeed);
+    mouseY = lerp(mouseY, pageY, followSpeed);
+    mouseF.style.top = mouseY - sizeF/2 + 'px';
+    mouseF.style.left = mouseX - sizeF/2 + 'px';
     requestAnimationFrame(loop);
   }
 
@@ -54,15 +63,15 @@ export const Cursor = () => {
   let clicked = false;
 
   function mousedown(e) {
-    gsap.to(cursor, {scale: 4.5});
-    gsap.to(cursorF, {scale: .4});
+    gsap.to(mouse, {scale: 4.5});
+    gsap.to(mouseF, {scale: .4});
 
     clicked = true;
     startY = e.clientY || e.touches[0].clientY || e.targetTouches[0].clientY;
   }
   function mouseup(e) {
-    gsap.to(cursor, {scale: 1});
-    gsap.to(cursorF, {scale: 1});
+    gsap.to(mouse, {scale: 1});
+    gsap.to(mouseF, {scale: 1});
 
     endY = e.clientY || endY;
     if (clicked && startY && Math.abs(startY - endY) >= 40) {
