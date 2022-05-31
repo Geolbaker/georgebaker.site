@@ -1,6 +1,35 @@
 import $ from 'jquery';
 import {gsap, Power4} from 'gsap';
 
+var toggle = 0;
+export const PopupToggle = () => {
+  if (toggle == 0) {
+    setTimeout(function(){
+      var div = document.querySelector("#popupMain");
+      div.classList.add("animate__backInRight");
+      div.classList.remove("d-none", "animate__backOutRight");
+      toggle ++;
+    },0);
+  }
+  else if (toggle == 1) {
+    var div = document.querySelector("#popupMain");
+    div.classList.remove("animate__backInRight");
+    div.classList.add("animate__backOutRight");
+    toggle = 0;
+  }
+}
+
+export const ResetTheme = () => {
+  document.documentElement.style.setProperty("--colorPalet-container", 'rgb(255 255 255)');
+  document.documentElement.style.setProperty("--colorPalet-background", 'rgb(236 236 235)');
+  document.documentElement.style.setProperty("--colorPalet-text", 'rgb(0 0 0)');
+  document.documentElement.style.setProperty("--colorPalet-header", 'rgb(255 255 255)');
+  document.documentElement.style.setProperty("--colorPalet-containerAlt", 'rgb(38 57 77 / 50%)');
+  document.documentElement.style.setProperty("--colorPalet-mainLight", 'rgb(105, 182, 213)');
+  localStorage.removeItem('theme');
+  localStorage.setItem('theme', 'normal');
+}
+
 export const Mouse = () => {
 
   //linear interpretation function
@@ -97,7 +126,8 @@ export const Mouse = () => {
   }, false);
   window.addEventListener('touchend', mouseup, false);
   window.addEventListener('mouseup', mouseup, false);
-
+  $('.mouseHover').mouseover('mousedown', mousedown, false);
+  $('.mouseHover').mouseout('mouseup', mouseup, false);
 
 
 }

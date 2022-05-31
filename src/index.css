@@ -7,6 +7,11 @@ body {
   background: var(--colorPalet-background);
 }
 
+html {
+
+  overflow: hidden;
+}
+
 * {
   transition: color 1s ease;
   transition: background-color 1s ease;
@@ -396,3 +401,31 @@ code {
             border-color: transparent
           }
         }
+
+
+
+  .MainPopup {
+    font-famiy: 'Montserrat';
+  }
+
+  .MainPopupButtons {
+    padding-left: 5px;
+    transition: text-shadow 1s ease;
+  }
+
+  .MainPopupButtons:hover {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+
+  }
+
+  #popupMain {
+    width: 30rem !important;
+    right: 0;
+    bottom: 0;
+  }
+
+  .popupBlockMain {
+    background: #0BB474;
+    color: #E7FFF6;
+
+  }

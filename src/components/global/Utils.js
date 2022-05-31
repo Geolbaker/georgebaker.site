@@ -5,6 +5,10 @@ import { request } from "@octokit/request"
 document.documentElement.style.setProperty('--cursor-type', 'default');
 
 
+
+
+
+
 // ██████╗ ██╗      █████╗  ██████╗███████╗██╗  ██╗ ██████╗ ██╗     ██████╗ ███████╗██████╗
 // ██╔══██╗██║     ██╔══██╗██╔════╝██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝██╔══██╗
 // ██████╔╝██║     ███████║██║     █████╗  ███████║██║   ██║██║     ██║  ██║█████╗  ██████╔╝
@@ -423,15 +427,6 @@ export const NotificationCheck = (event, type) => {
 }
 
 
-//remove local storage completely using enter key
-$(document).on('keypress',function(e) {
-    if(e.which == 13) {
-        localStorage.removeItem('notifications');
-        localStorage.removeItem('theme');
-
-        alert('Local Storage Reset');
-    }
-});
 
 
 
