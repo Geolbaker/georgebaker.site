@@ -355,7 +355,7 @@ code {
         	 border-radius: 50%;
         	 background: white;
         	 position: absolute;
-        	 z-index: 999;
+        	 z-index: 6000;
         	 pointer-events: none;
         	 mix-blend-mode: difference;
         }
@@ -370,15 +370,18 @@ code {
         	 mix-blend-mode: difference;
         	 pointer-events: none;
         	 opacity: .5;
+        	 z-index: 6000;
         }
 
 
 
         .typing-wrapper {
           height: 20vh;
-          display: grid;
+          position: absolute;
           place-items: center;
+          top: 20%;
         }
+
 
         .typing-intro {
           width: 22ch;
@@ -408,14 +411,22 @@ code {
     font-famiy: 'Montserrat';
   }
 
+  .MainPopupButtonSection {
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
   .MainPopupButtons {
     padding-left: 5px;
-    transition: text-shadow 1s ease;
+    transition: text-shadow 1s ease, color 1s ease;
+    padding: 1rem;
   }
 
   .MainPopupButtons:hover {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-
+    color: #63ffd3 !important;
   }
 
   #popupMain {
@@ -425,7 +436,52 @@ code {
   }
 
   .popupBlockMain {
-    background: #0BB474;
+    background: #4d4761;
     color: #E7FFF6;
+    transition: text-shadow 1s ease;
 
+  }
+
+  .backgroundSvg {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+  }
+
+  .popupMainIcon {
+    color: #63ffd3;
+  }
+
+  #PongGameContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(100 100 100 / 80%);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .PongGameBackground {
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    background: rgb(100 100 100 / 80%);
+    width: 100%;
+    height: 100%;
+    transition: background 1s ease;
+  }
+
+  .PongGameBackground:hover {
+    background: rgb(100 100 100 / 25%);
+  }
+
+  .PongGame {
+    z-index: 4000;
   }
