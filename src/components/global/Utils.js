@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import { request } from "@octokit/request"
 
+//show mouse
+document.documentElement.style.setProperty('--cursor-type', 'default');
+
 
 // ██████╗ ██╗      █████╗  ██████╗███████╗██╗  ██╗ ██████╗ ██╗     ██████╗ ███████╗██████╗
 // ██╔══██╗██║     ██╔══██╗██╔════╝██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝██╔══██╗
