@@ -17,8 +17,8 @@ function Body() {
       <defs>
         <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
           <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
-          <stop offset="0%" stopColor="#ff0" />
-          <stop offset="100%" stopColor="#ff00" />
+          <stop offset="0%" stopColor="#fff" />
+          <stop offset="100%" stopColor="#fff0" />
         </radialGradient>
         <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
           <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
@@ -48,12 +48,26 @@ function Body() {
       </rect>
     </svg>
       <Popup />
+      <div className="backgroundText">
+      <section aria-label="Floating Logo">
+        <div className="tilt">
+          <span>W</span>
+          <span>E</span>
+          <span>L</span>
+          <span>C</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+        </div>
+      </section>
+      </div>
       <div className="typing-wrapper">
         <div className="typing-intro">
           Welcome to my site. :)
         </div>
       </div>
       <Pong />
+      <p className="d-flex justify-content-center p-5 m-5">Hello</p>
     </div>
   );
 

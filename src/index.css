@@ -354,26 +354,38 @@ code {
         	 height: var(--size);
         	 border-radius: 50%;
         	 background: white;
-        	 position: absolute;
+        	 position: fixed;
         	 z-index: 6000;
         	 pointer-events: none;
-        	 mix-blend-mode: difference;
+        	 mix-blend-mode: exclusion;
         }
          .mouse-follow {
         	 width: var(--size);
         	 height: var(--size);
-        	 position: absolute;
+        	 position: fixed;
         	 top: 0;
         	 left: 0;
         	 background-image: url("data:image/svg+xml,%3Csvg width='47' height='47' viewBox='0 0 47 47' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M42.4202 42.4202C38.8403 46 33.3594 46 23.5 46C13.6406 46 8.15966 46 4.57983 42.4202C1 38.8403 1 33.3594 1 23.5C1 13.6406 1 8.15966 4.57983 4.57983C8.15966 1 13.6406 1 23.5 1C33.3594 1 38.8403 1 42.4202 4.57983C46 8.15966 46 13.6406 46 23.5C46 33.3594 46 38.8403 42.4202 42.4202Z' stroke='white'/%3E%3C/svg%3E%0A");
         	 background-size: cover;
-        	 mix-blend-mode: difference;
+        	 mix-blend-mode: exclusion;
         	 pointer-events: none;
         	 opacity: .5;
         	 z-index: 6000;
         }
 
-
+        .backgroundText {
+          font-family: 'Playfair Display', serif;
+          position: absolute;
+          display: flex;
+          top: 0;
+          left: 0;
+          width: 100wv;
+          color: rgb(255 255 255 / 0%);
+          font-size: 21vw;
+          letter-spacing: -0.6rem;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: rgb(255 255 255 / 65%);;
+        }
 
         .typing-wrapper {
           height: 20vh;
@@ -484,4 +496,91 @@ code {
 
   .PongGame {
     z-index: 4000;
+  }
+
+
+
+
+
+
+
+
+
+  section {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floating 5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  }
+
+  .tilt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: tilting 10s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  }
+
+  section span {
+    transition: font-weight 0.4s ease-in;
+    animation: floating-secondary 2.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  }
+
+  section span:nth-child(1) {
+    animation-delay: 1s;
+  }
+  section span:nth-child(2) {
+    animation-delay: 2s;
+  }
+  section span:nth-child(3) {
+    animation-delay: 3s;
+  }
+  section span:nth-child(4) {
+    animation-delay: 4s;
+  }
+  section span:nth-child(5) {
+    animation-delay: 5s;
+  }
+  section span:nth-child(6) {
+    animation-delay: 6s;
+  }
+  section span:nth-child(7) {
+    animation-delay: 7s;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 5vh);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes floating-secondary {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 1vh);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes tilting {
+    0% {
+      transform: rotate(1deg);
+    }
+    50% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(1deg);
+    }
   }
