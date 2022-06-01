@@ -9,7 +9,7 @@ body {
 
 html {
 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 * {
@@ -454,13 +454,9 @@ code {
 
   }
 
-  .backgroundSvg {
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100vw;
+  .backgroundSVG {
     height: 100vh;
-    z-index: 5;
+    width: 100vw;
   }
 
   .popupMainIcon {
