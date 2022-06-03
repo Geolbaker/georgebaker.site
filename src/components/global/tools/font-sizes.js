@@ -19,7 +19,7 @@ function FontSizes() {
     <SidePopup />
     <Header />
       <div className="container-fluid d-flex justify-content-center">
-            <div className="row w-100 text-center justify-content-center mt-5" id="helpfulCode">
+            <div className="row w-100 text-center justify-content-center mt-32" id="helpfulCode">
               <div className="col-12 mt-5">
                 <h2>Variable Font Sizes</h2>
               </div>

@@ -2,12 +2,12 @@ import {PopupToggle} from '../global/Utils.js';
 
 function SidePopup(){
   return (
-    <div id="popupDiv" className="position-fixed m-5 d-none animate__animated" style={{right: "0", bottom: "0", zIndex: "2000"}}>
-    <div className="bg-info p-5 popupBlock arrow-right" style={{borderRadius: "8px", filter: "drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2))"}}>
-      <button type="button" className="close closePopup" onClick={PopupToggle}>
+    <div id="popupDiv" className="fixed invisible animate__animated right-0 bottom-0 z-[2000]">
+    <div className="bg-teal-500 p-10 drop-shadow-md">
+      <button type="button" className="close  absolute top-0 right-[0.3rem] p-2" onClick={PopupToggle}>
         <span aria-hidden="true">&times;</span>
       </button>
-      Hello
+      Hello there, I'm a popup
 
     </div>
   </div>

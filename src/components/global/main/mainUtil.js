@@ -17,7 +17,7 @@ $(document).on('keypress',function(e) {
     if(e.which == 13) {
       var div = document.querySelector("#popupMain");
       div.classList.add("animate__backInRight");
-      div.classList.remove("d-none", "animate__backOutRight");
+      div.classList.remove("hidden", "animate__backOutRight");
       toggle = 1;
     }
 });
@@ -27,7 +27,7 @@ export const PopupToggle = () => {
     setTimeout(function(){
       var div = document.querySelector("#popupMain");
       div.classList.add("animate__backInRight");
-      div.classList.remove("d-none", "animate__backOutRight");
+      div.classList.remove("hidden", "animate__backOutRight");
       toggle = 1;
       openSound.play();
     },20000);
