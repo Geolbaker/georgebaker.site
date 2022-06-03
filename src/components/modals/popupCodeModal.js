@@ -1,27 +1,31 @@
+import {PopupModalToggle} from '../global/Utils.js';
 
 function PopupCodeModal(){
   return (
 
-  <div className="modal mt-5" id="popupCodeModal" tabIndex="-1" role="dialog" aria-labelledby="popupCodeModal" aria-hidden="true">
-    <div className="modal-dialog" role="document">
-      <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Timed Popup Code</h5>
-          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div className="modal-body overflow-scroll">
-          <p id="contentPopupCode">
+  <div id="popupCodeModal" tabIndex="-1" aria-hidden="true" className="invisible flex justify-center items-center fixed z-[6000] w-full md:inset-0 bg-slate-600/[.5] ">
+    <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
 
-          </p>
+        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+
+            <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    Time-Delay Popup Code
+                </h3>
+            </div>
+
+            <div className="p-6 space-y-6">
+                <p id="contentPopupCode">
+
+                </p>
+            </div>
+
+            <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                <button className="btn-primary" onClick={PopupModalToggle}>Close</button>
+            </div>
         </div>
-        <div className="modal-footer">
-          <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
   );
 }
 

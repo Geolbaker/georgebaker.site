@@ -20,10 +20,10 @@ function NotificationCenterModal(){
             </div>
   });
   return (
-    <div id="notificationCenterDiv" className="container position-fixed m-5 d-none">
-    <div className="position-fixed w-100 h-100 colorPaletteBackground" onClick={OpenNofiticationCenter}></div>
+    <div id="notificationCenterDiv" className="container fixed m-5 py-16 invisible">
+    <div className="fixed w-full h-full colorPaletteBackground" onClick={OpenNofiticationCenter}></div>
       <div className=" popupBlockNotification arrow-top">
-        <div id="notificationContent position-relative" style={{zIndex: "200"}}>
+        <div id="notificationContent relative z-[200]">
           <>
             {users}
           </>

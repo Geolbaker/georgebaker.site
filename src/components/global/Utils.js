@@ -1,8 +1,10 @@
 import $ from 'jquery';
-import { request } from "@octokit/request"
+import { request } from "@octokit/request";
 
 //show mouse
-document.documentElement.style.setProperty('--cursor-type', 'default');
+var setMouse = false;
+if (setMouse === true) {document.documentElement.style.setProperty('--cursor-type', 'default');}
+
 
 
 
@@ -27,19 +29,32 @@ document.documentElement.style.setProperty('--cursor-type', 'default');
 var togglePlaceholder = 0;
 export const PlaceholderToggle = () => {
   if (togglePlaceholder === 0) {
-    document.querySelector("#placeholder-content")?.classList?.add('d-none');
-    document.querySelector("#advert-content")?.classList?.add('d-flex');
-    document.querySelector("#placeholder-content")?.classList?.remove('d-flex');
-    document.querySelector("#advert-content")?.classList?.remove('d-none');
+    document.querySelector("#placeholder-content")?.classList?.add('hidden');
+    document.querySelector("#advert-content")?.classList?.add('block');
+    document.querySelector("#placeholder-content")?.classList?.remove('block');
+    document.querySelector("#advert-content")?.classList?.remove('hidden');
     togglePlaceholder++;
   } else if (togglePlaceholder !== 0) {
-    document.querySelector("#placeholder-content")?.classList?.add('d-flex');
-    document.querySelector("#advert-content")?.classList?.add('d-none');
-    document.querySelector("#placeholder-content")?.classList?.remove('d-none');
-    document.querySelector("#advert-content")?.classList?.remove('d-flex');
+    document.querySelector("#placeholder-content")?.classList?.add('block');
+    document.querySelector("#advert-content")?.classList?.add('hidden');
+    document.querySelector("#placeholder-content")?.classList?.remove('hidden');
+    document.querySelector("#advert-content")?.classList?.remove('block');
     togglePlaceholder = 0;
   }
 
+}
+var togglePlaceholderModal = 0;
+export const PlaceholderModalToggle = () => {
+  ColorRender();
+  if (togglePlaceholderModal === 0) {
+    document.querySelector("#placeholderModal")?.classList?.add("invisible");
+      document.querySelector("#placeholderModal")?.classList?.remove("visible");
+      togglePlaceholderModal = 1;
+  } else if (togglePlaceholderModal === 1) {
+    document.querySelector("#placeholderModal")?.classList?.remove("invisible");
+    document.querySelector("#placeholderModal")?.classList?.add("visible");
+    togglePlaceholderModal = 0;
+  }
 }
 
 // ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
@@ -78,15 +93,15 @@ const dateCodeTemplate = `
 `;
 const enableCode = `
     <<span>!</span>--Enable Code--><br><br>
-    &nbsp&nbsp&nbsp&nbspelement.classList.add(<span style="color:red">"d-block"</span>);
+    &nbsp&nbsp&nbsp&nbspelement.classList.add(<span style="color:red">"visible"</span>);
        <br><br>
-    &nbsp&nbsp&nbsp&nbspelement.classList.remove(<span style="color:red">"d-none"</span>);
+    &nbsp&nbsp&nbsp&nbspelement.classList.remove(<span style="color:red">"invisible"</span>);
 `;
 const disableCode = `
     <<span>!</span>--Disable Code--><br><br>
-    &nbsp&nbsp&nbsp&nbspelement.classList.remove(<span style="color:red">"d-block"</span>);
+    &nbsp&nbsp&nbsp&nbspelement.classList.remove(<span style="color:red">"visible"</span>);
        <br><br>
-    &nbsp&nbsp&nbsp&nbspelement.classList.add(<span style="color:red">"d-none"</span>);
+    &nbsp&nbsp&nbsp&nbspelement.classList.add(<span style="color:red">"invisible"</span>);
 `;
 const noDateTimeTemplate = `
   <p>No Date-Time has been selected</p>
@@ -112,8 +127,22 @@ export const CreateDateCode = (boolean) => {
   !insertDateTime
    ? $('#contentDateCode').append(noDateTimeTemplate)
    : $('#contentDateCode').append(tempDateTemplate);
+
+   TimedDisplayModalToggle();
 };
 
+var toggleTimedDisplayModal = 0;
+export const TimedDisplayModalToggle = () => {
+  if (toggleTimedDisplayModal === 0) {
+    document.querySelector("#contentDateModal")?.classList?.add("invisible");
+      document.querySelector("#contentDateModal")?.classList?.remove("visible");
+      toggleTimedDisplayModal = 1;
+  } else if (toggleTimedDisplayModal === 1) {
+    document.querySelector("#contentDateModal")?.classList?.remove("invisible");
+    document.querySelector("#contentDateModal")?.classList?.add("visible");
+    toggleTimedDisplayModal = 0;
+  }
+}
 // ██████╗ ██████╗ ██╗      ██████╗ ██████╗
 // ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗
 // ██║     ██║   ██║██║     ██║   ██║██████╔╝
@@ -176,7 +205,6 @@ export const ColorRender = (type) => {
     var tempTemplate = colorCodeTemplate;
     var colorLoad1 = document.querySelector('#colorLoader1');
     var colorLoad2 = document.querySelector('#colorLoader2');
-    console.log(colorLoad1.value);
     document.documentElement.style.setProperty('--loader1-color', colorLoad1?.value);
     document.documentElement.style.setProperty('--loader2-color', colorLoad2?.value);
     tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1.value);
@@ -189,6 +217,18 @@ export const ColorRender = (type) => {
     var tempTemplate = colorCodeTemplate;
     tempTemplate = tempTemplate.replaceAll('{{color1}}',"#E5E6E4");
     tempTemplate = tempTemplate.replaceAll('{{color2}}',"#ECECEB");
+    $("#colorLoaderModal")?.html(tempTemplate);
+  }
+  else if (!type) {
+    var colorLoad1 = document.documentElement.style.getPropertyValue('--loader1-color')
+    var colorLoad2 = document.documentElement.style.getPropertyValue('--loader2-color')
+    if (!colorLoad1 && !colorLoad2) {
+      colorLoad1 = document.querySelector('#colorLoader1').value;
+      colorLoad2 = document.querySelector('#colorLoader2').value;
+    }
+    var tempTemplate = colorCodeTemplate;
+    tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1);
+    tempTemplate = tempTemplate.replaceAll('{{color2}}',colorLoad2);
     $("#colorLoaderModal")?.html(tempTemplate);
   }
 
@@ -226,8 +266,8 @@ export const PopupToggle = () =>  {
     setTimeout(function(){
       var div = document.querySelector("#popupDiv");
       div.classList.add("animate__backInRight");
-      div.classList.remove("d-none", "animate__backOutRight");
-      togglePopup ++;
+      div.classList.remove("invisible", "animate__backOutRight");
+      togglePopup = 1;
     },waitAmount);
   }
   else if (togglePopup === 1) {
@@ -260,7 +300,7 @@ const popUpTemplate = `
   <br>&nbsp&nbsp&nbsp&nbspsetTimeout(<span style="color: blue">function</span>(){
   <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="color: blue">var</span> div = <span style="color: darkturquoise">document</span>.querySelector(<span style="color: red">"#INPUT-POPUP-ID"</span>);
   <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdiv.classList.add(<span style="color: lightseagreen">"animate__backInRight"</span>);
-  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdiv.classList.remove(<span style="color: lightseagreen">"d-none", "animate__backOutRight"</span>);
+  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdiv.classList.remove(<span style="color: lightseagreen">"invisible", "animate__backOutRight"</span>);
   <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptoggle ++;
   <br>&nbsp&nbsp&nbsp&nbsp},{{waitAmount}});
   <br>&nbsp&nbsp}
@@ -280,6 +320,20 @@ export const PopupCode = () =>  {
   tempTemplate = tempTemplate.replace('{{waitAmount}}',popupSliderValue + "000");
   $("#contentPopupCode").html(tempTemplate);
 
+}
+
+var togglePopupModal = 0;
+export const PopupModalToggle = () => {
+  PopupCode();
+  if (togglePopupModal === 0) {
+    document.querySelector("#popupCodeModal")?.classList?.add("invisible");
+      document.querySelector("#popupCodeModal")?.classList?.remove("visible");
+      togglePopupModal = 1;
+  } else if (togglePopupModal === 1) {
+    document.querySelector("#popupCodeModal")?.classList?.remove("invisible");
+    document.querySelector("#popupCodeModal")?.classList?.add("visible");
+    togglePopupModal = 0;
+  }
 }
 
 
@@ -344,17 +398,17 @@ export const NotificationCheck = (event, type) => {
     if (!originalLocalStorage) {
       // console.log("no storage")
       //if nothing is in local storage set all notifications to be unseen
-      document.querySelector('#newNotification').classList.add('d-block');
-      document.querySelector('#newNotification').classList.remove('d-none');
+      document.querySelector('#newNotification').classList.add('visible');
+      document.querySelector('#newNotification').classList.remove('invisible');
     } else if (notificationAllSeen === false) {
       // console.log("false");
       //if nothing is in local storage set all notifications to be unseen
-      document.querySelector('#newNotification').classList.add('d-block');
-      document.querySelector('#newNotification').classList.remove('d-none');
+      document.querySelector('#newNotification').classList.add('visible');
+      document.querySelector('#newNotification').classList.remove('invisible');
     } else if (notificationAllSeen) {
       //if nothing is in local storage set all notifications to be unseen
-      document.querySelector('#newNotification').classList.remove('d-block');
-      document.querySelector('#newNotification').classList.add('d-none');
+      document.querySelector('#newNotification').classList.remove('visible');
+      document.querySelector('#newNotification').classList.add('invisible');
 
     }
   }
@@ -389,8 +443,8 @@ export const NotificationCheck = (event, type) => {
         return false;
       }
       else {
-        document.querySelector('#newNotification').classList.remove('d-block');
-        document.querySelector('#newNotification').classList.add('d-none');
+        document.querySelector('#newNotification').classList.remove('visible');
+        document.querySelector('#newNotification').classList.add('invisible');
       }
     }
   }
@@ -458,21 +512,21 @@ export const OpenNofiticationCenter = () => {
     OpenColorPalette();
   }
   if (toggleNotification === 0) {
-    notificationTab.classList.add("d-block");
-    notificationTab.classList.remove("d-none");
-    iconActive.classList.add("d-block");
-    iconNormal.classList.add("d-none");
-    iconActive.classList.remove("d-none");
-    iconNormal.classList.remove("d-block");
+    notificationTab.classList.add("visible");
+    notificationTab.classList.remove("invisible");
+    iconActive.classList.add("visible");
+    iconNormal.classList.add("invisible");
+    iconActive.classList.remove("invisible");
+    iconNormal.classList.remove("visible");
     toggleNotification++;
   }
   else if (toggleNotification === 1) {
-    notificationTab.classList.add("d-none");
-    notificationTab.classList.remove("d-block");
-    iconNormal.classList.add("d-block");
-    iconActive.classList.add("d-none");
-    iconNormal.classList.remove("d-none");
-    iconActive.classList.remove("d-block");
+    notificationTab.classList.add("invisible");
+    notificationTab.classList.remove("visible");
+    iconNormal.classList.add("visible");
+    iconActive.classList.add("invisible");
+    iconNormal.classList.remove("invisible");
+    iconActive.classList.remove("visible");
     toggleNotification = 0;
   }
 }
@@ -529,19 +583,19 @@ export const OpenColorPalette = () => {
   if (toggleColorPalette === 0) {
     colorPaletteModal.classList.add("visible");
     colorPaletteModal.classList.remove("invisible");
-    colorIconActive.classList.add("d-block");
-    colorIconNormal.classList.add("d-none");
-    colorIconActive.classList.remove("d-none");
-    colorIconNormal.classList.remove("d-block");
+    colorIconActive.classList.add("visible");
+    colorIconNormal.classList.add("invisible");
+    colorIconActive.classList.remove("invisible");
+    colorIconNormal.classList.remove("visible");
     toggleColorPalette++;
   }
   else if (toggleColorPalette === 1) {
     colorPaletteModal.classList.add("invisible");
     colorPaletteModal.classList.remove("visible");
-    colorIconNormal.classList.add("d-block");
-    colorIconActive.classList.add("d-none");
-    colorIconNormal.classList.remove("d-none");
-    colorIconActive.classList.remove("d-block");
+    colorIconNormal.classList.add("visible");
+    colorIconActive.classList.add("invisible");
+    colorIconNormal.classList.remove("invisible");
+    colorIconActive.classList.remove("visible");
     toggleColorPalette = 0;
   }
 };

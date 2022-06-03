@@ -1,3 +1,12 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
 body {
   margin: 0;
   font-family: 'Quicksand', cursive,
@@ -57,12 +66,6 @@ code {
 .colorPaletteBackground:hover {
   cursor: pointer;
   background-color: rgb(100 100 100 / 30%);
-}
-
-.btn-primary {
-  background-color: var(--colorPalet-header) !important;
-  color: var(--colorPalet-text) !important;
-  border-color: var(--colorPalet-containerAlt) !important;
 }
 
 .dropdown-menu {
@@ -125,63 +128,6 @@ code {
     background: var(--colorPalet-container);
     cursor:pointer
   }
-
-  .colorPaletteButton {
-
-      position: absolute;
-      right: 3.5rem;
-      top: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--colorPalet-background);
-      border: none !important;
-      outline: none !important;
-      border-radius: 10px;
-  }
-
-  .colorPaletteButton:hover {
-    cursor: pointer;
-    background: var(--colorPalet-container);
-    border: none !important;
-    outline: none !important;
-  }
-
-  .colorIconActive {
-    display: none;
-  }
-
-
-    .notificationButton {
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--colorPalet-background);
-      border: none !important;
-      outline: none !important;
-      border-radius: 10px;
-    }
-    .notificationButton:hover {
-      cursor: pointer;
-      background: var(--colorPalet-container);
-      border: none !important;
-      outline: none !important;
-    }
-    .notificationButton:active {
-      background: var(--colorPalet-container);
-      border: none !important;
-      outline: none !important;
-    }
-    .iconActive {
-      display: none;
-    }
     .icon-button__badge {
       position: absolute;
       top: -2.5px;
@@ -222,20 +168,12 @@ code {
     }
 
     .colorPaletteSelection:hover {
+      
       box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
       cursor: pointer;
       font-size: 2rem;
       transition: box-shadow 1s ease;
       transition: font-size 1s ease;
-    }
-
-    .btn {
-      transition: background-color 1s ease;
-    }
-
-    .btn:hover {
-      background-color: var(--colorPalet-container) !important;
-      transition: background-color 1 ease;
     }
 
     .popupBlockNotification {
@@ -244,29 +182,15 @@ code {
       background: var(--colorPalet-container);
     }
 
-    .popupBlockColor {
-      border-radius: 8px;
-      filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
-      background: var(--colorPalet-container);
-    }
 
-
-
-        .loader .carousel-inner .carousel-item div {
-          animation: flash 2s infinite;
-        }
 
         .loader .advert-title-placeholder,
         .loader-content {
           animation: flash 2s infinite;
-          font-weight: 800;
-          font-size: 1.5rem;
-          border-radius: 18px;
         }
 
         .loader .advert-content-placeholder {
           animation: flash 2s infinite;
-          font-size: 1.2rem;
         }
 
         @keyframes flash {
@@ -286,35 +210,11 @@ code {
           }
         }
 
-        .advert-title {
-          font-size: 1.35rem;
-          display: block !important;
-        }
-
         .advert-content {
           background: var(--colorPalet-containerAlt);
-          border-radius: 18px;
-          font-size: 1.35rem;
-          display: block !important;
         }
         h2 {
           margin-bottom: 2rem;
-        }
-        .popupBlock.arrow-right:after {
-          content: " ";
-          position: absolute;
-          right: -15px;
-          top: 75px;
-          border-top: 15px solid transparent;
-          border-right: none;
-          border-left: 15px solid #17a2b8;
-          border-bottom: 15px solid transparent;
-        }
-        .closePopup {
-          position: absolute;
-          top: 0;
-          right: 0.3rem;
-          padding: 0.5rem !important;
         }
 
         .glass {
@@ -373,36 +273,10 @@ code {
         	 z-index: 6000;
         }
 
-        .backgroundText {
-          font-family: 'Playfair Display', serif;
-          position: absolute;
-          display: flex;
-          top: 0;
-          left: 0;
-          width: 100wv;
-          color: rgb(255 255 255 / 0%);
-          font-size: 21vw;
-          letter-spacing: -0.6rem;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: rgb(255 255 255 / 65%);;
-        }
-
-        .typing-wrapper {
-          height: 20vh;
-          position: absolute;
-          place-items: center;
-          top: 20%;
-        }
 
 
         .typing-intro {
-          width: 22ch;
           animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-          white-space: nowrap;
-          overflow: hidden;
-          border-right: 3px solid;
-          font-family: monospace;
-          font-size: 2em;
         }
 
         @keyframes typing {
@@ -417,23 +291,8 @@ code {
           }
         }
 
-
-
-  .MainPopup {
-    font-famiy: 'Montserrat';
-  }
-
-  .MainPopupButtonSection {
-    margin: 1rem;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-
   .MainPopupButtons {
-    padding-left: 5px;
     transition: text-shadow 1s ease, color 1s ease;
-    padding: 1rem;
   }
 
   .MainPopupButtons:hover {
@@ -441,58 +300,14 @@ code {
     color: #63ffd3 !important;
   }
 
-  #popupMain {
-    width: 30rem !important;
-    right: 0;
-    bottom: 0;
-  }
 
   .popupBlockMain {
     background: #4d4761;
     color: #E7FFF6;
-    transition: text-shadow 1s ease;
 
   }
 
-  .backgroundSVG {
-    height: 100vh;
-    width: 100vw;
-  }
 
-  .popupMainIcon {
-    color: #63ffd3;
-  }
-
-  #PongGameContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgb(100 100 100 / 80%);
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-
-  .PongGameBackground {
-    position: fixed;
-    z-index: 3000;
-    top: 0;
-    left: 0;
-    background: rgb(100 100 100 / 80%);
-    width: 100%;
-    height: 100%;
-    transition: background 1s ease;
-  }
-
-  .PongGameBackground:hover {
-    background: rgb(100 100 100 / 25%);
-  }
-
-  .PongGame {
-    z-index: 4000;
-  }
 
 
 
@@ -503,11 +318,7 @@ code {
 
 
   section {
-    width: 100vw;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     animation: floating 5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
   }
 
@@ -580,3 +391,52 @@ code {
       transform: rotate(1deg);
     }
   }
+
+
+
+@layer components {
+  .btn-primary {
+    @apply ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium;
+  }
+}
+
+.btn-primary {
+  background-color: var(--colorPalet-header) !important;
+  color: var(--colorPalet-text) !important;
+  border-color: var(--colorPalet-containerAlt) !important;
+  transition: background-color 1s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--colorPalet-text) !important;
+  color: var(--colorPalet-header) !important;
+  border-color: var(--colorPalet-text) !important;
+}
+
+.notificationButton {
+  background: var(--colorPalet-background);
+}
+.notificationButton:hover {
+  cursor: pointer !important;
+  background: var(--colorPalet-container);
+}
+.notificationButton:active {
+  background: var(--colorPalet-container);
+}
+
+.colorPaletteButton {
+  background: var(--colorPalet-background);
+}
+
+.colorPaletteButton:hover {
+  cursor: pointer;
+  background: var(--colorPalet-container);
+}
+
+.colorPaletteButton:active {
+  background: var(--colorPalet-container);
+}
+
+.popupBlockColor {
+  background: var(--colorPalet-container);
+}
