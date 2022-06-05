@@ -7,7 +7,7 @@ import htmlcolorLogo from '../../assets/htmlcolor-logo.webp';
 import jsBeautifier from '../../assets/js-beautifier.webp';
 import tinypngLogo from '../../assets/tinypng-logo.webp';
 
-export default [
+const assetExport = [
   background1,
   background2,
   background3,
@@ -17,3 +17,5 @@ export default [
   jsBeautifier,
   tinypngLogo
 ];
+
+export default assetExport;

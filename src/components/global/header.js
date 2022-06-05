@@ -1,8 +1,6 @@
 import NotificationCenter from './tools/notificationCenter.js';
 import ColorPaletteSelector from './tools/colorPaletteSelector.js';
-import { Link } from "react-router-dom";
-import { Fragment } from 'react';
-import { Popover, Transition } from '@headlessui/react';
+import { Popover } from '@headlessui/react';
 import Vivus from "vivus";
 import {useEffect} from 'react';
 

@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { request } from "@octokit/request";
 
 //show mouse
 var setMouse = false;
@@ -201,10 +200,12 @@ export const ColorLiveupdate = (event) => {
 };
 
 export const ColorRender = (type) => {
+  var tempTemplate = colorCodeTemplate;
+  var colorLoad1;
+  var colorLoad2;
   if (type === "chosen") {
-    var tempTemplate = colorCodeTemplate;
-    var colorLoad1 = document.querySelector('#colorLoader1');
-    var colorLoad2 = document.querySelector('#colorLoader2');
+    colorLoad1 = document.querySelector('#colorLoader1');
+    colorLoad2 = document.querySelector('#colorLoader2');
     document.documentElement.style.setProperty('--loader1-color', colorLoad1?.value);
     document.documentElement.style.setProperty('--loader2-color', colorLoad2?.value);
     tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1.value);
@@ -214,19 +215,17 @@ export const ColorRender = (type) => {
   else if (type === "generic") {
     document.documentElement.style.setProperty('--loader1-color', "#E5E6E4");
     document.documentElement.style.setProperty('--loader2-color', "#ECECEB");
-    var tempTemplate = colorCodeTemplate;
     tempTemplate = tempTemplate.replaceAll('{{color1}}',"#E5E6E4");
     tempTemplate = tempTemplate.replaceAll('{{color2}}',"#ECECEB");
     $("#colorLoaderModal")?.html(tempTemplate);
   }
   else if (!type) {
-    var colorLoad1 = document.documentElement.style.getPropertyValue('--loader1-color')
-    var colorLoad2 = document.documentElement.style.getPropertyValue('--loader2-color')
+    colorLoad1 = document.documentElement.style.getPropertyValue('--loader1-color')
+    colorLoad2 = document.documentElement.style.getPropertyValue('--loader2-color')
     if (!colorLoad1 && !colorLoad2) {
       colorLoad1 = document.querySelector('#colorLoader1').value;
       colorLoad2 = document.querySelector('#colorLoader2').value;
     }
-    var tempTemplate = colorCodeTemplate;
     tempTemplate = tempTemplate.replaceAll('{{color1}}',colorLoad1);
     tempTemplate = tempTemplate.replaceAll('{{color2}}',colorLoad2);
     $("#colorLoaderModal")?.html(tempTemplate);

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {gsap, Power4} from 'gsap';
+import {gsap} from 'gsap';
 
 
 //
@@ -13,7 +13,7 @@ import {gsap, Power4} from 'gsap';
 
 
 $(document).on('keypress',function(e) {
-    if(e.which == 13) {
+    if(e.which === 13) {
       var div = document.querySelector("#popupMain");
       div.classList.add("animate__backInRight");
       div.classList.remove("hidden", "animate__backOutRight");
@@ -22,7 +22,7 @@ $(document).on('keypress',function(e) {
 });
 var toggle = 0;
 export const PopupToggle = () => {
-  if (toggle == 0) {
+  if (toggle === 0) {
     setTimeout(function(){
       var div = document.querySelector("#popupMain");
       div.classList.add("animate__backInRight");
@@ -31,7 +31,7 @@ export const PopupToggle = () => {
       openSound.play();
     },20000);
   }
-  else if (toggle == 1) {
+  else if (toggle === 1) {
     var div = document.querySelector("#popupMain");
     div.classList.remove("animate__backInRight");
     div.classList.add("animate__backOutRight");
@@ -548,14 +548,16 @@ export const PongFunction = () => {
 
       listen: function () {
         document.addEventListener('keydown', function (key) {
-
-            // Handle the 'Press any key to begin' function and start the game.
-            if (Pong.running === false) {
-              if (key.keyCode === 32) {
-                Pong.running = true;
-                window.requestAnimationFrame(Pong.loop);
+            if ($('#PongGameContainer').hasClass('visible')) {
+              // Handle the 'Press any key to begin' function and start the game.
+              if (Pong.running === false) {
+                if (key.keyCode === 32) {
+                  Pong.running = true;
+                  window.requestAnimationFrame(Pong.loop);
+                }
               }
             }
+
 
             // Handle up arrow and w key events
             if (key.keyCode === 38 || key.keyCode === 87) Pong.player.move = DIRECTION.UP;

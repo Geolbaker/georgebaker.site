@@ -3,12 +3,10 @@ import {
   PlaceholderToggle,
   CreateDateCode,
   PopupToggle,
-  PopupCode,
   ColorLiveupdate,
   PopupDelayTime,
   PlaceholderModalToggle,
   PopupModalToggle,
-  TimedDisplayModalToggle
 } from '../Utils.js';
 
 import Header from '../header.js';

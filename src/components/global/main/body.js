@@ -1,4 +1,4 @@
-import assets from '../assets.js';
+
 import {Mouse, ResetTheme, PopupToggle} from './mainUtil.js';
 import {useEffect} from 'react';
 import Popup from './popup.js'
