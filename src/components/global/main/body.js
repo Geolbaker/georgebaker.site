@@ -9,12 +9,13 @@ function Body() {
   useEffect(()=>{
     Mouse();
     ResetTheme();
+
   },[]);
   PopupToggle();
   return (
     <div id="body" className="flex flex-wrap justify-center items-center">
       <div className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
-        <svg className="h-full w-full fixed z-[-1]" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        <svg className="h-full w-full fixed z-[-1] top-0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
           <defs>
             <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
               <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
@@ -71,8 +72,8 @@ function Body() {
         </div>
       </div>
 
-      <div className="container flex justify-center items-center bg-white">
-        <p className="flex content-center p-5 m-5">Hello</p>
+      <div className="container flex justify-center items-center rounded-2xl mb-10 glass-container">
+        <p className="flex content-center p-5 m-5">CALL ME YOU FUCKING NERDS</p>
       </div>
 
 

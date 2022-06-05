@@ -2,7 +2,7 @@ import {PopupToggle, PongToggle} from './mainUtil.js';
 
 function Popup(){
   return (
-    <div id="popupMain" className="fixed hidden animate__animated bottom-0 right-0 w-screen sm:w-[30rem]">
+    <div id="popupMain" className="fixed hidden animate__animated bottom-0 right-0 w-screen sm:w-[30rem] z-[400]">
       <div className="pb-2 pl-4 pr-4 pt-4 bg-white text-sky-600">
 
         <span className="font-sans">
