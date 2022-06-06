@@ -292,12 +292,11 @@ code {
         }
 
   .MainPopupButtons {
-    transition: text-shadow 1s ease, color 1s ease;
+    transition: color 1s ease;
   }
 
   .MainPopupButtons:hover {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    color: #63ffd3 !important;
+    color: #000 !important;
   }
 
 
@@ -441,28 +440,7 @@ code {
   background: var(--colorPalet-container);
 }
 
-.glass-container {
-  width: 30rem;
-  height: 20rem;
-  box-shadow: 0 0 1rem 0 rgba(100, 100, 100, .2);
-  background: rgba(100, 100, 100, .2) !important;
-  border-radius: 5px;
-  position: relative;
-  z-index: 1;
-  background: inherit;
-  overflow: hidden;
-}
-
-.glass-container:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(100, 100, 100, .5);
-  filter: blur(10px);
-  margin: -20px;
+#body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }

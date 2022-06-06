@@ -6,6 +6,8 @@ import htmlBeautifier from '../../assets/html-beautifier.webp';
 import htmlcolorLogo from '../../assets/htmlcolor-logo.webp';
 import jsBeautifier from '../../assets/js-beautifier.webp';
 import tinypngLogo from '../../assets/tinypng-logo.webp';
+import bodyVideo from '../../assets/7btrrd.mp4';
+import profilePicture from '../../assets/profilePicture.webp';
 
 const assetExport = [
   background1,
@@ -15,7 +17,9 @@ const assetExport = [
   htmlBeautifier,
   htmlcolorLogo,
   jsBeautifier,
-  tinypngLogo
+  tinypngLogo,
+  bodyVideo,
+  profilePicture
 ];
 
 export default assetExport;

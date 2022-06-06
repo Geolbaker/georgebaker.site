@@ -4,51 +4,28 @@ import {useEffect} from 'react';
 import Popup from './popup.js'
 import Pong from './pong.js';
 
+import assets from '../assets.js';
+
 
 function Body() {
+
   useEffect(()=>{
     Mouse();
     ResetTheme();
 
-  },[]);
+  });
+
   PopupToggle();
+
   return (
     <div id="body" className="flex flex-wrap justify-center items-center">
+      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
+        <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted>
+          <source src={assets[8]} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
-        <svg className="h-full w-full fixed z-[-1] top-0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
-              <stop offset="0%" stopColor="#fff" />
-              <stop offset="100%" stopColor="#fff0" />
-            </radialGradient>
-            <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
-              <stop offset="0%" stopColor="#0ff" />
-              <stop offset="100%" stopColor="#0ff0" />
-            </radialGradient>
-            <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
-              <stop offset="0%" stopColor="#f0f" />
-              <stop offset="100%" stopColor="#f0f0" />
-            </radialGradient>
-          </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
-            <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
-            <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
-            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite" />
-          </rect>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
-            <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
-            <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
-            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite" />
-          </rect>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
-            <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
-            <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
-            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite" />
-          </rect>
-        </svg>
         <Popup />
         <Pong />
         <div className="font-serif absolute left-0 top-0 text-[21vw] tracking-tighter"
@@ -72,8 +49,31 @@ function Body() {
         </div>
       </div>
 
-      <div className="container flex justify-center items-center rounded-2xl mb-10 glass-container">
-        <p className="flex content-center p-5 m-5">CALL ME YOU FUCKING NERDS</p>
+      <div className="container flex justify-center items-center rounded-2xl mb-10 backdrop-blur-xl bg-slate-900/[.4] h-[90vh] z-[1] relative">
+
+        <div id="header" className="h-[5vw] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
+          <div id="icons" className="group flex p-1">
+            <div className="bg-[#f96057] h-[15px] w-[15px] rounded-full mt-6 ml-5 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x invisible group-hover:visible" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </div>
+            <div className="bg-[#f8ce52] h-[15px] w-[15px] rounded-full mt-6 ml-2 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash invisible group-hover:visible" viewBox="0 0 16 16">
+                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </div>
+            <div className="bg-[#5fcf65] h-[15px] w-[15px] rounded-full mt-6 ml-2 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrows-angle-expand p-1 invisible group-hover:visible" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+              </svg>
+            </div>
+          </div>
+          <div id="profilePicture" className="flex justify-end m-4 mouseHover">
+            <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-5"/>
+          </div>
+        </div>
+        Hello, currently in devlepment, check back later :)
       </div>
 
 
