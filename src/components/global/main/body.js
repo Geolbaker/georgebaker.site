@@ -51,7 +51,7 @@ function Body() {
 
       <div className="container flex justify-center items-center rounded-2xl mb-10 backdrop-blur-xl bg-slate-900/[.4] h-[90vh] z-[1] relative">
 
-        <div id="header" className="h-[5vw] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
+        <div id="header" className="h-[65px] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
           <div id="icons" className="group flex p-1">
             <div className="bg-[#f96057] h-[15px] w-[15px] rounded-full mt-6 ml-5 flex">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x invisible group-hover:visible" viewBox="0 0 16 16">
