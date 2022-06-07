@@ -152,8 +152,8 @@ export const Mouse = () => {
 
   //setup the "animations" for the mouse click
   function mousedown(e) {
-    gsap.to(mouse, {scale: 4.5});
-    gsap.to(mouseF, {scale: .4});
+    gsap.to(mouse, {scale: 2.5});
+    gsap.to(mouseF, {scale: .1});
 
     clicked = true;
     startY = e.clientY || e.touches[0].clientY || e.targetTouches[0].clientY;
