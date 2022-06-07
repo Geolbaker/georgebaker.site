@@ -291,14 +291,6 @@ code {
           }
         }
 
-  .MainPopupButtons {
-    transition: color 1s ease;
-  }
-
-  .MainPopupButtons:hover {
-    color: #000 !important;
-  }
-
 
   .popupBlockMain {
     background: #4d4761;

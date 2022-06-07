@@ -15,8 +15,8 @@ import {gsap} from 'gsap';
 $(document).on('keypress',function(e) {
     if(e.which === 13) {
       var div = document.querySelector("#popupMain");
-      div.classList.add("animate__backInRight");
-      div.classList.remove("hidden", "animate__backOutRight");
+      div.classList.add("visible", "animate__backInRight");
+      div.classList.remove("invisible", "animate__zoomOut");
       toggle = 1;
     }
 });
@@ -25,8 +25,8 @@ export const PopupToggle = () => {
   if (toggle === 0) {
     setTimeout(function(){
       var div = document.querySelector("#popupMain");
-      div.classList.add("animate__backInRight");
-      div.classList.remove("hidden", "animate__backOutRight");
+      div.classList.add("animate__backInRight", "visible");
+      div.classList.remove("invisible", "animate__zoomOut");
       toggle = 1;
       openSound.play();
     },20000);
@@ -34,7 +34,11 @@ export const PopupToggle = () => {
   else if (toggle === 1) {
     var div = document.querySelector("#popupMain");
     div.classList.remove("animate__backInRight");
-    div.classList.add("animate__backOutRight");
+    div.classList.add("animate__zoomOut");
+    setTimeout(function(){
+      div.classList.add("invisible");
+      div.classList.remove("visible");
+    }, 1000);
     toggle = 0;
   }
 }
