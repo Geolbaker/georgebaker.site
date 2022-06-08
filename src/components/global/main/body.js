@@ -21,12 +21,12 @@ function Body() {
   return (
     <div id="body" className="flex flex-wrap justify-center items-center">
       <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
-        <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted playsinline>
+        <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted playsInline>
           <source src={assets[8]} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
+      <div id="heroScreen" className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
         <Popup />
         <Pong />
         <div className="font-serif absolute left-0 top-0 text-[21vw] tracking-tighter"
@@ -50,7 +50,7 @@ function Body() {
         </div>
       </div>
 
-      <div className="container flex justify-center items-center rounded-2xl mb-10 backdrop-blur-xl bg-slate-900/[.4] h-[90vh] z-[1] relative">
+      <div className="container flex justify-center items-center rounded-2xl backdrop-blur-xl bg-slate-900/[.4] h-[90vh] z-[1] relative my-[5vh]">
 
         <div id="header" className="h-[65px] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
           <div id="icons" className="group flex p-1">
@@ -66,7 +66,7 @@ function Body() {
             </div>
             <div className="bg-[#5fcf65] h-[15px] w-[15px] rounded-full mt-6 ml-2 flex">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrows-angle-expand p-1 invisible group-hover:visible" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                <path fillRule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
               </svg>
             </div>
           </div>
@@ -170,9 +170,6 @@ function Body() {
               <img src={photoAssets[3]} />
               <img src={photoAssets[4]} />
               <img src={photoAssets[5]} />
-              <img src={photoAssets[6]} />
-              <img src={photoAssets[7]} />
-              <img src={photoAssets[8]} />
             </div>
 
 
