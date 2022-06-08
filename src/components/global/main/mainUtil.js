@@ -627,9 +627,6 @@ window.onscroll = function(ev) {
 
   scrollPercent = roundUpNearest10(scrollPercent);
 
-  console.clear();
-  console.log(scrollPercent);
-
   if (scrollPercent >= 20) {
     var opacityHomeCheck = document.querySelector("#opacityHomeCheck");
     opacityHomeCheck.classList.remove("opacity-20");

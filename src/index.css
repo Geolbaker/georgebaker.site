@@ -22,8 +22,8 @@ html {
 }
 
 * {
-  transition: color 1s ease;
-  transition: background-color 1s ease;
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
   cursor: var(--cursor-type);
 }
 
