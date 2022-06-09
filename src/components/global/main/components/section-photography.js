@@ -48,7 +48,7 @@ function PhotographySection() {
         </div>
       </div>
 
-      <div id="sectionContent" className="p-2 transition-all bg-slate-900/[.6] absolute top-0 right-0 w-full top-[65px] overflow-scroll" style={{height: "calc(100% - 65px)"}}>
+      <div id="sectionContent" className="p-2 transition-all bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-scroll" style={{height: "calc(100% - 65px)"}}>
         {photoSection}
       </div>
     </div>
