@@ -623,7 +623,7 @@ var openSound = new Audio("data:audio/mpeg;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAASW
 
 
 
-
+var sectionOpen = 0;
 window.onscroll = function(ev) {
   var s = $(window).scrollTop(),
       d = $(document).height(),
@@ -637,7 +637,7 @@ window.onscroll = function(ev) {
 
   scrollPercent = roundUpNearest10(scrollPercent);
 
-  if (scrollPercent >= 20) {
+  if (scrollPercent >= 20 && sectionOpen === 0) {
     var opacityHomeCheck = document.querySelector("#opacityHomeCheck");
     opacityHomeCheck.classList.remove("opacity-20");
     opacityHomeCheck.classList.remove("opacity-30");
@@ -655,5 +655,6 @@ window.onscroll = function(ev) {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
     var heroScreen = document.querySelector('#heroScreen')
     heroScreen.classList.add("hidden");
+    sectionOpen = 1;
   }
 };
