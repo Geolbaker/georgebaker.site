@@ -2,34 +2,11 @@ import {useState} from 'react';
 import photoAssets from '../photographyAssets.js';
 
 function PhotographySection() {
+    const skyPhotos = [25, 26, 27, 28, 29, 30, 15, 17, 23, 18, 19, 20, 24, 16, 21, 22 ];
+    const naturePhotos = [6, 7, 8, 9, 10, 11, 12, 13, 14];
+    const buildingPhotos = [0, 1, 5, 3, 4, 2];
 
-  const [active, setActive] = useState('Nature');
-
-
-  let photoSection;
-  if (active === "Nature") {
-    photoSection = <div className="grid grid-cols-3">
-                      <img className="p-1 rounded-lg" src={photoAssets[6]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[7]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[8]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[9]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[10]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[11]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[12]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[13]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[14]} />
-                    </div>
-  }
-  else if (active === "Building") {
-    photoSection = <div className="grid grid-cols-3">
-                      <img className="p-1 rounded-lg" src={photoAssets[0]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[1]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[5]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[3]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[4]} />
-                      <img className="p-1 rounded-lg" src={photoAssets[2]} />
-                  </div>
-  }
+    const [active, setActive] = useState('Nature');
 
     return (
     <div className="flex absolute bottom-0 right-0 rounded-br-2xl" style={{width: "calc(100% - 240px)", height: "calc(100% - 65px)"}}>
@@ -42,14 +19,32 @@ function PhotographySection() {
           <div onClick={() => setActive('Building')} id="Building" className={`${active === 'Building' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
             Buildings
           </div>
-          <div onClick={() => setActive('ThirdTitle')} id="ThirdTitle" className={`${active === 'ThirdTitle' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
-            Title 3
+          <div onClick={() => setActive('Sky')} id="Sky" className={`${active === 'Sky' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+            Sky
           </div>
         </div>
       </div>
 
-      <div id="sectionContent" className="p-2 transition-all bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-scroll" style={{height: "calc(100% - 65px)"}}>
-        {photoSection}
+      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-scroll rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
+
+        <div id="NaturePhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Nature' ? "opacity-100" : "opacity-0"}`}>
+          {naturePhotos.map(i => {
+            return <img className={`p-1 rounded-lg ${active === 'Nature' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+          })}
+        </div>
+
+          <div id="BuildingPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Building' ? "opacity-100" : "opacity-0"}`}>
+            {buildingPhotos.map(i => {
+              return <img className={`p-1 rounded-lg ${active === 'Building' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+            })}
+          </div>
+
+          <div id="SkyPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Sky' ? "opacity-100" : "opacity-0"}`}>
+            {skyPhotos.map(i => {
+              return <img className={`p-1 rounded-lg ${active === 'Sky' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+            })}
+          </div>
+
       </div>
     </div>
   );

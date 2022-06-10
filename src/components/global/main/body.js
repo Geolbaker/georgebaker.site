@@ -7,9 +7,11 @@ import Pong from './pong.js';
 import assets from '../assets.js';
 import photoAssets from './photographyAssets.js';
 import PhotographySection from './components/section-photography.js';
+import DocumentarySection from './components/section-documentary.js';
+import RenderSection from './components/section-3Drendering.js';
 
 function Body() {
-  const [active, setActive] = useState('Nature');
+  const [active, setActive] = useState('Photography');
 
   useEffect(()=>{
     Mouse();
@@ -45,8 +47,8 @@ function Body() {
           </section>
         </div>
         <div className="h-[20vh] absolute items-center top-1/4 mb-[50vh]">
-          <div className="typing-intro w-[22ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 font-[monospace] text-3xl">
-            Welcome to my site. :)
+          <div className="typing-intro w-[19ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 font-[monospace] text-3xl">
+            Please scroll down
           </div>
         </div>
       </div>
@@ -71,7 +73,10 @@ function Body() {
               </svg>
             </div>
           </div>
-          <div id="profilePicture" className="flex justify-end m-4 mouseHover">
+          <div id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-2xl hover:bg-slate-400/[.1]`}>
+            <div className="text-white mr-4">
+              Profile
+            </div>
             <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-5"/>
           </div>
         </div>
@@ -81,7 +86,7 @@ function Body() {
             <div className="text-slate-400 mb-2">Creativity</div>
             <div className="flex flex-col whitespace-nowrap">
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('Photography')} className={`${active === 'Photography' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                  <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
                  <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
@@ -89,7 +94,7 @@ function Body() {
               Photography
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('Documentary')} className={`${active === 'Documentary' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                 <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
                 <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
@@ -98,14 +103,14 @@ function Body() {
               Documentary
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('3DRendering')} className={`${active === '3DRendering' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
                <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                  <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                </svg>
               3D Rendering
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('Server')} className={`${active === 'Server' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
                <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
               </svg>
@@ -148,8 +153,19 @@ function Body() {
 
 
           <div id="mainContent">
+            <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Photography" && <PhotographySection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === 'Documentary' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Documentary" && <DocumentarySection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === '3DRendering' ? "opacity-100" : "opacity-0"}`}>
+            {active === "3DRendering" && <RenderSection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Server" && <PhotographySection />}
+            </div>
 
-            <PhotographySection />
 
           </div>
       </div>

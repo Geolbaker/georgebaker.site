@@ -108,9 +108,19 @@ export const Mouse = () => {
   let sizeF = 36;
   let followSpeed = .13;
 
-  //add the divs to the main
-  document.body.appendChild(mouse);
-  document.body.appendChild(mouseF);
+  //make sure multiple mice cant be initiated
+  var mouse1check = document.querySelector(".mouse");
+  var mouse2check = document.querySelector(".mouse-follow");
+
+  if (!mouse1check && !mouse2check) {
+      //add the divs to the main
+      document.body.appendChild(mouse);
+      document.body.appendChild(mouseF);
+  }
+  else {
+    return false;
+  }
+
 
   //remove styling of mouse
   if ('ontouchstart' in window) {
