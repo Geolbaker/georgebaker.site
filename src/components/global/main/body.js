@@ -27,9 +27,9 @@ function Body() {
           Your browser does not support the video tag.
         </video>
       </div>
+      <Popup />
+      <Pong />
       <div id="heroScreen" className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
-        <Popup />
-        <Pong />
         <div className="font-serif absolute left-0 top-0 text-[21vw] tracking-tighter"
           style={{'WebkitTextStrokeWidth': "1px", 'WebkitTextStrokeColor': "rgb(255 255 255 / 65%)"}}>
           <section aria-label="Floating Logo" className="w-screen absolute top-1/4 content-center items-center">
