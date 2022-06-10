@@ -23,7 +23,7 @@ function Body() {
 
   return (
     <div id="body" className="flex flex-wrap justify-center items-center">
-      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
+      <div id="opacityHomeCheck" className="bg-[url('./backgroundQuickLoad.webp')] bg-cover w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
         <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted playsInline>
           <source src={assets[8]} type="video/mp4" />
           Your browser does not support the video tag.
