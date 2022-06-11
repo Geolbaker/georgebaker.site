@@ -25,21 +25,21 @@ function PhotographySection() {
         </div>
       </div>
 
-      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
+      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-auto rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
 
-        <div id="NaturePhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Nature' ? "opacity-100" : "opacity-0"}`}>
+        <div id="NaturePhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Nature' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
           {naturePhotos.map(i => {
             return <img className={`p-1 rounded-lg ${active === 'Nature' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
           })}
         </div>
 
-          <div id="BuildingPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Building' ? "opacity-100" : "opacity-0"}`}>
+          <div id="BuildingPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Building' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
             {buildingPhotos.map(i => {
               return <img className={`p-1 rounded-lg ${active === 'Building' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
             })}
           </div>
 
-          <div id="SkyPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Sky' ? "opacity-100" : "opacity-0"}`}>
+          <div id="SkyPhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Sky' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
             {skyPhotos.map(i => {
               return <img className={`p-1 rounded-lg ${active === 'Sky' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
             })}
