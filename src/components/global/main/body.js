@@ -9,9 +9,10 @@ import photoAssets from './photographyAssets.js';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
 import RenderSection from './components/section-3Drendering.js';
+import ProfileSection from './components/section-profile.js';
 
 function Body() {
-  const [active, setActive] = useState('Photography');
+  const [active, setActive] = useState('Profile');
 
   useEffect(()=>{
     Mouse();
@@ -73,11 +74,12 @@ function Body() {
               </svg>
             </div>
           </div>
-          <div id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-2xl hover:bg-slate-400/[.1]`}>
+          <div onClick={() => setActive('Profile')} id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-tr-2xl hover:bg-slate-400/[.1]`}>
+
+          <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
             <div className="text-white mr-4">
               Profile
             </div>
-            <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-5"/>
           </div>
         </div>
         <div className="overflow-hidden flex absolute w-full bottom-0" style={{height: "calc(100% - 65px)"}}>
@@ -162,8 +164,13 @@ function Body() {
             <div className={`transition-opacity duration-500 ${active === '3DRendering' ? "opacity-100" : "opacity-0"}`}>
             {active === "3DRendering" && <RenderSection />}
             </div>
-            <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
+            <div className={`transition-opacity duration-500 ${active === 'Server' ? "opacity-100" : "opacity-0"}`}>
             {active === "Server" && <PhotographySection />}
+            </div>
+
+
+            <div className={`transition-opacity duration-500 ${active === 'Profile' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Profile" && <ProfileSection />}
             </div>
 
 
