@@ -4,7 +4,15 @@
 @tailwind utilities;
 
 
+html::-webkit-scrollbar {
+  display: none;
+}
 
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-x: hidden;
+}
 
 
 body {
@@ -16,10 +24,7 @@ body {
   background: var(--colorPalet-background);
 }
 
-html {
 
-  overflow-x: hidden;
-}
 
 * {
   transition: color 0.5s ease;
