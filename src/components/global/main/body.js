@@ -76,7 +76,7 @@ function Body() {
           </div>
           <div onClick={() => setActive('Profile')} id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-tr-2xl hover:bg-slate-400/[.1]`}>
 
-          <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
+          <img src={assets[9]} alt="profilePicture" className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
             <div className="text-white mr-4">
               Profile
             </div>
