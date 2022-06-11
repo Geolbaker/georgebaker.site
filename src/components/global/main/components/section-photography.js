@@ -25,7 +25,7 @@ function PhotographySection() {
         </div>
       </div>
 
-      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-scroll rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
+      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
 
         <div id="NaturePhotos" className={`grid grid-cols-3 transition-opacity duration-500 absolute ${active === 'Nature' ? "opacity-100" : "opacity-0"}`}>
           {naturePhotos.map(i => {

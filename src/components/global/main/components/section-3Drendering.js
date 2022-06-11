@@ -10,7 +10,7 @@ function RenderSection() {
         <div id="sectionTitle" className="font-bold ml-10 absolute left-0">3D Renders</div>
       </div>
 
-      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-scroll rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
+      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
 
         <div className="transition-opacity duration-500 absolute" style={{width: "calc(100% - 1rem)"}}>
 
