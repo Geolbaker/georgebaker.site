@@ -112,39 +112,9 @@ function Body() {
               3D Rendering
              </div>
 
-             <div onClick={() => setActive('Server')} className={`${active === 'Server' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-              </svg>
-              Server Building
-             </div>
 
 
 
-            </div>
-           </div>
-
-           <div id="side-wrapper">
-            <div className="text-slate-400 mb-2 mt-5">Apps</div>
-            <div className="flex flex-col whitespace-nowrap">
-
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
-              <svg viewBox="0 0 512 512" className="w-4 mr-2">
-               <g xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="M0 0h128v128H0zm0 0M192 0h128v128H192zm0 0M384 0h128v128H384zm0 0M0 192h128v128H0zm0 0" data-original="#bfc9d1"></path>
-               </g>
-               <path xmlns="http://www.w3.org/2000/svg" d="M192 192h128v128H192zm0 0" fill="currentColor" data-original="#82b1ff"></path>
-               <path xmlns="http://www.w3.org/2000/svg" d="M384 192h128v128H384zm0 0M0 384h128v128H0zm0 0M192 384h128v128H192zm0 0M384 384h128v128H384zm0 0" fill="currentColor" data-original="#bfc9d1"></path>
-              </svg>
-              All Apps
-             </div>
-
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
-               <svg viewBox="0 0 488.932 488.932" fill="currentColor" className="w-4 mr-2">
-                <path d="M243.158 61.361v-57.6c0-3.2 4-4.9 6.7-2.9l118.4 87c2 1.5 2 4.4 0 5.9l-118.4 87c-2.7 2-6.7.2-6.7-2.9v-57.5c-87.8 1.4-158.1 76-152.1 165.4 5.1 76.8 67.7 139.1 144.5 144 81.4 5.2 150.6-53 163-129.9 2.3-14.3 14.7-24.7 29.2-24.7 17.9 0 31.8 15.9 29 33.5-17.4 109.7-118.5 192-235.7 178.9-98-11-176.7-89.4-187.8-187.4-14.7-128.2 84.9-237.4 209.9-238.8z"></path>
-               </svg>
-              Updates
-             </div>
 
             </div>
            </div>

@@ -449,3 +449,45 @@ code {
   color: white;
   border-bottom: 2px solid white;
 }
+
+#developerAnimation:before {
+  animation: sideToSideBefore 1s infinite alternate;
+}
+
+@keyframes sideToSideBefore {
+  from {
+    left: -0.5rem
+  }
+}
+
+#developerAnimation:after {
+  animation: sideToSideAfter 1s infinite alternate;
+}
+
+@keyframes sideToSideAfter {
+  from {
+    right: 0rem;
+  }
+}
+
+#designerBorder:before {
+  animation: borderResize 2s infinite alternate;
+}
+
+@keyframes borderResize {
+  from {
+    width: calc(100% + 1rem);
+    padding: 1.5rem;
+  }
+}
+
+#designerCursor {
+  animation: cursorResize 2s infinite alternate;
+}
+
+@keyframes cursorResize {
+  from {
+    right: -2rem;
+    padding-top: 1rem;
+  }
+}
