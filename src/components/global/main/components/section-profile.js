@@ -81,6 +81,134 @@ function PhotographySection() {
 
         <div id="Timeline" className={`transition-opacity duration-500 text-white absolute ${active === 'Timeline' ? "opacity-100" : "opacity-0"}`}>
 
+          <div className="container mx-auto w-full h-full">
+            <div className="relative wrap overflow-hidden p-10 h-full">
+              <div className="border-2-2 absolute border-opacity-20 border-white/[0.1] h-full border"> </div>
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2021</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">Web Designer</div>
+                  <div className="text-md text-white text-opacity-100">
+                    University of Lincoln Students'​ Union · Full-time
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                    Keeping the various Lincoln Students' Unions websites up to date and student focused, as well as proposing and implementing improvements and features, including but not limited to; Recruitment website, Student event promotional website and On-Campus SU Food and Dining websites.
+                    <br /><br />
+                    Develop the Students' Union and various sub-brands' SEO to enable further reach of the websites to existing and potential students and clients.
+                    <br /><br />
+                    Specifically working within the SUMS department of the Students' Union to liase with and develop full websites as well as provide developments and content creation for various nationwide Students Unions, including but not limited to Loughborough SU, Northumbria SU and York Saint John SU.
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                    <strong>Skills:</strong> Tailwind CSS · React.js · Adobe Photoshop · HTML · CSS · JavaScript
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2021</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">Digital Skills Advisor</div>
+                  <div className="text-md text-white text-opacity-100">
+                    Lincoln College · Part-time
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                  First line of contact for all nationwide Lincoln college students, who required any online and/or digital
+                  support; from using Microsoft products to accessing online college/course material.
+                  <br /><br />
+                  Provide solutions to any digital issues encountered by students and/or liaise with appropriate
+                  departments to gain resolutions and advise/assist students accordingly, both in person and remotely.
+                  <br /><br />
+                  Liaised with Heads of College to create the online 2021/22 student handbook and induction
+                  programme.
+                  <br /><br />
+                  <strong>Skills:</strong> Microsoft Office · Adobe Creative Suite
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2020</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">Web Developer</div>
+                  <div className="text-md text-white text-opacity-100">
+                    Stok.ly · Freelance
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                  Web/Software developer, using Angular framework to develop end user features and fix bugs for an
+                  ecommerce platform.
+                  <br /><br />
+                  Dealt with front end development of features and appearance, together with backend logic
+                  functionality of the site.
+                  <br/> <br/>
+                  <strong>Skills:</strong> AngularJS · HTML · SCSS · Typescript · DB · Git
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2017</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">BSc Computer Science</div>
+                  <div className="text-md text-white text-opacity-100">
+                    Lincoln University · Student
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                  Finished 3 years with a <strong>First Class Honours Degree</strong> in Computer Science
+                  <br /><br/>
+                  <strong>Set Modules:</strong> Big Data · Networks and Network systems · Advanced Machine Learning · Parallel Programming · Software Engineering · Artificial Intelligence · Database Systems · Web Authoring
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2017</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">Web Developer</div>
+                  <div className="text-md text-white text-opacity-100">
+                    Tazmania Tattoos · Freelance
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                  Commissioned to create a bespoke simple multipage website for Tazmania Tattoos.
+                  <br /><br />
+                  Established clients’ requirements to enable design and functionality to be met.
+                  <br /><br />
+                  The website <a href="" className="pointer-events-none underline">www.tazmaniatattoos.co.uk</a> was completed, however, is no longer available due to domain name
+                  non-renewal.
+                  <br /><br />
+                  <strong>Skills:</strong> Adobe Creative Suite · HTML · CSS · Javascript
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-8 flex justify-between items-center w-full">
+                <div className="bg-white/[0.1] w-14 flex items-center pl-1 h-8 ml-[0.13rem] mr-4 rounded-tr-full rounded-br-full ">2014</div>
+                <div className="bg-white/[.1] rounded-lg shadow-xl w-full px-6 py-4">
+                  <div className="mb-3 font-bold text-white text-xl">Assistant Dance Teacher</div>
+                  <div className="text-md text-white text-opacity-100">
+                    Spalding School of Dance · Part Time
+                    <br /><br />
+                  </div>
+                  <div className="text-sm text-white text-opacity-100">
+                  Worked for 3 years to assist in teaching 1-9 year olds Ballet and Tap
+                  <br /><br />
+                  Supervised children during end of term and yearly live performances and productions
+                  <br /><br />
+                  Completed housekeeping duties within the dance school
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <div id="Personal" className={`transition-opacity duration-500 text-white absolute ${active === 'Personal' ? "opacity-100" : "opacity-0"}`}>
