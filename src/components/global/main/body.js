@@ -10,6 +10,7 @@ import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
 import RenderSection from './components/section-3Drendering.js';
 import ProfileSection from './components/section-profile.js';
+import WebsitesSection from './components/section-websites.js';
 
 function Body() {
   const [active, setActive] = useState('Profile');
@@ -84,6 +85,25 @@ function Body() {
         </div>
         <div className="overflow-hidden flex absolute w-full bottom-0" style={{height: "calc(100% - 65px)"}}>
           <div id="sidebar" className="w-[240px] h-full border-r border-slate-500/25 p-8 overflow-auto shrink-0">
+
+          {/*start of work section*/}
+          <div id="side-wrapper" className="mb-5">
+           <div className="text-slate-400 mb-2">Work</div>
+           <div className="flex flex-col whitespace-nowrap">
+
+            <div onClick={() => setActive('Websites')} className={`${active === 'Websites' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
+              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
+               <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+              </svg>
+             Websites
+            </div>
+
+
+           </div>
+          </div>
+          {/*end of work section*/}
+
+          {/*start of creativity section*/}
            <div id="side-wrapper">
             <div className="text-slate-400 mb-2">Creativity</div>
             <div className="flex flex-col whitespace-nowrap">
@@ -113,11 +133,10 @@ function Body() {
              </div>
 
 
-
-
-
             </div>
            </div>
+           {/*end of creativity section*/}
+
 
 
           </div>
@@ -125,6 +144,12 @@ function Body() {
 
 
           <div id="mainContent">
+
+            <div className={`transition-opacity duration-500 ${active === 'Websites' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Websites" && <WebsitesSection />}
+            </div>
+
+
             <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
             {active === "Photography" && <PhotographySection />}
             </div>

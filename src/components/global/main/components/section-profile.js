@@ -81,7 +81,7 @@ function PhotographySection() {
 
         <div id="Timeline" className={`transition-opacity duration-500 text-white absolute ${active === 'Timeline' ? "opacity-100" : "opacity-0"}`}>
 
-          <div className="container mx-auto w-full h-full">
+          <div className={`container mx-auto w-full ${active === 'Timeline' ? "h-full" : "h-0"}`}>
             <div className="relative wrap overflow-hidden p-10 h-full">
               <div className="border-2-2 absolute border-opacity-20 border-white/[0.1] h-full border"> </div>
 
