@@ -11,7 +11,7 @@ function ColorPaletteModal(){
       <div className=" popupBlockColor rounded-lg drop-shadow-md">
         <div id="colorPaletteContent" className="relative z-[200]">
         <div onClick={() => ChangeColorPalette('normal')}>
-          <div className="flex p-2 grid grid-cols-4 transition-all ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
+          <div className="flex p-2 grid grid-cols-4 transition-[font-size] ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
             <div className="rounded-l-lg" style={{background: "rgb(255 255 255)"}}>
               {'\u00A0'}
             </div>
@@ -28,7 +28,7 @@ function ColorPaletteModal(){
         </div>
 
           <div onClick={() => ChangeColorPalette('botanical')}>
-            <div className="flex p-2 grid grid-cols-4 transition-all ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
+            <div className="flex p-2 grid grid-cols-4 transition-[font-size] ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
               <div className="rounded-l-lg" style={{background: "rgb(114 144 141)"}}>
                 {'\u00A0'}
               </div>
@@ -45,7 +45,7 @@ function ColorPaletteModal(){
           </div>
 
           <div onClick={() => ChangeColorPalette('witchgirl')}>
-            <div className="flex p-2 grid grid-cols-4 transition-all ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
+            <div className="flex p-2 grid grid-cols-4 transition-[font-size] ease-in-ease-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
               <div className="rounded-l-lg" style={{background: "rgb(231 200 190)"}}>
                 {'\u00A0'}
               </div>
@@ -62,7 +62,7 @@ function ColorPaletteModal(){
           </div>
 
           <div onClick={() => ChangeColorPalette('alpine')}>
-            <div className="flex p-2 grid grid-cols-4 transition-all ease-in-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
+            <div className="flex p-2 grid grid-cols-4 transition-[font-size] ease-in-out duration-500 hover:box-shadow-lg hover:text-[2rem] hover:cursor-pointer">
               <div className="rounded-l-lg" style={{background: "rgb(118 115 140)"}}>
                 {'\u00A0'}
               </div>
