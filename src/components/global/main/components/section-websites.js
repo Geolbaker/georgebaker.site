@@ -17,11 +17,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://freshers.lincolnsu.com/" target="_blank">Freshers Lincoln</a></span><br />
-              <span>The Freshers Splashpage for Lincoln Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://freshers.lincolnsu.com/" target="_blank">Freshers Lincoln</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Freshers Events
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Splashpage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Lincoln Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[42]}/>
+            <a href="https://freshers.lincolnsu.com/" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[42]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -30,11 +41,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://quacklincoln.com/" target="_blank">Quack Lincoln</a></span><br />
-              <span>The Quack Club Night Splashpage for Lincoln Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://quacklincoln.com/" target="_blank">Quack Lincoln</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Club Night Event
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Splashpage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Lincoln Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[43]}/>
+            <a href="https://quacklincoln.com/" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[43]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -43,11 +65,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://ulsuroles.co.uk/" target="_blank">ULSU Roles</a></span><br />
-              <span>An Informative Recruitment Splashpage for Lincoln Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://ulsuroles.co.uk/" target="_blank">ULSU Roles</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Recruitment
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Splashpage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Lincoln Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[44]}/>
+            <a href="https://ulsuroles.co.uk/" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[44]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -56,11 +89,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://lincolnsu.com/activities/varsity" target="_blank">Varsity</a></span><br />
-              <span>A Splashpage advertising Varsity for Lincoln Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://lincolnsu.com/activities/varsity" target="_blank">Varsity</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Varsity Sports
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Splashpage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Lincoln Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[45]}/>
+            <a href="https://lincolnsu.com/activities/varsity" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[45]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -69,11 +113,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://mynsu.co.uk/" target="_blank">Northumbria Students' Union</a></span><br />
-              <span>A Bespoke Homepage and Full Website Transition for Northumbria Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://mynsu.co.uk/" target="_blank">Northumbria Students' Union</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Full Despoke Site
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Beskope Homepage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Northumbria Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[46]}/>
+            <a href="https://mynsu.co.uk/" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[46]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -82,11 +137,22 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://lincolnsu.com/makeadifference22" target="_blank">Make A Difference</a></span><br />
-              <span>A Splashpage advertising Make A Difference for Lincoln Students' Union</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://lincolnsu.com/makeadifference22" target="_blank">Make A Difference</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Make A Difference Event
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Splashpage
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Lincoln Students' Union
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[47]}/>
+            <a href="https://lincolnsu.com/makeadifference22" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[47]}/>
+            </a>
 
           </div>
           {/*End of section*/}
@@ -95,11 +161,19 @@ function WebsitesSection() {
           <div className="grid grid-cols-2 border-b border-slate-500/25">
 
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
-              <span className="font-bold"><a href="https://georgebaker.site/tools" target="_blank">Personal Tools</a></span><br />
-              <span>My Personal Tools Website to practise and colate code</span>
+              <span className="font-bold p-2 rounded-lg hover:bg-slate-100/[0.1] hover:underline"><a href="https://georgebaker.site/tools" target="_blank">Personal Tools</a></span><br />
+              <span className="flex flex-wrap justify-center">
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Tools Website
+                </div>
+                <div className="m-1 p-2 bg-slate-100/[0.1] rounded-lg">
+                  Personal Use
+                </div>
+              </span>
             </div>
-
-            <img className="p-1 rounded-lg" src={assets[48]}/>
+            <a href="https://georgebaker.site/tools" target="_blank">
+              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={assets[48]}/>
+            </a>
 
           </div>
           {/*End of section*/}
