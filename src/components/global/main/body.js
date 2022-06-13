@@ -5,7 +5,7 @@ import Popup from './popup.js'
 import Pong from './pong.js';
 
 import assets from '../assets.js';
-import photoAssets from './photographyAssets.js';
+import mainAssets from './mainAssets.js';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
 import RenderSection from './components/section-3Drendering.js';

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import photoAssets from '../photographyAssets.js';
+import photoAssets from '../mainAssets.js';
 
 function PhotographySection() {
     const skyPhotos = [25, 26, 27, 28, 29, 30, 15, 17, 23, 18, 19, 20, 24, 16, 21, 22 ];

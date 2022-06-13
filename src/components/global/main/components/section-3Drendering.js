@@ -1,4 +1,4 @@
-import assets from '../photographyAssets.js';
+import assets from '../mainAssets.js';
 
 function RenderSection() {
 
