@@ -150,17 +150,6 @@ code {
       border-radius: 50%;
     }
 
-    .popupBlockNotification {
-      background-color: #fff;
-    }
-
-    #notificationCenterDiv {
-      right: 0;
-      top: 0.5rem;
-      z-index: 2000;
-      width: 35%;
-    }
-
     #colorPaletteModal {
       right: 0;
       top: 0.5rem;
@@ -185,8 +174,6 @@ code {
     }
 
     .popupBlockNotification {
-      border-radius: 8px;
-      filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
       background: var(--colorPalet-container);
     }
 
