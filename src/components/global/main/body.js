@@ -13,6 +13,7 @@ import ProfileSection from './components/section-profile.js';
 import WebsitesSection from './components/section-websites.js';
 
 function Body() {
+  var alreadyLoaded = 0;
   const [active, setActive] = useState('Profile');
 
   useEffect(()=>{
@@ -21,7 +22,11 @@ function Body() {
 
   });
 
-  PopupToggle();
+  if (alreadyLoaded === 0) {
+    PopupToggle();
+    alreadyLoaded = 1;
+  }
+
 
   return (
     <div id="body" className="flex flex-wrap justify-center items-center">
