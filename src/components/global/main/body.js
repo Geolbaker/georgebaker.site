@@ -13,7 +13,6 @@ import ProfileSection from './components/section-profile.js';
 import WebsitesSection from './components/section-websites.js';
 
 function Body() {
-  var alreadyLoaded = 0;
   const [active, setActive] = useState('Profile');
 
   useEffect(()=>{
@@ -22,9 +21,11 @@ function Body() {
 
   });
 
-  if (alreadyLoaded === 0) {
+  var popupToggled = localStorage.getItem('popupToggle');
+
+  if (popupToggled === "0") {
     PopupToggle();
-    alreadyLoaded = 1;
+
   }
 
 
