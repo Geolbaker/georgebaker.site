@@ -1,10 +1,10 @@
 
-import {Mouse, ResetTheme, PopupToggle} from './mainUtil.js';
+import {ResetTheme, PopupToggle} from './mainUtil.js';
 import {useEffect, useState} from 'react';
 import Popup from './popup.js'
 import Pong from './pong.js';
 
-import assets from '../assets.js';
+import assets from '../../../assets.js';
 import mainAssets from './mainAssets.js';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
@@ -12,11 +12,12 @@ import RenderSection from './components/section-3Drendering.js';
 import ProfileSection from './components/section-profile.js';
 import WebsitesSection from './components/section-websites.js';
 
+import WindowsBackground from './assets/windowsBackground.webp'
+
 function Body() {
   const [active, setActive] = useState('Profile');
 
   useEffect(()=>{
-    Mouse();
     ResetTheme();
 
   });
@@ -30,38 +31,21 @@ function Body() {
 
 
   return (
-    <div id="body" className="flex flex-wrap justify-center items-center font-['Quicksand']">
-      <div id="opacityHomeCheck" className="bg-[url('./backgroundQuickLoad.webp')] bg-cover w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
-        <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted playsInline>
-          <source src={assets[8]} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <div id="body" className="flex flex-wrap justify-center items-center" style={{fontFamily: "Tahoma"}}>
+      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
+        <img className="z-[1000] w-screen h-screen top-0 left-0 absolute" src={WindowsBackground} />
       </div>
       <Popup />
       <Pong />
       <div id="heroScreen" className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
-        <div className="font-serif absolute left-0 top-0 text-[21vw] tracking-tighter"
-          style={{'WebkitTextStrokeWidth': "1px", 'WebkitTextStrokeColor': "rgb(255 255 255 / 65%)"}}>
-          <section aria-label="Floating Logo" className="w-screen absolute top-1/4 content-center items-center">
-            <div className="tilt flex content-center items-center text-transparent">
-              <span>W</span>
-              <span>E</span>
-              <span>L</span>
-              <span>C</span>
-              <span>O</span>
-              <span>M</span>
-              <span>E</span>
-            </div>
-          </section>
-        </div>
         <div className="h-[20vh] absolute items-center top-1/4 mb-[50vh]">
-          <div className="typing-intro w-[19ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 font-[monospace] text-3xl">
-            Please scroll down
+          <div className="overflow-hidden text-3xl">
+            Please scroll down here
           </div>
         </div>
       </div>
 
-      <div className="container flex justify-center items-center rounded-2xl backdrop-blur-xl bg-slate-900/[.4] h-[90vh] z-[1] relative my-[5vh]">
+      <div className="container flex justify-center items-center rounded-2xl bg-['#0053e2'] h-[90vh] z-[1] relative my-[5vh]">
 
         <div id="header" className="h-[65px] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
           <div id="icons" className="group flex p-1">
