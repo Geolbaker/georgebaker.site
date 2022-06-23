@@ -16,9 +16,11 @@ import WebsitesSection from './components/section-websites.js';
 import WindowsBackground from './assets/windowsBackground.webp';
 import WindowsLogo from './assets/Windows_logo.svg';
 import WindowsFolder from './assets/FolderIcon.png';
+import WindowsComputer from './assets/MyComputerIcon.png';
+import WindowdsFolderOpen from './assets/FolderOpenIcon.png';
 
 function Body() {
-  const [active, setActive] = useState('Profile');
+  const [active, setActive] = useState('MyComputer');
 
   useEffect(()=>{
     ResetTheme();
@@ -115,7 +117,7 @@ function Body() {
                 </div>
               </div>
               <div className="bg-white border-b-[1.5px] border-b-[#d5d5cd] border-l-[1.5px] border-l-white">
-                <img className="mx-4 my-1" src={WindowsLogo} width="35"/>
+                <img className="mx-4 my-1 ml-3" src={WindowsLogo} width="35"/>
               </div>
             </div>
             <div className="flex w-full border-b-[1.5px] border-b-[#d5d5cd] border-t-white border-t-[1.5px]">
@@ -138,15 +140,35 @@ function Body() {
                 </div>
               </div>
             </div>
+            <div className="flex w-full border-b-[1.5px] border-b-[#d5d5cd] border-t-white border-t-[1.5px]">
+              <div className="flex mt-1 px-3 w-full">
+                Address
+                <div className="flex ml-3 w-full h-full bg-white border-[#afafff] border-2">
+                  <img src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
+                  {active === "MyComputer" && "My Computer"}
+                  {active === "Profile" && "My Computer / Profile"}
+                  {active === "Work" && "My Computer / Work"}
+                  {active === "Creativity" && "My Computer / Creativity"}
+                </div>
+              </div>
+            </div>
             <div id="folders" className="grid grid-cols-6 w-full bg-white" style={{height: "calc(100% - 100px)"}}>
-              <div className="flex items-center h-[80px] m-5">
-                <img src={WindowsFolder} className="w-[70px] h-[70px]"/>
+              <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
+                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
                 Profile
               </div>
 
-              <div className="flex items-center h-[80px] m-5">
-                <img src={WindowsFolder} className="w-[70px] h-[70px]"/>
-                Websites
+              <div onClick={() => setActive('Work')} className="flex items-center h-[80px] m-5 group">
+                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                Work
+              </div>
+
+              <div onClick={() => setActive('Creativity')} className="flex items-center h-[80px] m-5 group">
+                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                Creativity
               </div>
 
             </div>
