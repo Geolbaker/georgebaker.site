@@ -55,7 +55,7 @@ function Body() {
           </section>
         </div>
         <div className="h-[20vh] absolute items-center top-1/4 mb-[50vh]">
-          <div className="typing-intro w-[19ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 font-[monospace] text-3xl">
+          <div className="typing-intro w-[14.7ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 text-3xl">
             Please scroll down
           </div>
         </div>

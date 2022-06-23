@@ -1,18 +1,21 @@
 
 import {ResetTheme, PopupToggle} from './mainUtil.js';
 import {useEffect, useState} from 'react';
-import Popup from './popup.js'
+import Popup from './popup.js';
 import Pong from './pong.js';
 
 import assets from '../../../assets.js';
 import mainAssets from './mainAssets.js';
+import './xp.css';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
 import RenderSection from './components/section-3Drendering.js';
 import ProfileSection from './components/section-profile.js';
 import WebsitesSection from './components/section-websites.js';
 
-import WindowsBackground from './assets/windowsBackground.webp'
+import WindowsBackground from './assets/windowsBackground.webp';
+import WindowsLogo from './assets/Windows_logo.svg';
+import WindowsFolder from './assets/FolderIcon.png';
 
 function Body() {
   const [active, setActive] = useState('Profile');
@@ -45,122 +48,112 @@ function Body() {
         </div>
       </div>
 
-      <div className="container flex justify-center items-center rounded-2xl bg-['#0053e2'] h-[90vh] z-[1] relative my-[5vh]">
+      <div className="container flex justify-center items-center rounded-[5px] bg-[#0053e2] border-[#0053e2] border-[3px] h-[90vh] z-[1] relative my-[5vh]
+                      shadow-[inset_0_10px_3px_-8px_rgba(52,147,255,0.7)]">
 
-        <div id="header" className="h-[65px] border-b border-slate-500/25 absolute top-0 left-0 w-full flex justify-between">
+        {/*Start of header*/}
+
+        <div id="header" className="h-auto border-b-[3px] border-[#0053e2]   absolute top-0 left-0 w-full flex justify-end"
+        style={{boxShadow: "inset 0 -7px 15px -7px rgba(180,210,255,0.7)"}}>
           <div id="icons" className="group flex p-1">
-            <div className="bg-[#f96057] h-[15px] w-[15px] rounded-full mt-6 ml-5 flex">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x invisible group-hover:visible" viewBox="0 0 16 16">
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-              </svg>
-            </div>
-            <div className="bg-[#f8ce52] h-[15px] w-[15px] rounded-full mt-6 ml-2 flex">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash invisible group-hover:visible" viewBox="0 0 16 16">
-                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-              </svg>
-            </div>
-            <div className="bg-[#5fcf65] h-[15px] w-[15px] rounded-full mt-6 ml-2 flex">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrows-angle-expand p-1 invisible group-hover:visible" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-              </svg>
-            </div>
-          </div>
-          <div onClick={() => setActive('Profile')} id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-tr-2xl hover:bg-slate-400/[.1]`}>
 
-          <img src={assets[9]} alt="profilePicture" className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
-            <div className="text-white mr-4">
-              Profile
+            {/*Start of minimise icon*/}
+            <div className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
+              <div className="relative h-full w-full bg-[#3870f5] rounded-[2px] flex justify-center items-center border-[0.5px] border-[#3870f5] topbar-buttons hover:brightness-125
+              before:content-[''] before:absolute before:h-[3px] before:w-[7px] before:bottom-1 before:left-1 before:bg-white">
+
+              </div>
             </div>
+            {/*End of minimise icon*/}
+
+            {/*Start of maximise icon*/}
+            <div className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
+              <div className="h-full w-full bg-[#3870f5] rounded-[2px] flex justify-center items-center border-[0.5px] border-[#3870f5] topbar-buttons hover:brightness-125">
+                <svg width="16" height="16" fill="white" className=" scale-75">
+                  <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5H.5ZM1 5V2h14v3H1Zm0 1h14v8H1V6Z"/>
+                </svg>
+              </div>
+            </div>
+            {/*End of maximise icon*/}
+
+            {/*Start of close icon*/}
+            <div className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
+              <div className="h-full w-full bg-[#e76338] rounded-[2px] flex justify-center items-center border-[0.5px] border-[#b24228] topbar-buttons hover:brightness-125">
+                <svg width="16" height="16" fill="white" className="scale-150">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </div>
+            </div>
+            {/*End of close icon*/}
+
           </div>
         </div>
-        <div className="overflow-hidden flex absolute w-full bottom-0" style={{height: "calc(100% - 65px)"}}>
-          <div id="sidebar" className="w-[240px] h-full border-r border-slate-500/25 p-8 overflow-auto shrink-0">
+        {/*End of header*/}
+        <div className="overflow-hidden flex absolute w-full bottom-0 bg-[#f1eee4]" style={{height: "calc(100% - 38px)"}}>
 
-          {/*start of work section*/}
-          <div id="side-wrapper" className="mb-5">
-           <div className="text-slate-400 mb-2">Work</div>
-           <div className="flex flex-col whitespace-nowrap">
+          <div id="mainContent" className="w-full h-full">
+            <div id="topNavbar" className="h-auto w-full flex">
 
-            <div onClick={() => setActive('Websites')} className={`${active === 'Websites' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-               <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
-              </svg>
-             Websites
+              <div className="flex w-full border-b-[1.5px] border-r-[1.5px] border-[#d5d5cd]">
+                <div className="my-[3px] ml-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  File
+                </div>
+                <div className="my-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  Edit
+                </div>
+                <div className="my-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  View
+                </div>
+                <div className="my-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  Favourites
+                </div>
+                <div className="my-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  Tools
+                </div>
+                <div className="my-[3px] py-1 px-3 hover:bg-[#1660E8] hover:text-white transition-none">
+                  Help
+                </div>
+              </div>
+              <div className="bg-white border-b-[1.5px] border-b-[#d5d5cd] border-l-[1.5px] border-l-white">
+                <img className="mx-4 my-1" src={WindowsLogo} width="35"/>
+              </div>
             </div>
+            <div className="flex w-full border-b-[1.5px] border-b-[#d5d5cd] border-t-white border-t-[1.5px]">
+              <div className="flex border-r-2 border-r-black/[0.2] my-1 pr-1">
+                <div className="ml-1 px-1 flex items-center border-2 border-transparent hover:border-slate-600/[0.1] rounded-[5px] hover:shadow-[inset_0_-7px_3px_-7px_rgba(0,0,0,0.1);]">
+                  <div className="m-1 h-[37px] w-[37px] bg-[#1d730e] rounded-full flex justify-center items-center">
+                    <svg width="16" height="16" className="history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white bg-[#48c221] rounded-full">
+                      <path className="translate-y-[-1.3px] translate-x-[-1.3px]" fillRule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                    </svg>
+                  </div>
+                  &nbsp;Back
+                </div>
 
+                <div className="ml-1 px-1 flex items-center border-2 border-transparent hover:border-slate-600/[0.1] rounded-[5px] hover:shadow-[inset_0_-7px_3px_-7px_rgba(0,0,0,0.1);]">
+                  <div className="m-1 h-[37px] w-[37px] bg-[#1d730e] rounded-full flex justify-center items-center">
+                    <svg width="16" height="16" className="history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white bg-[#48c221] rounded-full">
+                      <path className="translate-y-[-1.3px] translate-x-[-1.3px]" fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="folders" className="grid grid-cols-6 w-full bg-white" style={{height: "calc(100% - 100px)"}}>
+              <div className="flex items-center h-[80px] m-5">
+                <img src={WindowsFolder} className="w-[70px] h-[70px]"/>
+                Profile
+              </div>
 
-           </div>
-          </div>
-          {/*end of work section*/}
-
-          {/*start of creativity section*/}
-           <div id="side-wrapper">
-            <div className="text-slate-400 mb-2">Creativity</div>
-            <div className="flex flex-col whitespace-nowrap">
-
-             <div onClick={() => setActive('Photography')} className={`${active === 'Photography' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-                 <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
-                 <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-              </svg>
-              Photography
-             </div>
-
-             <div onClick={() => setActive('Documentary')} className={`${active === 'Documentary' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-                <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
-                <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-              </svg>
-              Documentary
-             </div>
-
-             <div onClick={() => setActive('3DRendering')} className={`${active === '3DRendering' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-                 <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-               </svg>
-              3D Rendering
-             </div>
-
+              <div className="flex items-center h-[80px] m-5">
+                <img src={WindowsFolder} className="w-[70px] h-[70px]"/>
+                Websites
+              </div>
 
             </div>
-           </div>
-           {/*end of creativity section*/}
-
-
-
-          </div>
-          </div>
-
-
-          <div id="mainContent">
-
-            <div className={`transition-opacity duration-500 ${active === 'Websites' ? "opacity-100" : "opacity-0"}`}>
-            {active === "Websites" && <WebsitesSection />}
-            </div>
-
-
-            <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
-            {active === "Photography" && <PhotographySection />}
-            </div>
-            <div className={`transition-opacity duration-500 ${active === 'Documentary' ? "opacity-100" : "opacity-0"}`}>
-            {active === "Documentary" && <DocumentarySection />}
-            </div>
-            <div className={`transition-opacity duration-500 ${active === '3DRendering' ? "opacity-100" : "opacity-0"}`}>
-            {active === "3DRendering" && <RenderSection />}
-            </div>
-            <div className={`transition-opacity duration-500 ${active === 'Server' ? "opacity-100" : "opacity-0"}`}>
-            {active === "Server" && <PhotographySection />}
-            </div>
-
-
-            <div className={`transition-opacity duration-500 ${active === 'Profile' ? "opacity-100" : "opacity-0"}`}>
-            {active === "Profile" && <ProfileSection />}
-            </div>
-
 
           </div>
       </div>
+    </div>
     </div>
 
   );

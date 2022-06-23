@@ -1,0 +1,7 @@
+.topbar-buttons {
+  box-shadow: rgb(0 0 0 / 0.7) -2px -2px 4px -1px inset, rgb(255 255 255 / 0.7) 10px 10px 3px -9px inset;
+}
+
+.history-buttons {
+  box-shadow: rgb(0 0 0 / 40%) -1.5px -1.5px 2px -1px inset, rgb(255 255 255 / 70%) 6px 9px 2px -9px inset;
+}
