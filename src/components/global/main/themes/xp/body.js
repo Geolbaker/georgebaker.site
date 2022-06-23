@@ -18,6 +18,7 @@ import WindowsLogo from './assets/Windows_logo.svg';
 import WindowsFolder from './assets/FolderIcon.png';
 import WindowsComputer from './assets/MyComputerIcon.png';
 import WindowdsFolderOpen from './assets/FolderOpenIcon.png';
+import WindowsFile from './assets/FileIcon.png';
 
 function Body() {
   const [active, setActive] = useState('MyComputer');
@@ -122,9 +123,9 @@ function Body() {
             </div>
             <div className="flex w-full border-b-[1.5px] border-b-[#d5d5cd] border-t-white border-t-[1.5px]">
               <div className="flex border-r-2 border-r-black/[0.2] my-1 pr-1">
-                <div className="ml-1 px-1 flex items-center border-2 border-transparent hover:border-slate-600/[0.1] rounded-[5px] hover:shadow-[inset_0_-7px_3px_-7px_rgba(0,0,0,0.1);]">
+                <div onClick={() => setActive('MyComputer')} className="ml-1 px-1 flex items-center border-2 border-transparent hover:border-slate-600/[0.1] rounded-[5px] hover:shadow-[inset_0_-7px_3px_-7px_rgba(0,0,0,0.1);]">
                   <div className="m-1 h-[37px] w-[37px] bg-[#1d730e] rounded-full flex justify-center items-center">
-                    <svg width="16" height="16" className="history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white bg-[#48c221] rounded-full">
+                    <svg width="16" height="16" className={`${active === 'MyComputer' ? "bg-[#b2b2b2]" : "bg-[#48c221]"} history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white rounded-full`}>
                       <path className="translate-y-[-1.3px] translate-x-[-1.3px]" fillRule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
                     </svg>
                   </div>
@@ -133,7 +134,7 @@ function Body() {
 
                 <div className="ml-1 px-1 flex items-center border-2 border-transparent hover:border-slate-600/[0.1] rounded-[5px] hover:shadow-[inset_0_-7px_3px_-7px_rgba(0,0,0,0.1);]">
                   <div className="m-1 h-[37px] w-[37px] bg-[#1d730e] rounded-full flex justify-center items-center">
-                    <svg width="16" height="16" className="history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white bg-[#48c221] rounded-full">
+                    <svg width="16" height="16" className="bg-[#b2b2b2] history-buttons hover:brightness-110 w-[13px] h-[13px] scale-[275%] stroke-white bg-[#48c221] rounded-full">
                       <path className="translate-y-[-1.3px] translate-x-[-1.3px]" fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                     </svg>
                   </div>
@@ -146,29 +147,69 @@ function Body() {
                 <div className="flex ml-3 w-full h-full bg-white border-[#afafff] border-2">
                   <img src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
                   {active === "MyComputer" && "My Computer"}
-                  {active === "Profile" && "My Computer / Profile"}
+                  {active === "About" && "My Computer / About"}
                   {active === "Work" && "My Computer / Work"}
                   {active === "Creativity" && "My Computer / Creativity"}
                 </div>
               </div>
             </div>
-            <div id="folders" className="grid grid-cols-6 w-full bg-white" style={{height: "calc(100% - 100px)"}}>
-              <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
-                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
-                Profile
+            <div id="folders" className="flex w-full bg-white" style={{height: "calc(100% - 100px)"}}>
+
+              <div id="MyComputer" className={`${active === 'MyComputer' ? "block" : "hidden"} absolute grid grid-cols-6`}>
+                <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                  About
+                </div>
+
+                <div onClick={() => setActive('Work')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                  Work
+                </div>
+
+                <div onClick={() => setActive('Creativity')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                  Creativity
+                </div>
               </div>
 
-              <div onClick={() => setActive('Work')} className="flex items-center h-[80px] m-5 group">
-                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
-                Work
+              <div id="Profile" className={`${active === 'About' ? "block" : "hidden"} absolute grid grid-cols-6`}>
+                <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Profile
+                </div>
+                <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Timeline
+                </div>
+                <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Personal
+                </div>
               </div>
 
-              <div onClick={() => setActive('Creativity')} className="flex items-center h-[80px] m-5 group">
-                <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
-                Creativity
+              <div id="Work" className={`${active === 'Work' ? "block" : "hidden"} absolute grid grid-cols-6`}>
+                <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Websites
+                </div>
+              </div>
+
+              <div id="Creativity" className={`${active === 'Creativity' ? "block" : "hidden"} absolute grid grid-cols-6`}>
+                <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Photography
+                </div>
+                <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  Documentary
+                </div>
+                <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
+                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  3D-Rendering
+                </div>
               </div>
 
             </div>
