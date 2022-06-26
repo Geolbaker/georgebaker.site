@@ -51,14 +51,22 @@ function Body() {
         </div>
       </div>
 
-      <div className="container flex justify-center items-center rounded-[5px] bg-[#0053e2] border-[#0053e2] border-[3px] h-[90vh] z-[1] relative my-[5vh]
+      <div className="container flex justify-center items-center rounded-t-[5px] bg-[#0053e2] border-[#0053e2] border-[3px] h-[90vh] z-[1] relative my-[5vh]
                       shadow-[inset_0_10px_3px_-8px_rgba(52,147,255,0.7)]">
 
         {/*Start of header*/}
 
         <div id="header" className="h-auto border-b-[3px] border-[#0053e2]   absolute top-0 left-0 w-full flex justify-end"
         style={{boxShadow: "inset 0 -7px 15px -7px rgba(180,210,255,0.7)"}}>
-          <div id="icons" className="group flex p-1">
+          <div id="icons" className="group flex p-1 w-full">
+
+            <div className="w-full flex text-white text-left">
+              <img src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
+              {active === "MyComputer" && "My Computer"}
+              {active === "About" && "About"}
+              {active === "Work" && "Work"}
+              {active === "Creativity" && "Creativity"}
+            </div>
 
             {/*Start of minimise icon*/}
             <div className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
