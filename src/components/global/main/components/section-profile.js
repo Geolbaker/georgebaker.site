@@ -15,13 +15,13 @@ function PhotographySection() {
       <div id="mainContentHeader" className="flex items-center justify-center border-b border-slate-500/25 h-[65px] shrink-0 w-full text-white sticky top-0">
         <div id="sectionTitle" className="font-bold ml-10 absolute left-0">About Me</div>
         <div id="sectionHeaders" className="flex">
-          <div onClick={() => setActive('MainProfile')} id="MainProfile" className={`${active === 'MainProfile' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('MainProfile')} id="MainProfile" className={`${active === 'MainProfile' ? "activeSectionTitle" : ""} apple-header`}>
             Profile
           </div>
-          <div onClick={() => setActive('Timeline')} id="Timeline" className={`${active === 'Timeline' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Timeline')} id="Timeline" className={`${active === 'Timeline' ? "activeSectionTitle" : ""} apple-header`}>
             Timeline
           </div>
-          <div onClick={() => setActive('Personal')} id="Personal" className={`${active === 'Personal' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Personal')} id="Personal" className={`${active === 'Personal' ? "activeSectionTitle" : ""} apple-header`}>
             Personal
           </div>
         </div>

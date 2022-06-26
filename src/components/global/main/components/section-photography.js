@@ -13,13 +13,13 @@ function PhotographySection() {
       <div id="mainContentHeader" className="flex items-center justify-center border-b border-slate-500/25 h-[65px] shrink-0 w-full text-white sticky top-0">
         <div id="sectionTitle" className="font-bold ml-10 absolute left-0">Photography</div>
         <div id="sectionHeaders" className="flex">
-          <div onClick={() => setActive('Nature')} id="Nature" className={`${active === 'Nature' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Nature')} id="Nature" className={`${active === 'Nature' ? "activeSectionTitle" : ""} apple-header`}>
             Nature
           </div>
-          <div onClick={() => setActive('Building')} id="Building" className={`${active === 'Building' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Building')} id="Building" className={`${active === 'Building' ? "activeSectionTitle" : ""} apple-header`}>
             Buildings
           </div>
-          <div onClick={() => setActive('Sky')} id="Sky" className={`${active === 'Sky' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Sky')} id="Sky" className={`${active === 'Sky' ? "activeSectionTitle" : ""} apple-header`}>
             Sky
           </div>
         </div>

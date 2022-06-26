@@ -40,13 +40,6 @@ import slabs3 from '../../../assets/portfolio/Slabs_3.webp';
 import slabs4 from '../../../assets/portfolio/Slabs_4.webp';
 import slabs5 from '../../../assets/portfolio/Slabs_5.webp';
 import slabs6 from '../../../assets/portfolio/Slabs_6.webp';
-import website1 from '../../../assets/portfolio/Websites_1.webp';
-import website2 from '../../../assets/portfolio/Websites_2.webp';
-import website3 from '../../../assets/portfolio/Websites_3.webp';
-import website4 from '../../../assets/portfolio/Websites_4.webp';
-import website5 from '../../../assets/portfolio/Websites_5.webp';
-import website6 from '../../../assets/portfolio/Websites_6.webp';
-import website7 from '../../../assets/portfolio/Websites_7.webp';
 
 
 
@@ -92,14 +85,7 @@ const photoAssets = [
   slabs3,
   slabs4,
   slabs5,
-  slabs6,
-  website1,
-  website2,
-  website3,
-  website4,
-  website5,
-  website6,
-  website7
+  slabs6
 ];
 
 export default photoAssets;

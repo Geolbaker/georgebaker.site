@@ -4,6 +4,18 @@
 @tailwind utilities;
 
 
+@layer components {
+  .apple-header {
+    @apply font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white;
+  }
+}
+
+
+
+
+
+
+
 #sectionContent::-webkit-scrollbar {
   display: none;
 }
