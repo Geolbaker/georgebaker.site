@@ -21,13 +21,13 @@ function WebsitesSection() {
         <div className="transition-opacity duration-500 absolute" style={{width: "calc(100% - 1rem)"}}>
 
         {[
-          ['Freshers Lincoln', 'https://freshers.lincolnsu.com/', 'Freshers Events', 'Splashpage', 'Lincoln Students Union', '"<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['Quack Lincoln', 'https://quacklincoln.com/', 'Club Night Event', 'Splashpage', 'Lincoln Students Union', '<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['ULSU Roles', 'https://ulsuroles.co.uk/', 'Recruitment', 'Splashpage', 'Lincoln Students Union', '<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['Varsity', 'https://lincolnsu.com/activities/varsity', 'Varsity Sports', 'Splashpage', 'Lincoln Students Union', '<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['Northumbria Students Union', 'https://mynsu.co.uk/', 'Full Site Design', 'Beskope Homepage', 'Northumbria Students Union', '<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['Make A Difference', 'https://lincolnsu.com/makeadifference22', 'Make A Difference Event', 'Splashpage', 'Lincoln Students Union', '<img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>'],
-          ['George Baker Tools', 'https://georgebaker.site/tools', 'Tools Website', 'Personal Use', 'Feature Testing', '../../../../assets/portfolio/Websites_1.webp'],
+          ['Freshers Lincoln', 'https://freshers.lincolnsu.com/', 'Freshers Events', 'Splashpage', 'Lincoln Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>],
+          ['Quack Lincoln', 'https://quacklincoln.com/', 'Club Night Event', 'Splashpage', 'Lincoln Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_2.webp")}/>],
+          ['ULSU Roles', 'https://ulsuroles.co.uk/', 'Recruitment', 'Splashpage', 'Lincoln Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_3.webp")}/>],
+          ['Varsity', 'https://lincolnsu.com/activities/varsity', 'Varsity Sports', 'Splashpage', 'Lincoln Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_4.webp")}/>],
+          ['Northumbria Students Union', 'https://mynsu.co.uk/', 'Full Site Design', 'Beskope Homepage', 'Northumbria Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_5.webp")}/>],
+          ['Make A Difference', 'https://lincolnsu.com/makeadifference22', 'Make A Difference Event', 'Splashpage', 'Lincoln Students Union', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_6.webp")}/>],
+          ['George Baker Tools', 'https://georgebaker.site/tools', 'Tools Website', 'Personal Use', 'Feature Testing', <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_7.webp")}/>],
         ].map(([website, url, tag1, tag2, tag3, img]) => (
           <div key={website} className="grid grid-cols-2 border-b border-slate-500/25">
 
@@ -46,7 +46,7 @@ function WebsitesSection() {
               </span>
             </div>
             <a href={url} target="_blank">
-              <img className="p-1 rounded-lg hover:bg-slate-100/[0.2]" src={require("../../../../assets/portfolio/Websites_1.webp")}/>
+              {img}
             </a>
 
           </div>
