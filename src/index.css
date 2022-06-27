@@ -4,22 +4,28 @@
 @tailwind utilities;
 
 
-
-
-
-body {
-  margin: 0;
-  font-family: 'Quicksand', cursive,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--colorPalet-background);
+#sectionContent::-webkit-scrollbar {
+  display: none;
+}
+#sectionContent {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 html {
 
   overflow-x: hidden;
 }
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--colorPalet-background);
+}
+
+
 
 * {
   transition: color 0.5s ease;
@@ -142,17 +148,6 @@ code {
       border-radius: 50%;
     }
 
-    .popupBlockNotification {
-      background-color: #fff;
-    }
-
-    #notificationCenterDiv {
-      right: 0;
-      top: 0.5rem;
-      z-index: 2000;
-      width: 35%;
-    }
-
     #colorPaletteModal {
       right: 0;
       top: 0.5rem;
@@ -177,8 +172,6 @@ code {
     }
 
     .popupBlockNotification {
-      border-radius: 8px;
-      filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.2));
       background: var(--colorPalet-container);
     }
 
@@ -276,7 +269,7 @@ code {
 
 
         .typing-intro {
-          animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+          animation: typing 2s steps(19), blink .5s step-end infinite alternate;
         }
 
         @keyframes typing {
@@ -440,4 +433,46 @@ code {
 .activeSectionTitle {
   color: white;
   border-bottom: 2px solid white;
+}
+
+#developerAnimation:before {
+  animation: sideToSideBefore 1s infinite alternate;
+}
+
+@keyframes sideToSideBefore {
+  from {
+    left: -0.5rem
+  }
+}
+
+#developerAnimation:after {
+  animation: sideToSideAfter 1s infinite alternate;
+}
+
+@keyframes sideToSideAfter {
+  from {
+    right: 0rem;
+  }
+}
+
+#designerBorder:before {
+  animation: borderResize 2s infinite alternate;
+}
+
+@keyframes borderResize {
+  from {
+    width: calc(100% + 1rem);
+    padding: 1.5rem;
+  }
+}
+
+#designerCursor {
+  animation: cursorResize 2s infinite alternate;
+}
+
+@keyframes cursorResize {
+  from {
+    right: -2rem;
+    padding-top: 1rem;
+  }
 }

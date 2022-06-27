@@ -5,11 +5,15 @@ import Popup from './popup.js'
 import Pong from './pong.js';
 
 import assets from '../assets.js';
-import photoAssets from './photographyAssets.js';
+import mainAssets from './mainAssets.js';
 import PhotographySection from './components/section-photography.js';
+import DocumentarySection from './components/section-documentary.js';
+import RenderSection from './components/section-3Drendering.js';
+import ProfileSection from './components/section-profile.js';
+import WebsitesSection from './components/section-websites.js';
 
 function Body() {
-  const [active, setActive] = useState('Nature');
+  const [active, setActive] = useState('Profile');
 
   useEffect(()=>{
     Mouse();
@@ -17,11 +21,17 @@ function Body() {
 
   });
 
-  PopupToggle();
+  var popupToggled = localStorage.getItem('popupToggle');
+
+  if (popupToggled === "0") {
+    PopupToggle();
+
+  }
+
 
   return (
-    <div id="body" className="flex flex-wrap justify-center items-center">
-      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
+    <div id="body" className="flex flex-wrap justify-center items-center font-['Quicksand']">
+      <div id="opacityHomeCheck" className="bg-[url('./backgroundQuickLoad.webp')] bg-cover w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
         <video className="w-screen h-screen object-cover" width="320" height="240" autoPlay loop muted playsInline>
           <source src={assets[8]} type="video/mp4" />
           Your browser does not support the video tag.
@@ -45,8 +55,8 @@ function Body() {
           </section>
         </div>
         <div className="h-[20vh] absolute items-center top-1/4 mb-[50vh]">
-          <div className="typing-intro w-[22ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 font-[monospace] text-3xl">
-            Welcome to my site. :)
+          <div className="typing-intro w-[14.7ch] whitespace-nowrap overflow-hidden border-black border-solid border-r-4 text-3xl">
+            Please scroll down
           </div>
         </div>
       </div>
@@ -71,17 +81,40 @@ function Body() {
               </svg>
             </div>
           </div>
-          <div id="profilePicture" className="flex justify-end m-4 mouseHover">
-            <img src={assets[9]} className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-5"/>
+          <div onClick={() => setActive('Profile')} id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-tr-2xl hover:bg-slate-400/[.1]`}>
+
+          <img src={assets[9]} alt="profilePicture" className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
+            <div className="text-white mr-4">
+              Profile
+            </div>
           </div>
         </div>
         <div className="overflow-hidden flex absolute w-full bottom-0" style={{height: "calc(100% - 65px)"}}>
           <div id="sidebar" className="w-[240px] h-full border-r border-slate-500/25 p-8 overflow-auto shrink-0">
+
+          {/*start of work section*/}
+          <div id="side-wrapper" className="mb-5">
+           <div className="text-slate-400 mb-2">Work</div>
+           <div className="flex flex-col whitespace-nowrap">
+
+            <div onClick={() => setActive('Websites')} className={`${active === 'Websites' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
+              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
+               <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+              </svg>
+             Websites
+            </div>
+
+
+           </div>
+          </div>
+          {/*end of work section*/}
+
+          {/*start of creativity section*/}
            <div id="side-wrapper">
             <div className="text-slate-400 mb-2">Creativity</div>
             <div className="flex flex-col whitespace-nowrap">
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('Photography')} className={`${active === 'Photography' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                  <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
                  <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
@@ -89,7 +122,7 @@ function Body() {
               Photography
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('Documentary')} className={`${active === 'Documentary' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                 <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
                 <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
@@ -98,49 +131,18 @@ function Body() {
               Documentary
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
+             <div onClick={() => setActive('3DRendering')} className={`${active === '3DRendering' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
                <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
                  <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                </svg>
               3D Rendering
              </div>
 
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
-               <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-              </svg>
-              Server Building
-             </div>
-
-
 
             </div>
            </div>
+           {/*end of creativity section*/}
 
-           <div id="side-wrapper">
-            <div className="text-slate-400 mb-2 mt-5">Apps</div>
-            <div className="flex flex-col whitespace-nowrap">
-
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
-              <svg viewBox="0 0 512 512" className="w-4 mr-2">
-               <g xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                <path d="M0 0h128v128H0zm0 0M192 0h128v128H192zm0 0M384 0h128v128H384zm0 0M0 192h128v128H0zm0 0" data-original="#bfc9d1"></path>
-               </g>
-               <path xmlns="http://www.w3.org/2000/svg" d="M192 192h128v128H192zm0 0" fill="currentColor" data-original="#82b1ff"></path>
-               <path xmlns="http://www.w3.org/2000/svg" d="M384 192h128v128H384zm0 0M0 384h128v128H0zm0 0M192 384h128v128H192zm0 0M384 384h128v128H384zm0 0" fill="currentColor" data-original="#bfc9d1"></path>
-              </svg>
-              All Apps
-             </div>
-
-             <div className="flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]">
-               <svg viewBox="0 0 488.932 488.932" fill="currentColor" className="w-4 mr-2">
-                <path d="M243.158 61.361v-57.6c0-3.2 4-4.9 6.7-2.9l118.4 87c2 1.5 2 4.4 0 5.9l-118.4 87c-2.7 2-6.7.2-6.7-2.9v-57.5c-87.8 1.4-158.1 76-152.1 165.4 5.1 76.8 67.7 139.1 144.5 144 81.4 5.2 150.6-53 163-129.9 2.3-14.3 14.7-24.7 29.2-24.7 17.9 0 31.8 15.9 29 33.5-17.4 109.7-118.5 192-235.7 178.9-98-11-176.7-89.4-187.8-187.4-14.7-128.2 84.9-237.4 209.9-238.8z"></path>
-               </svg>
-              Updates
-             </div>
-
-            </div>
-           </div>
 
 
           </div>
@@ -149,7 +151,29 @@ function Body() {
 
           <div id="mainContent">
 
-            <PhotographySection />
+            <div className={`transition-opacity duration-500 ${active === 'Websites' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Websites" && <WebsitesSection />}
+            </div>
+
+
+            <div className={`transition-opacity duration-500 ${active === 'Photography' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Photography" && <PhotographySection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === 'Documentary' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Documentary" && <DocumentarySection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === '3DRendering' ? "opacity-100" : "opacity-0"}`}>
+            {active === "3DRendering" && <RenderSection />}
+            </div>
+            <div className={`transition-opacity duration-500 ${active === 'Server' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Server" && <PhotographySection />}
+            </div>
+
+
+            <div className={`transition-opacity duration-500 ${active === 'Profile' ? "opacity-100" : "opacity-0"}`}>
+            {active === "Profile" && <ProfileSection />}
+            </div>
+
 
           </div>
       </div>

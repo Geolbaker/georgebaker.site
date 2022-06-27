@@ -20,9 +20,9 @@ function NotificationCenterModal(){
             </div>
   });
   return (
-    <div id="notificationCenterDiv" className="container fixed m-5 py-16 invisible">
+    <div id="notificationCenterDiv" className="container fixed m-5 py-16 invisible right-0 top-[0.5rem] z-[2000] sm:!w-[55%] md:!w-[35%] " style={{width: "calc(100% - 2.5rem)"}}>
     <div className="fixed w-full h-full colorPaletteBackground" onClick={OpenNofiticationCenter}></div>
-      <div className=" popupBlockNotification arrow-top">
+      <div className=" popupBlockNotification rounded-lg drop-shadow-md arrow-top h-full overflow-auto md:h-auto">
         <div id="notificationContent relative z-[200]">
           <>
             {users}

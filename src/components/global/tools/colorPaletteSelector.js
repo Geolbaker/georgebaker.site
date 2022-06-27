@@ -1,6 +1,7 @@
 import {OpenColorPalette} from '../Utils.js';
 
 function ColorPaletteSelector() {
+
   return (
     <button type="button" className="colorPaletteButton relative flex items-center justify-center w-10 h-10 rounded-lg ml-5" onClick={OpenColorPalette}>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="colorIconNormal absolute flex items-center justify-center bi bi-palette" viewBox="0 0 16 16">
