@@ -4,6 +4,58 @@
 @tailwind utilities;
 
 
+@layer components {
+  .apple-header {
+    @apply font-bold px-2 sm:px-4 lg:px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white;
+  }
+
+
+}
+
+/*maincontentbox*/
+.contentBox {
+  width: 100%;
+  height: 100%;
+}
+@media screen(sm) {
+  .contentBox {
+    width: calc(100% - 180px) !important;
+    height: calc(100% - 65px) !important;
+  }
+}
+
+@media screen(md) {
+  .contentBox {
+    width: calc(100% - 240px) !important;
+    height: calc(100% - 65px) !important;
+  }
+}
+
+.sideBar {
+  height: auto;
+}
+
+@media screen(sm) {
+  .sideBar {
+    height: calc(100% - 65px);
+    top: 65px;
+  }
+}
+
+#sectionContent {
+  height: calc(100% - 180px)
+}
+
+@media screen(sm) {
+  #sectionContent {
+    height: calc(100% - 65px)
+  }
+}
+
+
+
+
+
 #sectionContent::-webkit-scrollbar {
   display: none;
 }

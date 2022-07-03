@@ -12,6 +12,9 @@ import { Routes, Route} from "react-router-dom";
 
 
 function App() {
+    const themes = [<Body />, <Xp />];
+    const random = Math.floor(Math.random() * themes.length);
+
   return (
     <div id="home" >
 

@@ -38,18 +38,12 @@ function Body() {
 
   return (
     <div id="body" className="flex flex-wrap justify-center items-center" style={{fontFamily: "Tahoma"}}>
-      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-20 transition-all duration-200">
+      <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-100 transition-all duration-200">
         <img className="z-[1000] w-screen h-screen top-0 left-0 absolute" src={WindowsBackground} />
       </div>
       <Popup />
       <Pong />
-      <div id="heroScreen" className="h-screen w-screen overflow-hidden flex flex-wrap items-center justify-center">
-        <div className="h-[20vh] absolute items-center top-1/4 mb-[50vh]">
-          <div className="overflow-hidden text-3xl">
-            Please scroll down here
-          </div>
-        </div>
-      </div>
+
 
       <div className="container flex justify-center items-center rounded-t-[5px] bg-[#0053e2] border-[#0053e2] border-[3px] h-[90vh] z-[1] relative my-[5vh]
                       shadow-[inset_0_10px_3px_-8px_rgba(52,147,255,0.7)]">

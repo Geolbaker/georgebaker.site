@@ -11,23 +11,23 @@ function PhotographySection() {
     });
 
     return (
-    <div className="flex absolute bottom-0 right-0 rounded-br-2xl" style={{width: "calc(100% - 240px)", height: "calc(100% - 65px)"}}>
-      <div id="mainContentHeader" className="flex items-center justify-center border-b border-slate-500/25 h-[65px] shrink-0 w-full text-white sticky top-0">
-        <div id="sectionTitle" className="font-bold ml-10 absolute left-0">About Me</div>
+    <div className="block sm:flex relative sm:absolute bottom-0 right-0 rounded-br-2xl contentBox" >
+      <div id="mainContentHeader" className="flex items-center justify-end md:justify-center border-b border-slate-500/25 h-[65px] shrink-0 w-full text-white sticky top-0 ">
+        <div id="sectionTitle" className="font-bold ml-5 lg:ml-10 absolute left-0">About Me</div>
         <div id="sectionHeaders" className="flex">
-          <div onClick={() => setActive('MainProfile')} id="MainProfile" className={`${active === 'MainProfile' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('MainProfile')} id="MainProfile" className={`${active === 'MainProfile' ? "activeSectionTitle" : ""} apple-header`}>
             Profile
           </div>
-          <div onClick={() => setActive('Timeline')} id="Timeline" className={`${active === 'Timeline' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Timeline')} id="Timeline" className={`${active === 'Timeline' ? "activeSectionTitle" : ""} apple-header`}>
             Timeline
           </div>
-          <div onClick={() => setActive('Personal')} id="Personal" className={`${active === 'Personal' ? "activeSectionTitle" : ""} font-bold px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white`}>
+          <div onClick={() => setActive('Personal')} id="Personal" className={`${active === 'Personal' ? "activeSectionTitle" : ""} apple-header`}>
             Personal
           </div>
         </div>
       </div>
 
-      <div id="sectionContent" className="p-2 bg-slate-900/[.6] absolute right-0 w-full top-[65px] overflow-auto rounded-br-2xl" style={{height: "calc(100% - 65px)"}}>
+      <div id="sectionContent" className="p-2 bg-slate-900/[.6] relative sm:absolute right-0 w-full sm:top-[65px] overflow-auto rounded-br-2xl">
 
         <div id="MainProfile" className={`p-3 flex flex-col justify-center text-center items-center transition-opacity duration-500 text-white absolute ${active === 'MainProfile' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem", height: "calc(100% - 1rem)"}}>
           <div className="text-4xl ">George Baker</div>
@@ -82,7 +82,7 @@ function PhotographySection() {
         <div id="Timeline" className={`transition-opacity duration-500 text-white absolute ${active === 'Timeline' ? "opacity-100" : "opacity-0"}`}>
 
           <div className={`container mx-auto w-full h-full`}>
-            <div className={`relative wrap overflow-hidden p-10 transition-all duration-500 ${active === 'Timeline' ? "h-full" : "h-0"}`}>
+            <div className={`relative wrap overflow-hidden p-3 md:p-10 transition-all duration-500 ${active === 'Timeline' ? "h-full" : "h-0"}`}>
               <div className="border-2-2 absolute border-opacity-20 border-white/[0.1] h-full border"> </div>
 
               <div className="mb-8 flex justify-between items-center w-full">
@@ -211,8 +211,30 @@ function PhotographySection() {
           </div>
         </div>
 
-        <div id="Personal" className={`transition-opacity duration-500 text-white absolute ${active === 'Personal' ? "opacity-100" : "opacity-0"}`}>
-
+        <div id="Personal" className={`transition-opacity w-full h-full duration-500 text-white absolute ${active === 'Personal' ? "opacity-100" : "opacity-0"}`}>
+          <div className={`${active === 'Personal' ? "block" : "hidden"} h-full w-full flex flex-col p-4 sm:p-2 justify-center items-center text-center -translate-x-2`}>
+            My name is George Baker. <br />
+            I'm a Web Designer by trade. <br />
+            <div className="flex">
+              I'm&nbsp;
+              <div id="ageNormal">
+              </div>
+              &nbsp;Years Old. <br />
+            </div>
+            <div className="flex flex-wrap text-center justify-center">
+              I'm married and have a beautiful&nbsp;
+              <div id="daughterAge">
+              </div>
+              &nbsp;month old girl. <br />
+            </div>
+            My spare time is spent working on way too many projects that will never see the light of day. <br />
+            I enjoy: <br />
+            Building Mechanical Keyboards <br />
+            Playing Piano <br />
+            Reading <br />
+            Coding <br />
+            Studying fitness and nutrition <br />
+          </div>
         </div>
 
       </div>
