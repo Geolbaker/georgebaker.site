@@ -211,7 +211,7 @@ function PhotographySection() {
           </div>
         </div>
 
-        <div id="Personal" className={`transition-opacity w-full h-full duration-500 text-white absolute ${active === 'Personal' ? "opacity-100" : "opacity-0"}`}>
+        <div id="Personal" className={`transition-opacity w-full h-full duration-500 text-white absolute ${active === 'Personal' ? "opacity-100 h-full" : "opacity-0 h-0"}`}>
           <div className={`${active === 'Personal' ? "block" : "hidden"} h-full w-full flex flex-col p-4 sm:p-2 justify-center items-center text-center -translate-x-2`}>
             My name is George Baker. <br />
             I'm a Web Designer by trade. <br />
