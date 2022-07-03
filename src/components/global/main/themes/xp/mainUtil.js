@@ -497,48 +497,21 @@ var openSound = new Audio("data:audio/mpeg;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAASW
 
 
 
-
-
-//check whether the top intro section should still show
-var sectionOpen = 0;
-//runs everytime the window is scrolled
-window.onscroll = function(ev) {
-  //create the relevant variables to check the scroll height of the document
-  var s = $(window).scrollTop(),
-      d = $(document).height(),
-      c = $(window).height();
-  //calculate the scroll percentage for smooth transitions
-  var scrollPercent = (s / (d - c)) * 100;
-  //round the number to the nearest 10 to make it more viable
-  function roundUpNearest10(num) {
-    return Math.ceil(num / 10) * 10;
-  }
-
-  scrollPercent = roundUpNearest10(scrollPercent);
-  //only run if the scroll percent is more than 20 and that the top section hasnt been removed yet
-  if (scrollPercent >= 20 && sectionOpen === 0) {
-    var opacityHomeCheck = document.querySelector("#opacityHomeCheck");
-    opacityHomeCheck.classList.remove("opacity-20");
-    opacityHomeCheck.classList.remove("opacity-30");
-    opacityHomeCheck.classList.remove("opacity-40");
-    opacityHomeCheck.classList.remove("opacity-50");
-    opacityHomeCheck.classList.remove("opacity-60");
-    opacityHomeCheck.classList.remove("opacity-70");
-    opacityHomeCheck.classList.remove("opacity-80");
-    opacityHomeCheck.classList.remove("opacity-90");
-    opacityHomeCheck.classList.remove("opacity-100");
-    opacityHomeCheck.classList.remove("opacity-110");
-    opacityHomeCheck.classList.add("opacity-" + scrollPercent);
-  }
-  //when the scroll is at the bottom of the page hide the top section and stop the scroll function from running anymore
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    var heroScreen = document.querySelector('#heroScreen')
-    heroScreen.classList.add("hidden");
-    sectionOpen = 1;
-  }
-};
-
-
+//
+// ██████╗ ██╗██████╗ ████████╗██╗  ██╗██████╗  █████╗ ██╗   ██╗
+// ██╔══██╗██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
+// ██████╔╝██║██████╔╝   ██║   ███████║██║  ██║███████║ ╚████╔╝
+// ██╔══██╗██║██╔══██╗   ██║   ██╔══██║██║  ██║██╔══██║  ╚██╔╝
+// ██████╔╝██║██║  ██║   ██║   ██║  ██║██████╔╝██║  ██║   ██║
+// ╚═════╝ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝
+//
+//  ██████╗ █████╗ ██╗      ██████╗
+// ██╔════╝██╔══██╗██║     ██╔════╝
+// ██║     ███████║██║     ██║
+// ██║     ██╔══██║██║     ██║
+// ╚██████╗██║  ██║███████╗╚██████╗
+//  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
+//    
 
 
 export const BirthdayVersionCalc = () => {
