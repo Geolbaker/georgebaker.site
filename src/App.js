@@ -16,7 +16,7 @@ function App() {
     const random = Math.floor(Math.random() * themes.length);
 
   return (
-    <div id="home" className="h-screen">
+    <div id="home" className="sm:h-screen">
 
       <Routes>
         <Route path="/" element={<Body />} />
