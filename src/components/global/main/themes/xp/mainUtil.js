@@ -15,7 +15,7 @@ import {gsap} from 'gsap';
 $(document).on('keypress',function(e) {
     if(e.which === 13) {
       var div = document.querySelector("#popupMain");
-      div.classList.add("visible", "animate__backInRight");
+      div.classList.add("visible", "animate__bounceInRight");
       div.classList.remove("invisible", "animate__zoomOut");
       localStorage.setItem('popupToggle', "0");
       toggle = 1;
@@ -26,7 +26,7 @@ export const PopupToggle = () => {
     if (toggle === 0) {
       setTimeout(function(){
         var div = document.querySelector("#popupMain");
-        div.classList.add("animate__backInRight", "visible");
+        div.classList.add("animate__bounceInRight", "visible");
         div.classList.remove("invisible", "animate__zoomOut");
         toggle = 1;
         localStorage.setItem('popupToggle', "1");
@@ -511,7 +511,7 @@ var openSound = new Audio("data:audio/mpeg;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAASW
 // ██║     ██╔══██║██║     ██║
 // ╚██████╗██║  ██║███████╗╚██████╗
 //  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
-//    
+//
 
 
 export const BirthdayVersionCalc = () => {
