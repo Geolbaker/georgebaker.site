@@ -1,6 +1,6 @@
 import {FontSizeTextUpdater} from '../Utils.js';
 
-import Header from '../header.js';
+import Header from './header.js';
 import NotificationCenterModal from '../../modals/notificationCenterModal.js';
 import ColorPaletteModal from '../../modals/colorPaletteModal.js';
 import PlaceholderCodeModal from '../../modals/placeholderCodeModal.js';

@@ -1,5 +1,5 @@
-import NotificationCenter from './tools/notificationCenter.js';
-import ColorPaletteSelector from './tools/colorPaletteSelector.js';
+import NotificationCenter from './notificationCenter.js';
+import ColorPaletteSelector from './colorPaletteSelector.js';
 import { Popover } from '@headlessui/react';
 import Vivus from "vivus";
 import {useEffect} from 'react';
