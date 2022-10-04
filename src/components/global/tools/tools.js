@@ -1,18 +1,15 @@
 import {
   ColorRender,
-  PlaceholderToggle,
   CreateDateCode,
   PopupToggle,
   ColorLiveupdate,
   PopupDelayTime,
-  PlaceholderModalToggle,
   PopupModalToggle,
 } from '../Utils.js';
 
 import Header from './header.js';
 import NotificationCenterModal from '../../modals/notificationCenterModal.js';
 import ColorPaletteModal from '../../modals/colorPaletteModal.js';
-import PlaceholderCodeModal from '../../modals/placeholderCodeModal.js';
 import TimedDisplayModal from '../../modals/timedDisplayModal.js';
 import PopupCodeModal from '../../modals/popupCodeModal.js';
 import SidePopup from '../../modals/sidePopup.js';
@@ -25,7 +22,6 @@ function Tools() {
     <div id="tools">
     <NotificationCenterModal  />
     <ColorPaletteModal  />
-    <PlaceholderCodeModal />
     <TimedDisplayModal />
     <PopupCodeModal />
     <SidePopup />
@@ -96,48 +92,6 @@ function Tools() {
           <h2>Helpful Code</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full text-center justify-center" id="helpfulCode">
-
-        <div className="w-full p-1 pt-3 md:p-5">
-          <div className="text-center bg-white rounded pb-4 containerShadow">
-            <h2 className="pt-3">Skeleton Placeholders</h2>
-            <div className="grid grid-cols-2 flex-wrap justify-center block" id="placeholder-content">
-              <div className="loader w-full p-2 mb-1">
-                <div className="p-3 loader-content font-extrabold text-2xl rounded-xl">
-                  <div className="advert-title-placeholder"> Text</div>
-                  <div className="advert-content-placeholder text-xl"> Text</div>
-                </div>
-              </div>
-              <div className="loader w-full p-2 mb-1">
-                <div className="p-3 loader-content font-extrabold text-2xl rounded-xl">
-                  <div className="advert-title-placeholder"> Text</div>
-                  <div className="advert-content-placeholder text-xl"> Text</div>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 flex-wrap justify-center hidden" id="advert-content">
-              <div className="loader w-full p-2 mb-1">
-                <div className="p-3 advert-content block font-extrabold text-2xl rounded-xl">
-                  <div className="advert-title"> Loaded</div>
-                  <div className="advert-content text-xl"> Loaded</div>
-                </div>
-              </div>
-              <div className="loader w-full p-2 mb-1">
-                <div className="p-3 advert-content block font-extrabold text-2xl rounded-xl">
-                  <div className="advert-title"> Loaded</div>
-                  <div className="advert-content text-xl"> Loaded</div>
-                </div>
-              </div>
-            </div>
-            <br/>
-            <input type="color" id="colorLoader1" name="head" defaultValue="#D1FFF6" onChange={ColorLiveupdate}/>
-            <input type="color" id="colorLoader2" name="head" defaultValue="#FFB6F1" onChange={ColorLiveupdate}/>
-            <br/><br/>
-            <button className="btn-primary m-2" onClick={() => ColorRender('chosen')}>Chosen</button>
-            <button className="btn-primary m-2" onClick={() => ColorRender("generic")}>Grey</button>
-            <button className="btn-primary m-2" onClick={PlaceholderToggle}>Add Content Toggle</button>
-            <button className="btn-primary m-2" onClick={PlaceholderModalToggle}>Show Code</button>
-          </div>
-        </div>
 
         <div className="w-full p-1 pt-3 md:p-5">
           <div className="text-center bg-white rounded pb-4 containerShadow">

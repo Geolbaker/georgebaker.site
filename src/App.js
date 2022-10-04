@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Body />} />
         <Route path="/xp" element={<XpTheme />} />
         <Route path="/mac" element={<MacTheme />} />
-        <Route path="/tools" element={<Tools />} />
+        <Route path="/test" element={<Tools />} />
         <Route path="/fontSizes" element={<FontSizes />} />
         <Route path="*" element={<FourOneFour />}/>
       </Routes>

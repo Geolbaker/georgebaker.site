@@ -15,19 +15,49 @@
     @apply hover:scale-[115%]
   }
   .link-underline-25 {
-    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-[-10%] hover:before:left-0 before:bg-[#ddd] before:transition-all before:duration-500 hover:before:w-[25%]
+    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-[-10%] hover:before:left-0 before:bg-homepage-alt before:transition-all before:duration-500 hover:before:w-[25%]
   }
   .link-underline-50 {
-    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-0 before:bg-[#ddd] before:transition-all before:duration-500 hover:before:w-[50%]
+    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-0 before:bg-homepage-alt before:transition-all before:duration-500 hover:before:w-[50%]
   }
   .link-underline-100 {
-    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-0 before:bg-[#ddd] before:transition-all before:duration-500 hover:before:w-[100%]
+    @apply before:content-[''] before:w-[0%] before:h-[3px] before:absolute before:bottom-[5px] before:left-0 before:bg-homepage-alt before:transition-all before:duration-500 hover:before:w-[100%]
   }
   .dot-to-arrow {
-    @apply before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-[''] before:bg-black before:w-[4px] before:h-[4px] before:right-6 before:top-[45%] before:rounded-full after:absolute after:content-[''] after:bg-black after:w-[4px] after:h-[4px] after:right-6 after:top-[45%] after:rounded-full before:rotate-[45deg] after:rotate-[-45deg] group-hover:before:translate-y-[-6.2px] group-hover:after:translate-y-[6.2px] group-hover:before:w-[20px] group-hover:after:w-[20px] group-hover:before:h-[3px] group-hover:after:h-[3px]
+    @apply before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-[''] before:bg-homepage-text before:w-[4px] before:h-[4px] before:right-6 before:top-[45%] before:rounded-full after:absolute after:content-[''] after:bg-homepage-text after:w-[4px] after:h-[4px] after:right-6 after:top-[45%] after:rounded-full before:rotate-[45deg] after:rotate-[-45deg] group-hover:before:translate-y-[-6.2px] group-hover:after:translate-y-[6.2px] group-hover:before:w-[20px] group-hover:after:w-[20px] group-hover:before:h-[3px] group-hover:after:h-[3px]
   }
 
 }
+
+* {
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
+  cursor: var(--cursor-type);
+}
+
+:root {
+
+      --colorPalet-background: rgb(236 236 235 / 100%);
+      --colorPalet-backgroundAlt: #fff;
+      --colorPalet-text: #000;
+      --colorPalet-textAlt: #fff;
+      --colorPalet-header: #fff;
+      --colorPalet-container: #fff;
+      --colorPalet-containerAlt: rgb(38 57 77 / 50%);
+      --colorPalet-mainLight : rgb(105 182 213);
+
+      --cursor-type: default;
+
+      --colorPallete-homepage-bg: rgb(255 255 255);
+      --colorPallete-homepage-text: rgb(0 0 0);
+      --colorPallete-homepage-alt: rgb(221 221 221);
+}
+
+
+
+
+
+
 
 /*maincontentbox*/
 .contentBox {
@@ -81,42 +111,7 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-html {
 
-  overflow-x: hidden;
-}
-
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--colorPalet-background);
-}
-
-
-
-* {
-  transition: color 0.5s ease;
-  transition: background-color 0.5s ease;
-  cursor: var(--cursor-type);
-}
-
-:root {
-      --loader1-color: #D1FFF6;
-      --loader2-color: #FFB6F1;
-
-      --colorPalet-background: rgb(236 236 235 / 100%);
-      --colorPalet-backgroundAlt: #fff;
-      --colorPalet-text: #000;
-      --colorPalet-textAlt: #fff;
-      --colorPalet-header: #fff;
-      --colorPalet-container: #fff;
-      --colorPalet-containerAlt: rgb(38 57 77 / 50%);
-      --colorPalet-mainLight : rgb(105, 182, 213);
-
-      --cursor-type: default;
-    }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

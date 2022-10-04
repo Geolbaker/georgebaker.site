@@ -3,7 +3,6 @@ import {FontSizeTextUpdater} from '../Utils.js';
 import Header from './header.js';
 import NotificationCenterModal from '../../modals/notificationCenterModal.js';
 import ColorPaletteModal from '../../modals/colorPaletteModal.js';
-import PlaceholderCodeModal from '../../modals/placeholderCodeModal.js';
 import TimedDisplayModal from '../../modals/timedDisplayModal.js';
 import PopupCodeModal from '../../modals/popupCodeModal.js';
 import SidePopup from '../../modals/sidePopup.js';
@@ -13,7 +12,6 @@ function FontSizes() {
     <div id="font-sizes">
     <NotificationCenterModal  />
     <ColorPaletteModal  />
-    <PlaceholderCodeModal />
     <TimedDisplayModal />
     <PopupCodeModal />
     <SidePopup />

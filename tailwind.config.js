@@ -13,7 +13,13 @@ module.exports = {
     './src/index.{html,js}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "homepage-bg": "var(--colorPallete-homepage-bg)",
+        "homepage-text": "var(--colorPallete-homepage-text)",
+        "homepage-alt": "var(--colorPallete-homepage-alt)"
+      },
+    },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],
       'sans': ['Quicksand', 'sans-serif'],

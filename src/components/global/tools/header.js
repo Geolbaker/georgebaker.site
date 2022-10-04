@@ -26,7 +26,7 @@ function Header() {
 
 
 
-            <a href="/tools" className="flex text-base font-medium hover:font-bold">
+            <a href="/test" className="flex text-base font-medium hover:font-bold">
               Tools
             </a>
             <a href="/fontsizes" className="flex text-base font-medium hover:font-bold">
