@@ -43,27 +43,27 @@ function Body() {
       //--colorPallete-homepage-alt
       $("#colourPallete").click(function(){
         if (palleteToggle == 0) {
-          document.documentElement.style.setProperty("--colorPallete-homepage-bg", 'rgb(255 255 255)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-text", 'rgb(0 0 0)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-alt", 'rgb(221 221 221)');
+          colourUpdate('rgb(255 255 255)', 'rgb(0 0 0)', 'rgb(221 221 221)');
           palleteToggle++;
         } else if (palleteToggle == 1) {
-          document.documentElement.style.setProperty("--colorPallete-homepage-bg", 'rgb(0 0 0)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-text", 'rgb(255 255 255)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-alt", 'rgb(100 100 100)');
+          colourUpdate('rgb(0 0 0)', 'rgb(255 255 255)', 'rgb(100 100 100)');
           palleteToggle++;
         } else if (palleteToggle == 2) {
-          document.documentElement.style.setProperty("--colorPallete-homepage-bg", 'rgb(173 166 194)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-text", 'rgb(250 250 250)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-alt", 'rgb(114 94 141)');
+          colourUpdate('rgb(173 166 194)', 'rgb(250 250 250)', 'rgb(114 94 141)');
           palleteToggle++;
         } else if (palleteToggle == 3) {
-          document.documentElement.style.setProperty("--colorPallete-homepage-bg", 'rgb(255 250 243)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-text", 'rgb(86 148 159)');
-          document.documentElement.style.setProperty("--colorPallete-homepage-alt", 'rgb(240 233 223)');
+          colourUpdate('rgb(255 250 243)', 'rgb(86 148 159)', 'rgb(240 233 223)');
           palleteToggle++;
+        } else if (palleteToggle == 4) {
+          colourUpdate('rgb(123 156 152)', 'rgb(234 241 243)', 'rgb(114 144 141)');
+          palleteToggle = 0;
         }
       })
+      function colourUpdate(a, b, c) {
+        document.documentElement.style.setProperty("--colorPallete-homepage-bg", a);
+        document.documentElement.style.setProperty("--colorPallete-homepage-text", b);
+        document.documentElement.style.setProperty("--colorPallete-homepage-alt", c);
+      }
   });
 
   return (
