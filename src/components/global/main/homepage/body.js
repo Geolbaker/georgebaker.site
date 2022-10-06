@@ -36,6 +36,7 @@ function Body() {
         setTimeout(
           function(){
             a.classList.remove("opacity-[0.0001]");
+            a.classList.remove("translate-y-[3rem]");
           }, time);
       }
 
@@ -75,7 +76,7 @@ function Body() {
           colourUpdate('rgb(255 255 255)', 'rgb(0 0 0)', 'rgb(221 221 221)');
           palleteToggle++;
         } else if (palleteToggle == 1) {
-          colourUpdate('rgb(0 0 0)', 'rgb(255 255 255)', 'rgb(100 100 100)');
+          colourUpdate('rgb(60 60 60)', 'rgb(255 255 255)', 'rgb(100 100 100)');
           palleteToggle++;
         } else if (palleteToggle == 2) {
           colourUpdate('rgb(173 166 194)', 'rgb(250 250 250)', 'rgb(114 94 141)');
@@ -101,23 +102,23 @@ function Body() {
       {/* Navigation Items */}
       <div className="w-max relative top-0 left-0 flex justify-end">
         <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem]">
-          <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001]">
+          <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Themes
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001]">
+          <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Portfolio
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001]">
+          <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Personal
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001]">
+          <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Hobbies
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="comingSoon" className="text-homepage-alt w-max transition-all duration-500 opacity-[0.0001]">
+          <div id="comingSoon" className="text-homepage-alt w-max transition-all duration-500 opacity-[0.0001] translate-y-[3rem]">
               Coming Soon
           </div>
         </div>
@@ -177,15 +178,6 @@ function Body() {
 
 }
 
-
-//IDEA FOR OPENING ANIMATION
-//all elements are invisible/opacity-0 overflow-hidden and translate-y-[10rem]
-//run a search through number of classnames i++ etc with example-1, example-2, etc, and set to collection1, collection2, etc,
-//until find no more entries in the list then carry on
-//const collection = document.getElementsByClassName("example");
-//collection[0].innerHTML = "Hello World!";
-//with all the collections, on each loop, edit classNames to create the intial animation with a specific delay between each interpretation
-//finish with every collection being reset to allow for normal non-loader animations
 
 
 export default Body;
