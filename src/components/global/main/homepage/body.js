@@ -100,7 +100,7 @@ function Body() {
     <div id="HomepageBody" className="flex justify-center items-center h-screen w-screen shadow-inner bg-homepage-bg text-homepage-text" >
 
       {/* Navigation Items */}
-      <div className="w-max relative top-0 left-0 flex justify-end">
+      <div className="w-max relative top-0 left-0 flex-col md:flex-row flex justify-end">
         <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem]">
           <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Themes
@@ -122,19 +122,19 @@ function Body() {
               Coming Soon
           </div>
         </div>
-        <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem] overflow-hidden relative">
+        <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
           <div id="themeSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
             <a className="link link-underline-25 link-emphasis" href="/xp">Windows Xp</a>
             <a className="link link-underline-25 link-emphasis" href="/mac">GlassOS</a>
           </div>
           <div id="portfolioSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="link" href="#">Portfolio SubMenu</a>
+            <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
           <div id="personalSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="link" href="#">Personal SubMenu</a>
+            <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
           <div id="hobbiesSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="link" href="#">Hobbies SubMenu</a>
+            <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
         </div>
       </div>
