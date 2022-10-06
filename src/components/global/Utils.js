@@ -10,51 +10,6 @@ if (setMouse === true) {document.documentElement.style.setProperty('--cursor-typ
 
 
 
-// ██████╗ ██╗      █████╗  ██████╗███████╗██╗  ██╗ ██████╗ ██╗     ██████╗ ███████╗██████╗
-// ██╔══██╗██║     ██╔══██╗██╔════╝██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝██╔══██╗
-// ██████╔╝██║     ███████║██║     █████╗  ███████║██║   ██║██║     ██║  ██║█████╗  ██████╔╝
-// ██╔═══╝ ██║     ██╔══██║██║     ██╔══╝  ██╔══██║██║   ██║██║     ██║  ██║██╔══╝  ██╔══██╗
-// ██║     ███████╗██║  ██║╚██████╗███████╗██║  ██║╚██████╔╝███████╗██████╔╝███████╗██║  ██║
-// ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-//
-// ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗
-// ╚══██╔══╝██╔═══██╗██╔════╝ ██╔════╝ ██║     ██╔════╝
-//    ██║   ██║   ██║██║  ███╗██║  ███╗██║     █████╗
-//    ██║   ██║   ██║██║   ██║██║   ██║██║     ██╔══╝
-//    ██║   ╚██████╔╝╚██████╔╝╚██████╔╝███████╗███████╗
-//    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-//
-
-var togglePlaceholder = 0;
-export const PlaceholderToggle = () => {
-  if (togglePlaceholder === 0) {
-    document.querySelector("#placeholder-content")?.classList?.add('hidden');
-    document.querySelector("#advert-content")?.classList?.add('block');
-    document.querySelector("#placeholder-content")?.classList?.remove('block');
-    document.querySelector("#advert-content")?.classList?.remove('hidden');
-    togglePlaceholder++;
-  } else if (togglePlaceholder !== 0) {
-    document.querySelector("#placeholder-content")?.classList?.add('block');
-    document.querySelector("#advert-content")?.classList?.add('hidden');
-    document.querySelector("#placeholder-content")?.classList?.remove('hidden');
-    document.querySelector("#advert-content")?.classList?.remove('block');
-    togglePlaceholder = 0;
-  }
-
-}
-var togglePlaceholderModal = 0;
-export const PlaceholderModalToggle = () => {
-  ColorRender();
-  if (togglePlaceholderModal === 0) {
-    document.querySelector("#placeholderModal")?.classList?.add("invisible");
-      document.querySelector("#placeholderModal")?.classList?.remove("visible");
-      togglePlaceholderModal = 1;
-  } else if (togglePlaceholderModal === 1) {
-    document.querySelector("#placeholderModal")?.classList?.remove("invisible");
-    document.querySelector("#placeholderModal")?.classList?.add("visible");
-    togglePlaceholderModal = 0;
-  }
-}
 
 // ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
 // ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝

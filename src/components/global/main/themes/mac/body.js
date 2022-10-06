@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import Popup from './popup.js'
 import Pong from './pong.js';
 
-import assets from '../assets.js';
+import assets from '../../../assets.js';
 import mainAssets from './mainAssets.js';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
