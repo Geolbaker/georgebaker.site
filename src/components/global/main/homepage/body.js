@@ -20,18 +20,18 @@ function Body() {
       //other elements
       var socialIcons = document.getElementById("socialIcons");
       var colorPalleteIcon = document.getElementById("colorPalleteIcon")
-      //color pallete
-      var palleteToggle = 1;
+      //color pallete theme
+      var homepageTheme;
 
       //intro animations
-      introAnimation(themeMain, 0);
-      introAnimation(portfolioMain, 500);
-      introAnimation(personalMain, 1000);
-      introAnimation(hobbiesMain, 1500);
-      introAnimation(comingSoon, 2000);
-      introAnimation(socialIcons, 2500);
-      introAnimation(colorPalleteIcon, 2500);
-
+      introAnimation(themeMain, 200);
+      introAnimation(portfolioMain, 700);
+      introAnimation(personalMain, 1200);
+      introAnimation(hobbiesMain, 1700);
+      introAnimation(comingSoon, 2200);
+      introAnimation(socialIcons, 2700);
+      introAnimation(colorPalleteIcon, 2700);
+      //function to load each section, all run at the same time which is why individual timeouts are required
       function introAnimation(a, time){
         setTimeout(
           function(){
@@ -41,9 +41,8 @@ function Body() {
       }
 
 
-
-
       //Menu SubMenu Controller
+      //The animation for opening and closing each submenu
       function subMenuReset() {
         themeSubMenu.classList.add("translate-x-[-20rem]");
         portfolioSubMenu.classList.add("translate-x-[-20rem]");
@@ -67,28 +66,59 @@ function Body() {
         hobbiesSubMenu.classList.remove("translate-x-[-20rem]");
       })
 
-      //Colour Pallete Rotate
+      //Colour Pallete / Theme
       //--colorPallete-homepage-bg
       //--colorPallete-homepage-text
       //--colorPallete-homepage-alt
-      $("#colourPallete").click(function(){
-        if (palleteToggle == 0) {
+
+      //check if local storage contains the homepage theme already
+      if (!localStorage.getItem('homepageTheme')) {
+        //if there is nothing, set the homepage theme to 0
+        homepageTheme = 0;
+      } else if (localStorage.getItem('homepageTheme')) {
+        //if there is get it from local storage
+        homepageTheme = localStorage.getItem('homepageTheme');
+      }
+
+      //run theme selector which intially sets the start theme colours
+      themeSelector();
+      function themeSelector(){
+        if (homepageTheme == 0) {
+          //sets colour of theme
           colourUpdate('rgb(255 255 255)', 'rgb(0 0 0)', 'rgb(221 221 221)');
-          palleteToggle++;
-        } else if (palleteToggle == 1) {
+          //resets and sets local storage of selected theme
+          localStorage.removeItem('homepageTheme');
+          localStorage.setItem('homepageTheme', homepageTheme);
+          //temp increase theme number to display next theme on click
+          homepageTheme = 1;
+          //repeat for each theme type
+        } else if (homepageTheme == 1) {
           colourUpdate('rgb(60 60 60)', 'rgb(255 255 255)', 'rgb(100 100 100)');
-          palleteToggle++;
-        } else if (palleteToggle == 2) {
+          localStorage.removeItem('homepageTheme');
+          localStorage.setItem('homepageTheme', homepageTheme);
+          homepageTheme = 2;
+        } else if (homepageTheme == 2) {
           colourUpdate('rgb(173 166 194)', 'rgb(250 250 250)', 'rgb(114 94 141)');
-          palleteToggle++;
-        } else if (palleteToggle == 3) {
+          localStorage.removeItem('homepageTheme');
+          localStorage.setItem('homepageTheme', homepageTheme);
+          homepageTheme = 3;
+        } else if (homepageTheme == 3) {
           colourUpdate('rgb(255 250 243)', 'rgb(86 148 159)', 'rgb(240 233 223)');
-          palleteToggle++;
-        } else if (palleteToggle == 4) {
+          localStorage.removeItem('homepageTheme');
+          localStorage.setItem('homepageTheme', homepageTheme);
+          homepageTheme = 4;
+        } else if (homepageTheme == 4) {
           colourUpdate('rgb(123 156 152)', 'rgb(234 241 243)', 'rgb(114 144 141)');
-          palleteToggle = 0;
+          localStorage.removeItem('homepageTheme');
+          localStorage.setItem('homepageTheme', homepageTheme);
+          homepageTheme = 0;
         }
+      }
+      //on click cycle through next theme
+      $("#colourPallete").click(function(){
+        themeSelector();
       })
+      //set the colour of the theme to the correct parts
       function colourUpdate(a, b, c) {
         document.documentElement.style.setProperty("--colorPallete-homepage-bg", a);
         document.documentElement.style.setProperty("--colorPallete-homepage-text", b);
