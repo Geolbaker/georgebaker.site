@@ -9,7 +9,7 @@
     @apply font-bold px-2 sm:px-4 lg:px-8 h-[65px] flex items-center text-slate-400 transition-all hover:text-white hover:border-b-2 hover:border-white;
   }
   .link {
-    @apply relative hover:cursor-pointer transition-all duration-500
+    @apply relative hover:cursor-pointer transition-all duration-[700ms]
   }
   .link-emphasis {
     @apply hover:scale-[115%]

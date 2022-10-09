@@ -153,17 +153,22 @@ function Body() {
           </div>
         </div>
         <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
-          <div id="themeSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="link link-underline-25 link-emphasis" href="/xp">Windows Xp</a>
-            <a className="link link-underline-25 link-emphasis" href="/mac">GlassOS</a>
+          <div id="themeSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
+            <span className="relative after:text-[1rem] after:text-homepage-bg after:px-1
+            after:transition-all after:duration-500
+            after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
+            after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
+            after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
+            <a className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</a>
+            <a className="link link-underline-25 link-emphasis text-homepage-text" href="/mac">GlassOS</a>
           </div>
-          <div id="portfolioSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
+          <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
             <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
-          <div id="personalSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
+          <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
             <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
-          <div id="hobbiesSubMenu" className="flex flex-col link delay-100 translate-x-[-20rem] absolute top-0 ml-8">
+          <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
             <a className="text-homepage-alt" href="#">Coming Soon</a>
           </div>
         </div>
