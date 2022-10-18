@@ -1,8 +1,9 @@
 import $ from 'jquery';
 
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 function Body() {
+  const [active, setActive] = useState('Home');
 
   useEffect(()=>{
 
@@ -130,7 +131,7 @@ function Body() {
     <div id="HomepageBody" className="flex justify-center items-center h-screen w-screen shadow-inner bg-homepage-bg text-homepage-text" >
 
       {/* Navigation Items */}
-      <div className="w-max relative top-0 left-0 flex-col md:flex-row flex justify-end">
+      <div className={`${active === 'Home' ? " " : "translate-x-[-50vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500`}>
         <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem]">
           <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Themes
@@ -163,7 +164,7 @@ function Body() {
             <a className="link link-underline-25 link-emphasis text-homepage-text" href="/mac">GlassOS</a>
           </div>
           <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="text-homepage-alt" href="#">Coming Soon</a>
+            <a onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Testing</a>
           </div>
           <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
             <a className="text-homepage-alt" href="#">Coming Soon</a>
