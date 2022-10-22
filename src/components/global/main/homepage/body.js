@@ -196,7 +196,7 @@ function Body() {
       {/*End of Image Overlay*/}
 
       {/*Bottom Icons*/}
-      <div className={`${active === 'Portfolio' ? "bottom-[101vh]" : "bottom-[12vh]"} right-[150px] flex absolute transition-all duration-[1s]`}>
+      <div className={`${active === 'Portfolio' ? "top-[0vh] sm:top-[-1vh]" : "top-[80vh] sm:top-[88vh]"} right-[150px] flex absolute transition-all duration-[1s]`}>
         <div id="socialIcons" className="fixed flex m-5 transition-all duration-500 opacity-[0.0001]">
           <a alt="Personal Codepen" href="https://codepen.io/geo1baker" target="_blank" className="p-5">
             <svg width="16" height="16" className="bi bi-code-slash link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
