@@ -141,11 +141,11 @@ function Body() {
   });
 
   return (
-    <div id="HomepageBody" className="flex justify-center items-center h-screen w-screen shadow-inner bg-homepage-bg text-homepage-text" >
+    <div id="HomepageBody" className="font-['DM_Serif_Display'] flex justify-center items-center h-screen w-screen shadow-inner bg-homepage-bg text-homepage-text" >
 
       {/* Navigation Items */}
-      <div className={`${active === 'Home' ? "delay-[1.5s]" : "translate-x-[-50vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500 `}>
-        <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem]">
+      <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-50vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500 `}>
+        <div className="container text-[2rem] w-[15rem]">
           <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
               Themes
               <span className="dot-to-arrow"></span>
@@ -166,7 +166,7 @@ function Body() {
               Coming Soon
           </div>
         </div>
-        <div className="container font-['DM_Serif_Display'] text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
+        <div className="container text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
           <div id="themeSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
             <span className="relative after:text-[1rem] after:text-homepage-bg after:px-1
             after:transition-all after:duration-500
@@ -196,7 +196,7 @@ function Body() {
       {/*End of Image Overlay*/}
 
       {/*Bottom Icons*/}
-      <div className={`${active === 'Portfolio' ? "top-[0vh] sm:top-[-1vh]" : "top-[80vh] sm:top-[88vh]"} right-[150px] flex absolute transition-all duration-[1s]`}>
+      <div className="bottom-[12vh] right-[150px] flex absolute">
         <div id="socialIcons" className="fixed flex m-5 transition-all duration-500 opacity-[0.0001]">
           <a alt="Personal Codepen" href="https://codepen.io/geo1baker" target="_blank" className="p-5">
             <svg width="16" height="16" className="bi bi-code-slash link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
@@ -213,7 +213,7 @@ function Body() {
       {/*End of Bottom Icons*/}
 
       {/*Colour Pallete*/}
-      <div className={`${active === 'Portfolio' ? "right-[47vw]" : "right-[1vw]"} top-7 flex absolute px-8 transition-all duration-[1s]`}>
+      <div className="right-[1vw] top-7 flex absolute px-8">
         <div id="colorPalleteIcon" className="fixed transition-all duration-500 opacity-[0.0001]">
           <div id="colourPallete" className="absolute top-[-7px] left-[-4px] w-[25px] h-[30px] hover:cursor-pointer z-20 peer"></div>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="bi bi-droplet-half scale-[170%] link peer-hover:scale-[200%] fill-homepage-text" viewBox="0 0 16 16">
@@ -226,15 +226,32 @@ function Body() {
 
 
       {/*Portfolio Section*/}
-      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] delay-[0.5s]" : "opacity-[0.0001] translate-y-[100vh] "} top-0 mt-24 w-screen absolute flex justify-center transition-all duration-[2s] `}>
+      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] delay-[0.5s]" : "opacity-[0.0001] translate-y-[100vh] "} top-0 mt-24 w-screen absolute flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className="fixed transition-all duration-500 opacity-[0.0001] ">
-          <div className="container flex justify-center text-[2rem]">
-            Title Here
-            <button onClick={() => setActive('Home')}>Oi</button>
+          <div className="container flex justify-center text-[2rem] flex-col">
+            <p>Title Here</p>
+
+
           </div>
         </div>
       </div>
       {/*End of Portfolio Section*/}
+
+      {/*Back Button*/}
+      <div className={`${active === 'Home' ? "translate-x-[-20vw] opacity-[0.0001]" : "translate-x-0 opacity-100"}
+      duration-500 transition-all fixed top-16 left-3`}>
+        <button className="link link-emphasis fixed left-4 bottom-0 pl-8 text-[1.7rem]
+        before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-['']
+        before:bg-homepage-text before:left-0 before:top-[45%] before:rounded-full after:absolute after:content-['']
+        after:bg-homepage-text after:left-0 after:top-[45%] after:rounded-full before:rotate-[45deg]
+        after:rotate-[-45deg] before:translate-y-[6.2px] after:translate-y-[-6.2px] before:w-[20px]
+        after:w-[20px] before:h-[3px] after:h-[3px]
+        " onClick={() => setActive('Home')}>
+          Back
+        </button>
+      </div>
+
+      {/*End of Back Button*/}
 
 
     </div>
