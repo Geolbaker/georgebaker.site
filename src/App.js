@@ -13,8 +13,6 @@ import { Routes, Route} from "react-router-dom";
 
 
 function App() {
-    const themes = [<MacTheme />, <XpTheme />];
-    const random = Math.floor(Math.random() * themes.length);
 
   return (
     <div id="home" className="sm:h-screen">

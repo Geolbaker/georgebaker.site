@@ -139,19 +139,19 @@ code {
 }
 
 .dropdown-menu {
-  background-color: var(--colorPalet-container) !important;
+  background-color: var(--colorPalet-container);
 }
 
 .bg-light {
-  background-color: var(--colorPalet-header) !important;
+  background-color: var(--colorPalet-header);
 }
 
 .bg-white {
-  background-color: var(--colorPalet-container) !important;
+  background-color: var(--colorPalet-container);
 }
 
 .navbar-light, .navbar-brand, .navbar-nav, .nav-link, p, h1, h2, h3, h4, h5, body {
-  color: var(--colorPalet-text) !important;
+  color: var(--colorPalet-text);
 }
 
 .containerShadow {
@@ -272,37 +272,6 @@ code {
         }
         h2 {
           margin-bottom: 2rem;
-        }
-
-        .glass {
-        	 height: 100%;
-        	 width: 100%;
-        	 background-image: url(./assets/background2.webp);
-        	 background-size: cover;
-        	 background-position: center;
-        	 clip-path: inset(5rem);
-        	 filter: blur(10px);
-        	 display: flex;
-        	 justify-content: center;
-        	 align-items: center;
-        }
-         .drop-shadow {
-        	 height: calc(100vh - 3.5rem);
-        	 width: 100%;
-        	 filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.30));
-        	 display: flex;
-        	 justify-content: center;
-        	 align-items: center;
-           position: absolute;
-        }
-         .drop-shadow > span {
-        	 position: absolute;
-        	 z-index: 5;
-        	 color: white;
-        	 font-size: 5vw;
-        	 letter-spacing: 0.75em;
-        	 padding-left: 0.375em;
-           width: 50vw;
         }
 
 

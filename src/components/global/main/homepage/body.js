@@ -97,7 +97,7 @@ function Body() {
       //run theme selector which intially sets the start theme colours
       themeSelector();
       function themeSelector(){
-        if (homepageTheme == 0) {
+        if (homepageTheme === 0) {
           //sets colour of theme
           colourUpdate('rgb(255 255 255)', 'rgb(0 0 0)', 'rgb(221 221 221)');
           //resets and sets local storage of selected theme
@@ -106,22 +106,22 @@ function Body() {
           //temp increase theme number to display next theme on click
           homepageTheme = 1;
           //repeat for each theme type
-        } else if (homepageTheme == 1) {
+        } else if (homepageTheme === 1) {
           colourUpdate('rgb(60 60 60)', 'rgb(255 255 255)', 'rgb(100 100 100)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 2;
-        } else if (homepageTheme == 2) {
-          colourUpdate('rgb(173 166 194)', 'rgb(250 250 250)', 'rgb(114 94 141)');
+        } else if (homepageTheme === 2) {
+          colourUpdate('rgb(23 63 53)', 'rgb(234 160 156)', 'rgb(64 142 123)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 3;
-        } else if (homepageTheme == 3) {
+        } else if (homepageTheme === 3) {
           colourUpdate('rgb(255 250 243)', 'rgb(86 148 159)', 'rgb(240 233 223)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 4;
-        } else if (homepageTheme == 4) {
+        } else if (homepageTheme === 4) {
           colourUpdate('rgb(123 156 152)', 'rgb(234 241 243)', 'rgb(114 144 141)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
@@ -144,21 +144,21 @@ function Body() {
     <div id="HomepageBody" className="font-['DM_Serif_Display'] flex justify-center items-center h-screen w-screen shadow-inner bg-homepage-bg text-homepage-text" >
 
       {/* Navigation Items */}
-      <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-50vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500 `}>
+      <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-80vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500 `}>
         <div className="container text-[2rem] w-[15rem]">
-          <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
+          <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
               Themes
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
+          <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
               Portfolio
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
+          <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
               Personal
               <span className="dot-to-arrow"></span>
           </div>
-          <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem]">
+          <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
               Hobbies
               <span className="dot-to-arrow"></span>
           </div>
@@ -173,17 +173,17 @@ function Body() {
             after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
             after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
             after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
-            <a className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</a>
-            <a className="link link-underline-25 link-emphasis text-homepage-text" href="/mac">GlassOS</a>
+            <button className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</button>
+            <button className="link link-underline-25 link-emphasis text-homepage-text" href="/mac">GlassOS</button>
           </div>
           <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <a onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Testing</a>
+            <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Websites</button>
           </div>
           <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="text-homepage-alt" href="#">Coming Soon</a>
+            <button className="text-homepage-alt" href="#">Coming Soon</button>
           </div>
           <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <a className="text-homepage-alt" href="#">Coming Soon</a>
+            <button className="text-homepage-alt" href="#">Coming Soon</button>
           </div>
         </div>
       </div>
@@ -198,12 +198,12 @@ function Body() {
       {/*Bottom Icons*/}
       <div className="bottom-[12vh] right-[150px] flex absolute">
         <div id="socialIcons" className="fixed flex m-5 transition-all duration-500 opacity-[0.0001]">
-          <a alt="Personal Codepen" href="https://codepen.io/geo1baker" target="_blank" className="p-5">
+          <a alt="Personal Codepen" href="https://codepen.io/geo1baker" target="_blank" rel="noopener" className="p-5">
             <svg width="16" height="16" className="bi bi-code-slash link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
               <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
             </svg>
           </a>
-          <a alt="Personal Github" href="https://github.com/Geolbaker" target="_blank" className="p-5">
+          <a alt="Personal Github" href="https://github.com/Geolbaker" target="_blank" rel="noopener" className="p-5">
             <svg width="16" height="16" className="bi bi-github link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
             </svg>
@@ -224,23 +224,10 @@ function Body() {
       </div>
       {/*End of Colour Pallete*/}
 
-
-      {/*Portfolio Section*/}
-      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] delay-[0.5s]" : "opacity-[0.0001] translate-y-[100vh] "} top-0 mt-24 w-screen absolute flex justify-center transition-all duration-[1s] `}>
-        <div id="portfolioSection" className="fixed transition-all duration-500 opacity-[0.0001] ">
-          <div className="container flex justify-center text-[2rem] flex-col">
-            <p>Title Here</p>
-
-
-          </div>
-        </div>
-      </div>
-      {/*End of Portfolio Section*/}
-
       {/*Back Button*/}
       <div className={`${active === 'Home' ? "translate-x-[-20vw] opacity-[0.0001]" : "translate-x-0 opacity-100"}
       duration-500 transition-all fixed top-16 left-3`}>
-        <button className="link link-emphasis fixed left-4 bottom-0 pl-8 text-[1.7rem]
+        <button className="link link-emphasis fixed left-4 bottom-0 pl-8 text-[1.7rem] text-homepage-text
         before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-['']
         before:bg-homepage-text before:left-0 before:top-[45%] before:rounded-full after:absolute after:content-['']
         after:bg-homepage-text after:left-0 after:top-[45%] after:rounded-full before:rotate-[45deg]
@@ -252,6 +239,22 @@ function Body() {
       </div>
 
       {/*End of Back Button*/}
+
+      {/*Portfolio Section*/}
+      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100]" : "opacity-[0.0001] translate-y-[100vh] "} top-0 mt-24 w-screen absolute flex justify-center transition-all duration-[1s] `}>
+        <div id="portfolioSection" className="fixed transition-all duration-500 opacity-[0.0001] ">
+          <div className="container flex justify-center flex-col text-homepage-text">
+            <span className="text-[9rem] text-center relative after:content-[''] after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
+            after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
+            transition-all duration-500">Websites</span>
+            <div className="w-full">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {/*End of Portfolio Section*/}
 
 
     </div>

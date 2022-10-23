@@ -1,16 +1,9 @@
-import Img from './components/global/assets.js';
 
 function FourOneFour() {
   return (
-    <div id="404" style={{maxHeight: "calc(100vh - 3.5rem)", overflow:"hidden"}}>
-      <div className=" w-100 d-flex justify-content-center overflow-hidden align-items-center">
-        <img src={Img[1]} style={{height: "calc(100vh - 3.5rem)", objectFit: 'cover', width: "100vw"}} alt="404-background-image"/>
-        <div className="drop-shadow">
-          <div className="glass">
-
-          </div>
-          <span> This page does not exist :( </span>
-        </div>
+    <div id="404" className="bg-homepage-bg" >
+      <div className="h-screen w-screen flex justify-center items-center break-all">
+          <span className="text-homepage-text text-[2rem] break-all p-10">😞 This page does not exist 😞 </span>
       </div>
     </div>
   );
