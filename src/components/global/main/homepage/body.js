@@ -97,7 +97,7 @@ function Body() {
       //run theme selector which intially sets the start theme colours
       themeSelector();
       function themeSelector(){
-        if (homepageTheme === 0) {
+        if (homepageTheme == 0) {
           //sets colour of theme
           colourUpdate('rgb(255 255 255)', 'rgb(0 0 0)', 'rgb(221 221 221)');
           //resets and sets local storage of selected theme
@@ -106,22 +106,22 @@ function Body() {
           //temp increase theme number to display next theme on click
           homepageTheme = 1;
           //repeat for each theme type
-        } else if (homepageTheme === 1) {
+        } else if (homepageTheme == 1) {
           colourUpdate('rgb(60 60 60)', 'rgb(255 255 255)', 'rgb(100 100 100)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 2;
-        } else if (homepageTheme === 2) {
+        } else if (homepageTheme == 2) {
           colourUpdate('rgb(23 63 53)', 'rgb(234 160 156)', 'rgb(64 142 123)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 3;
-        } else if (homepageTheme === 3) {
+        } else if (homepageTheme == 3) {
           colourUpdate('rgb(255 250 243)', 'rgb(86 148 159)', 'rgb(240 233 223)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 4;
-        } else if (homepageTheme === 4) {
+        } else if (homepageTheme == 4) {
           colourUpdate('rgb(123 156 152)', 'rgb(234 241 243)', 'rgb(114 144 141)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
