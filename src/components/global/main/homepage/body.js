@@ -244,7 +244,7 @@ function Body() {
       <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100]" : "opacity-[0.0001] translate-y-[100vh] "} top-0 mt-24 w-screen absolute flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className="fixed transition-all duration-500 opacity-[0.0001] ">
           <div className="container flex justify-center flex-col text-homepage-text">
-            <span className="text-[9rem] text-center relative after:content-[''] after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
+            <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">Websites</span>
             <div className="w-full">
