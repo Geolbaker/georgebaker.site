@@ -26,6 +26,9 @@
   .dot-to-arrow {
     @apply before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-[''] before:bg-homepage-text before:w-[4px] before:h-[4px] before:right-6 before:top-[45%] before:rounded-full after:absolute after:content-[''] after:bg-homepage-text after:w-[4px] after:h-[4px] after:right-6 after:top-[45%] after:rounded-full before:rotate-[45deg] after:rotate-[-45deg] group-hover:before:translate-y-[-6.2px] group-hover:after:translate-y-[6.2px] group-hover:before:w-[20px] group-hover:after:w-[20px] group-hover:before:h-[3px] group-hover:after:h-[3px]
   }
+  .homepage-website-imgs {
+    @apply w-full h-auto shadow-lg rounded hover:scale-[103%]
+  }
 
 }
 
