@@ -151,48 +151,50 @@ function Body() {
   });
 
   return (
-    <div id="HomepageBody" className={`${active === 'Home' ? "h-screen" : "h-full sm:h-screen"} font-['DM_Serif_Display'] flex justify-center items-center w-screen shadow-inner bg-homepage-bg text-homepage-text transition-all duration-500`} >
+    <div id="HomepageBody" className={`${active === 'Home' ? "h-screen" : "h-full"} font-['DM_Serif_Display'] overflow-scroll w-screen bg-homepage-bg text-homepage-text transition-all duration-500`} >
       {/* Navigation Items */}
-      <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-80vw] opacity-[0.0001]"} w-max absolute flex-col md:flex-row flex justify-end transition-all duration-500 `}>
-        <div className="container text-[2rem] w-[15rem]">
-          <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
-              Themes
-              <span className="dot-to-arrow"></span>
+      <div id="HomepageBody" className={`${active === 'Home' ? "h-screen" : "h-full"} absolute flex justify-center items-center w-screen transition-all duration-500`} >
+        <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-80vw] opacity-[0.0001]"} w-max absolute flex-col md:flex-row flex justify-end transition-all duration-500 `}>
+          <div className="container text-[2rem] w-[15rem]">
+            <div id="themeMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
+                Themes
+                <span className="dot-to-arrow"></span>
+            </div>
+            <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
+                Portfolio
+                <span className="dot-to-arrow"></span>
+            </div>
+            <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
+                Personal
+                <span className="dot-to-arrow"></span>
+            </div>
+            <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
+                Hobbies
+                <span className="dot-to-arrow"></span>
+            </div>
+            <div id="comingSoon" className="text-homepage-alt w-max transition-all duration-500 opacity-[0.0001] translate-y-[3rem]">
+                Coming Soon
+            </div>
           </div>
-          <div id="portfolioMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
-              Portfolio
-              <span className="dot-to-arrow"></span>
-          </div>
-          <div id="personalMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
-              Personal
-              <span className="dot-to-arrow"></span>
-          </div>
-          <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
-              Hobbies
-              <span className="dot-to-arrow"></span>
-          </div>
-          <div id="comingSoon" className="text-homepage-alt w-max transition-all duration-500 opacity-[0.0001] translate-y-[3rem]">
-              Coming Soon
-          </div>
-        </div>
-        <div className="container text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
-          <div id="themeSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <span className="relative after:text-[1rem] after:text-homepage-bg after:px-1
-            after:transition-all after:duration-500
-            after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
-            after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
-            after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
-            <button className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</button>
-            <button className="link link-underline-25 link-emphasis text-homepage-text text-left" href="/mac">GlassOS</button>
-          </div>
-          <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Websites</button>
-          </div>
-          <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <button className="text-homepage-alt" href="#">Coming Soon</button>
-          </div>
-          <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-            <button className="text-homepage-alt" href="#">Coming Soon</button>
+          <div className="container text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
+            <div id="themeSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
+              <span className="relative after:text-[1rem] after:text-homepage-bg after:px-1
+              after:transition-all after:duration-500
+              after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
+              after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
+              after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
+              <button className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</button>
+              <button className="link link-underline-25 link-emphasis text-homepage-text text-left" href="/mac">GlassOS</button>
+            </div>
+            <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
+              <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Websites</button>
+            </div>
+            <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
+              <button className="text-homepage-alt" href="#">Coming Soon</button>
+            </div>
+            <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
+              <button className="text-homepage-alt" href="#">Coming Soon</button>
+            </div>
           </div>
         </div>
       </div>
@@ -235,7 +237,7 @@ function Body() {
 
       {/*Back Button*/}
       <div className={`${active === 'Home' ? "translate-x-[-20vw] opacity-[0.0001]" : "translate-x-0 opacity-100"}
-      duration-500 transition-all fixed top-16 left-3 z-30`}>
+      duration-500 transition-all fixed top-16 left-1 sm:left-3 z-30`}>
         <button className="link link-emphasis fixed left-4 bottom-0 pl-8 text-[1.7rem] text-homepage-text
         before:transition-all before:duration-500 after:transition-all after:duration-500 before:absolute before:content-['']
         before:bg-homepage-text before:left-0 before:top-[45%] before:rounded-full after:absolute after:content-['']
@@ -250,7 +252,7 @@ function Body() {
       {/*End of Back Button*/}
 
       {/*Portfolio Section*/}
-      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] sm:h-full pt-12 sm:pt-24" : "opacity-[0.0001] translate-y-[100vh] h-0 overflow-hidden"} top-0 z-10 w-screen sm:absolute flex justify-center transition-all duration-[1s] `}>
+      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24" : "opacity-[0.0001] translate-y-[100vh] h-0 overflow-hidden"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className=" transition-all duration-500 opacity-[0.0001] ">
           <div className="container flex justify-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
