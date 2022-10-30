@@ -151,7 +151,7 @@ function Body() {
   });
 
   return (
-    <div id="HomepageBody" className={`${active === 'Home' ? "h-screen" : "h-[1850px]"} font-['DM_Serif_Display'] flex justify-center items-center w-screen shadow-inner bg-homepage-bg text-homepage-text`} >
+    <div id="HomepageBody" className={`${active === 'Home' ? "h-screen" : "h-screen"} font-['DM_Serif_Display'] flex justify-center items-center w-screen shadow-inner bg-homepage-bg text-homepage-text transition-all duration-500`} >
       {/* Navigation Items */}
       <div className={`${active === 'Home' ? "delay-[0.5s]" : "translate-x-[-80vw] opacity-[0.0001]"} w-max relative top-0 left-0 flex-col md:flex-row flex justify-end transition-all duration-500 `}>
         <div className="container text-[2rem] w-[15rem]">
@@ -250,7 +250,7 @@ function Body() {
       {/*End of Back Button*/}
 
       {/*Portfolio Section*/}
-      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] h-full pt-12 sm:pt-24" : "opacity-[0.0001] translate-y-[100vh] h-0 "} top-0 z-10 w-screen absolute flex justify-center transition-all duration-[1s] `}>
+      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] h-full pt-12 sm:pt-24 overflow-scroll" : "opacity-[0.0001] translate-y-[100vh] h-0 overflow-hidden"} top-0 z-10 w-screen absolute flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className="fixed transition-all duration-500 opacity-[0.0001] ">
           <div className="container flex justify-center flex-col text-homepage-text p-12">
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
