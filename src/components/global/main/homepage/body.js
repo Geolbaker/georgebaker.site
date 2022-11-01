@@ -183,8 +183,10 @@ function Body() {
               after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
               after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
               after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
-              <button className="link link-underline-25 link-emphasis text-homepage-text" href="/xp">Windows Xp</button>
-              <button className="link link-underline-25 link-emphasis text-homepage-text text-left" href="/mac">GlassOS</button>
+              <button className="link link-underline-25 link-emphasis text-homepage-text"
+              onClick={() => window.open('/xp', '_self')}>Windows Xp</button>
+              <button className="link link-underline-25 link-emphasis text-homepage-text text-left"
+              onClick={() => window.open('/mac', '_self')}>GlassOS</button>
             </div>
             <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
               <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Websites</button>
@@ -252,7 +254,7 @@ function Body() {
       {/*End of Back Button*/}
 
       {/*Portfolio Section*/}
-      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24" : "opacity-[0.0001] translate-y-[100vh] h-0 overflow-hidden"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
+      <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24" : "opacity-[0.0001] translate-y-[100vh] overflow-hidden"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className=" transition-all duration-500 opacity-[0.0001] ">
           <div className="container flex justify-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
