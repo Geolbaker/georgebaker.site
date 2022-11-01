@@ -259,15 +259,24 @@ function Body() {
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">Websites</span>
             <div className="w-full h-full gap-8 grid grid-cols-1 sm:grid-cols-2 pb-12">
-              <img className="homepage-website-imgs link" src={Website_5} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_3} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_4} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_6} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_1} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_2} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_7} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_8} loading="lazy" alt=""/>
-              <img className="homepage-website-imgs link" src={Website_9} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://lincolnsulettings.co.uk/', '_blank')}
+              className="homepage-website-imgs link" src={Website_5} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://lincolnsu.com/freshers', '_blank')}
+              className="homepage-website-imgs link" src={Website_3} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://lincolnsu.com/housingblogs', '_blank')}
+              className="homepage-website-imgs link" src={Website_4} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://mynsu.co.uk/', '_blank')}
+              className="homepage-website-imgs link" src={Website_6} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://bathspasu.co.uk/gym', '_blank')}
+              className="homepage-website-imgs link" src={Website_1} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://lincolnsu.com/activities/varsity', '_blank')}
+              className="homepage-website-imgs link" src={Website_2} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://mynsu.co.uk/freshers-22', '_blank')}
+              className="homepage-website-imgs link" src={Website_7} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://quacklincoln.com/', '_blank')}
+              className="homepage-website-imgs link" src={Website_8} loading="lazy" alt=""/>
+              <img onClick={() => window.open('https://ulsuroles.co.uk/', '_blank')}
+              className="homepage-website-imgs link" src={Website_9} loading="lazy" alt=""/>
             </div>
 
           </div>
