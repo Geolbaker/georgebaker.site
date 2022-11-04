@@ -31,6 +31,7 @@ function Body() {
       //sections
       var portfolioSection = document.getElementById("portfolioSection");
       var personalSection = document.getElementById("personalSection");
+      var documentarySection = document.getElementById("documentarySection");
       //other elements
       var socialIcons = document.getElementById("socialIcons");
       var colorPalleteIcon = document.getElementById("colorPalleteIcon")
@@ -38,8 +39,8 @@ function Body() {
       var homepageTheme;
 
       //intro animations
-      introAnimation(themeMain, 200);
-      introAnimation(portfolioMain, 700);
+      introAnimation(portfolioMain, 200);
+      introAnimation(themeMain, 700);
       introAnimation(personalMain, 1200);
       introAnimation(hobbiesMain, 1700);
       introAnimation(comingSoon, 2200);
@@ -57,6 +58,7 @@ function Body() {
       //section animations
       sectionAnimation(portfolioSection, 0);
       sectionAnimation(personalSection, 0);
+      sectionAnimation(documentarySection, 0);
 
       //function to run each intro animations
       function sectionAnimation(a, time){
@@ -185,19 +187,22 @@ function Body() {
               after:absolute after:content-['Work_In_Progress'] after:top-0 after:items-center
               after:flex after:justify-center after:right-[-0.5rem] after:bg-homepage-text
               after:w-[17ch] after:h-5 after:rounded-md after:z-20"></span>
-              <button className="link link-underline-25 link-emphasis text-homepage-text"
+              <button className="link link-underline-25 link-emphasis text-homepage-text text-left"
               onClick={() => window.open('/xp', '_self')}>Windows Xp</button>
               <button className="link link-underline-25 link-emphasis text-homepage-text text-left"
               onClick={() => window.open('/mac', '_self')}>GlassOS</button>
             </div>
             <div id="portfolioSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-              <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">Websites</button>
+              <button onClick={() => setActive('Portfolio')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">Websites</button>
             </div>
             <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-              <button onClick={() => setActive('Personal')} className="link link-underline-25 link-emphasis text-homepage-text" href="#">About Me</button>
+              <button onClick={() => setActive('Personal')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">About Me</button>
+              <button onClick={() => setActive('Documentary')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">Documentary</button>
+              <a href="https://www.goodreads.com/georgebaker" target="_blank" rel="noopener" className="link link-underline-25 link-emphasis text-homepage-text text-left">GoodReads</a>
+
             </div>
             <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-              <button className="text-homepage-alt" href="#">Coming Soon</button>
+              <button className="text-homepage-alt text-left" href="#">Coming Soon</button>
             </div>
           </div>
         </div>
@@ -295,19 +300,36 @@ function Body() {
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">About Me</span>
-            <div className="w-full md:w-[75%] h-full gap-8 flex flex-col items-center text-[2rem] justify-center text-center pb-12 text-homepage-text ">
-              <p className="text-homepage-text">My name is George Baker.</p>
-              <p className="text-homepage-text">I'm a Web Designer by trade.</p>
-              <p className="text-homepage-text">I'm 23 Years Old.</p>
-              <p className="text-homepage-text">I'm married and have a beautiful 8 month old girl.</p>
-              <p className="text-homepage-text">My spare time is spent tinkering with too many projects that are starting to see the light of day.</p>
+            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col text-[2rem] justify-center text-left pb-12 text-homepage-text ">
+              <p className="text-homepage-text"><i>NAME</i> George Baker</p>
+              <p className="text-homepage-text"><i>TRADE</i> Web Designer</p>
+              <p className="text-homepage-text"><i>AGE</i> 23</p>
+              <p className="text-homepage-text">My spare time is spent tinkering with too many projects that are <span className="font-[1rem]">(finally)</span> starting to see the light of day.</p>
               <br/>
               <p className="text-homepage-text">I enjoy:</p>
-              <p className="text-homepage-text">Building Mechanical Keyboards</p>
-              <p className="text-homepage-text">Playing Piano</p>
-              <p className="text-homepage-text">Reading</p>
-              <p className="text-homepage-text">Coding</p>
-              <p className="text-homepage-text">Studying fitness and nutrition</p>
+              <p className="text-homepage-text">Building Mechanical Keyboards
+              <br/>Building PC's
+              <br/>Playing Piano
+              <br/>Reading
+              <br/>Coding
+              <br/>Studying fitness and nutrition
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {/*End of Personal Section*/}
+
+      {/*Personal Section*/}
+      <div className={`${active === 'Documentary' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24 h-[20rem]" : "h-[0.0001rem] opacity-[0.0001] translate-y-[100vh] overflow-hidden h-0"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
+        <div id="documentarySection" className=" transition-all duration-500 opacity-[0.0001] ">
+          <div className="container flex justify-center items-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
+            <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
+            after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
+            transition-all duration-500">Documentary</span>
+            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col items-center text-[2rem] justify-center text-center pb-12 text-homepage-text ">
+              <iframe width="100%" height="500px" src="https://www.youtube.com/embed/X6_IaHQpMD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
           </div>
