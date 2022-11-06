@@ -300,20 +300,25 @@ function Body() {
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">About Me</span>
-            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col text-[2rem] justify-center text-left pb-12 text-homepage-text ">
-              <p className="text-homepage-text"><i>NAME</i> George Baker</p>
-              <p className="text-homepage-text"><i>TRADE</i> Web Designer</p>
-              <p className="text-homepage-text"><i>AGE</i> 23</p>
-              <p className="text-homepage-text">My spare time is spent tinkering with too many projects that are <span className="font-[1rem]">(finally)</span> starting to see the light of day.</p>
-              <br/>
-              <p className="text-homepage-text">I enjoy:</p>
-              <p className="text-homepage-text">Building Mechanical Keyboards
-              <br/>Building PC's
-              <br/>Playing Piano
-              <br/>Reading
-              <br/>Coding
-              <br/>Studying fitness and nutrition
+            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col text-[1.7rem] !font-sans justify-center text-left pb-12 text-homepage-text ">
+              <p className="text-homepage-text">
+                I'm George.
+                By trade, I'm a Web Designer, with speciality experience in Web Development and SEO
               </p>
+              <p className="text-homepage-text">
+                My spare time is spent tinkering with too many projects that are <span className="!text-[1rem]">(finally)</span> starting to see the light of day.</p>
+              <br/>
+              <p className="text-homepage-text">My Hobbies:</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 !text-[1.5rem]">
+                <p className="text-homepage-text p-2">Designing Websites</p>
+                <p className="text-homepage-text p-2">Mechanical Keyboards</p>
+                <p className="text-homepage-text p-2">Custom PC's</p>
+                <p className="text-homepage-text p-2">Playing Piano</p>
+                <p className="text-homepage-text p-2">Reading</p>
+                <p className="text-homepage-text p-2">Coding</p>
+                <p className="text-homepage-text p-2">Fitness & Nutrition</p>
+                <p className="text-homepage-text p-2">Gardening & DIY</p>
+              </div>
             </div>
 
           </div>
