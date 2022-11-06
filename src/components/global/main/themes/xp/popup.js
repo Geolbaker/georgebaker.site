@@ -14,11 +14,11 @@ function Popup(){
         <div className="flex flex-row justify-between w-full relative">
           <div className="z-20 px-2 border-black/[0.2] border-2 rounded-[5px] w-16 text-center
           hover:border-[1px] hover:shadow-[2px_2px_2px_-1px_rgba(0,0,0,0.69)] hover:cursor-pointer">Game</div>
-          <div onClick={PopupToggle} className=" z-20 px-2 border-black/[0.2] border-2 rounded-[5px] w-16 text-center
+          <div className=" z-20 px-2 border-black/[0.2] border-2 rounded-[5px] w-16 text-center
           hover:border-[1px] hover:shadow-[2px_2px_2px_-1px_rgba(0,0,0,0.69)] hover:cursor-pointer">No</div>
         </div>
       </div>
-      <img className="w-32" loading="lazy" src={Clippy}/>
+      <img alt="clippy" className="w-32" loading="lazy" src={Clippy}/>
     </div>
   );
 }

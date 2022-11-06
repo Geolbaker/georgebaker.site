@@ -29,19 +29,19 @@ function PhotographySection() {
 
         <div id="NaturePhotos" className={`grid grid-cols-2 lg:grid-cols-3 pb-4 sm:pb-0 transition-opacity duration-500 absolute ${active === 'Nature' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
           {naturePhotos.map(i => {
-            return <img className={`p-1 rounded-lg ${active === 'Nature' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+            return <img className={`p-1 rounded-lg ${active === 'Nature' ? "h-100" : "h-0"}`} alt="nature photos" src={photoAssets[i]} key={i} loading="lazy"/>
           })}
         </div>
 
           <div id="BuildingPhotos" className={`grid grid-cols-2 lg:grid-cols-3 pb-4 sm:pb-0 transition-opacity duration-500 absolute ${active === 'Building' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
             {buildingPhotos.map(i => {
-              return <img className={`p-1 rounded-lg ${active === 'Building' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+              return <img className={`p-1 rounded-lg ${active === 'Building' ? "h-100" : "h-0"}`} alt="building photos" src={photoAssets[i]} key={i} loading="lazy"/>
             })}
           </div>
 
           <div id="SkyPhotos" className={`grid grid-cols-2 lg:grid-cols-3 pb-4 sm:pb-0 transition-opacity duration-500 absolute ${active === 'Sky' ? "opacity-100" : "opacity-0"}`} style={{width: "calc(100% - 1rem)"}}>
             {skyPhotos.map(i => {
-              return <img className={`p-1 rounded-lg ${active === 'Sky' ? "h-100" : "h-0"}`} src={photoAssets[i]} key={i} loading="lazy"/>
+              return <img className={`p-1 rounded-lg ${active === 'Sky' ? "h-100" : "h-0"}`} alt="sky photos" src={photoAssets[i]} key={i} loading="lazy"/>
             })}
           </div>
 

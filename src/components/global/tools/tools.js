@@ -1,8 +1,6 @@
 import {
-  ColorRender,
   CreateDateCode,
   PopupToggle,
-  ColorLiveupdate,
   PopupDelayTime,
   PopupModalToggle,
 } from '../Utils.js';

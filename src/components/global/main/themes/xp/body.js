@@ -2,16 +2,8 @@
 import {ResetTheme, PopupToggle} from './mainUtil.js';
 import {useEffect, useState} from 'react';
 import Popup from './popup.js';
-import Pong from './pong.js';
 
-import assets from '../../../assets.js';
-import mainAssets from './mainAssets.js';
 import './xp.css';
-import PhotographySection from './components/section-photography.js';
-import DocumentarySection from './components/section-documentary.js';
-import RenderSection from './components/section-3Drendering.js';
-import ProfileSection from './components/section-profile.js';
-import WebsitesSection from './components/section-websites.js';
 
 import WindowsBackground from './assets/windowsBackground.webp';
 import WindowsLogo from './assets/Windows_logo.svg';
@@ -39,10 +31,9 @@ function Body() {
   return (
     <div id="body" className="flex flex-wrap justify-center items-center" style={{fontFamily: "Tahoma"}}>
       <div id="opacityHomeCheck" className="w-screen h-screen fixed top-0 right-0 z-[-1] opacity-100 transition-all duration-200">
-        <img className="z-[1000] w-screen h-screen top-0 left-0 absolute" src={WindowsBackground} />
+        <img alt="windows background" className="z-[1000] w-screen h-screen top-0 left-0 absolute" src={WindowsBackground} />
       </div>
       <Popup />
-      <Pong />
 
 
       <div className="container flex justify-center items-center rounded-t-[5px] bg-[#0053e2] border-[#0053e2] border-[3px] h-[90vh] z-[1] relative my-[5vh]
@@ -55,10 +46,9 @@ function Body() {
           <div id="icons" className="group flex p-1 w-full">
 
             <div className="w-full flex text-white text-left">
-              <img src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
+              <img alt="" src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
               {active === "MyComputer" && "My Computer"}
               {active === "About" && "About"}
-              {active === "Work" && "Work"}
               {active === "Creativity" && "Creativity"}
             </div>
 
@@ -82,7 +72,7 @@ function Body() {
             {/*End of maximise icon*/}
 
             {/*Start of close icon*/}
-            <div className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
+            <div onClick={() => window.open('/', '_self')} className="h-[23px] w-[23px] rounded-[2px] bg-white m-[2px] p-[0.6px]">
               <div className="h-full w-full bg-[#e76338] rounded-[2px] flex justify-center items-center border-[0.5px] border-[#b24228] topbar-buttons hover:brightness-125">
                 <svg width="16" height="16" fill="white" className="scale-150">
                   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
@@ -147,10 +137,9 @@ function Body() {
               <div className="flex mt-1 px-3 w-full">
                 Address
                 <div className="flex ml-3 w-full h-full bg-white border-[#afafff] border-2">
-                  <img src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
+                  <img alt="" src={WindowsComputer} className="m-1 w-[20px] h-[20px]" />
                   {active === "MyComputer" && "My Computer"}
                   {active === "About" && "My Computer / About"}
-                  {active === "Work" && "My Computer / Work"}
                   {active === "Creativity" && "My Computer / Creativity"}
                 </div>
               </div>
@@ -159,57 +148,51 @@ function Body() {
 
               <div id="MyComputer" className={`${active === 'MyComputer' ? "block" : "hidden"} absolute grid grid-cols-6`}>
                 <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                  <img alt="" src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                  <img alt="" src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
                   About
                 </div>
 
-                <div onClick={() => setActive('Work')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
-                  Work
-                </div>
-
                 <div onClick={() => setActive('Creativity')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
-                  <img src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
+                  <img alt="" src={WindowsFolder} className="w-[70px] h-[70px] block group-hover:hidden"/>
+                  <img alt="" src={WindowdsFolderOpen} className="w-[70px] h-[70px] hidden group-hover:block"/>
                   Creativity
                 </div>
               </div>
 
               <div id="Profile" className={`${active === 'About' ? "block" : "hidden"} absolute grid grid-cols-6`}>
                 <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Profile
                 </div>
                 <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Timeline
                 </div>
                 <div onClick={() => setActive('About')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Personal
                 </div>
               </div>
 
               <div id="Work" className={`${active === 'Work' ? "block" : "hidden"} absolute grid grid-cols-6`}>
                 <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Websites
                 </div>
               </div>
 
               <div id="Creativity" className={`${active === 'Creativity' ? "block" : "hidden"} absolute grid grid-cols-6`}>
                 <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Photography
                 </div>
                 <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   Documentary
                 </div>
                 <div onClick={() => setActive('Profile')} className="flex items-center h-[80px] m-5 group">
-                  <img src={WindowsFile} className="w-[70px] h-[70px]"/>
+                  <img alt="" src={WindowsFile} className="w-[70px] h-[70px]"/>
                   3D-Rendering
                 </div>
               </div>

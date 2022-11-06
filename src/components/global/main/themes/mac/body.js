@@ -5,12 +5,10 @@ import Popup from './popup.js'
 import Pong from './pong.js';
 
 import assets from '../../../assets.js';
-import mainAssets from './mainAssets.js';
 import PhotographySection from './components/section-photography.js';
 import DocumentarySection from './components/section-documentary.js';
 import RenderSection from './components/section-3Drendering.js';
 import ProfileSection from './components/section-profile.js';
-import WebsitesSection from './components/section-websites.js';
 
 function Body() {
   const [active, setActive] = useState('Profile');
@@ -46,7 +44,7 @@ function Body() {
         <div id="header" className="h-[65px] border-b border-slate-500/25 relative sm:absolute top-0 left-0 w-full ">
           <div className="flex justify-between">
           <div id="icons" className="group flex p-1">
-            <div className="bg-[#f96057] h-[15px] w-[15px] rounded-full mt-6 ml-5 flex">
+            <div onClick={() => window.open('/', '_self')} className="bg-[#f96057] h-[15px] w-[15px] rounded-full mt-6 ml-5 flex">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x invisible group-hover:visible" viewBox="0 0 16 16">
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
               </svg>
@@ -64,7 +62,7 @@ function Body() {
           </div>
           <div onClick={() => setActive('Profile')} id="profilePicture" className={`flex justify-end items-center p-4 mouseHover ${active === 'Profile' ? "bg-slate-400/[.1]" : ""} rounded-tr-2xl hover:bg-slate-400/[.1]`}>
 
-          <img src={assets[9]} alt="profilePicture" className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
+          <img src={assets[6]} alt="profilePicture" className="h-[32px] w-[32px] rounded-full object-cover border-2 border-white mr-4"/>
             <div className="text-white mr-4">
               Profile
             </div>
@@ -73,28 +71,6 @@ function Body() {
         </div>
         <div className="sm:overflow-hidden relative sm:absolute w-full top-0 sm:bottom-0 sideBar">
           <div id="sidebar" className="w-full sm:w-[180px] md:w-[240px] flex sm:flex-col justify-center sm:justify-start h-auto sm:h-full sm:border-r sm:border-slate-500/25 p-2 sm:p-4 md:p-8 overflow-auto shrink-0">
-
-          {/*start of work section*/}
-          <div id="side-wrapper" className="sm:mb-5 flex items-center sm:items-start sm:flex-col">
-           <div className="hidden sm:block text-slate-400 mb-2">Work</div>
-           <div className="flex sm:flex-col whitespace-nowrap">
-
-            <div onClick={() => setActive('Websites')} className={`${active === 'Websites' ? "bg-slate-400/[.1]" : ""} flex align-center text-white p-2 mouseHover rounded-lg hover:bg-slate-400/[.1]`}>
-              <svg fill="currentColor" className="w-4 mr-2" viewBox="0 0 16 16">
-               <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
-              </svg>
-            <span className="hidden sm:block">
-             Websites
-            </span>
-            <span className="block sm:hidden">
-             Web
-            </span>
-            </div>
-
-
-           </div>
-          </div>
-          {/*end of work section*/}
 
           {/*start of creativity section*/}
            <div id="side-wrapper" className="flex items-center sm:items-start sm:flex-col">
@@ -152,10 +128,6 @@ function Body() {
 
 
           <div id="mainContent" className="h-full w-full">
-
-            <div className={`transition-opacity w-full duration-500 ${active === 'Websites' ? "opacity-100 h-full" : "opacity-0 h-0"}`}>
-            {active === "Websites" && <WebsitesSection />}
-            </div>
 
 
             <div className={`transition-opacity w-full duration-500 ${active === 'Photography' ? "opacity-100 h-full" : "opacity-0 h-0"}`}>

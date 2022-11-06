@@ -13,7 +13,7 @@ function RenderSection() {
         <div className="transition-opacity duration-500 absolute" style={{width: "calc(100% - 1rem)"}}>
 
           <div className="flex flex-col lg:grid lg:grid-cols-2 border-b border-slate-500/25 pb-2">
-            <img className="p-1 rounded-lg" src={assets[31]}/>
+            <img className="p-1 rounded-lg" alt="blade runner inspiration" src={assets[31]}/>
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
               <span className="font-bold">Blade Runner Inspiration </span><br />
               <span>The way in which Blade Runner 2049 played with light inspired
@@ -28,13 +28,13 @@ function RenderSection() {
               <span className="font-bold">Room Designs </span><br />
               <span>Designs of room interiors to either experiment with light or general object building.</span>
             </div>
-            <img className="p-1 rounded-lg" src={assets[34]}/>
-            <img className="p-1 rounded-lg" src={assets[35]}/>
+            <img className="p-1 rounded-lg" alt="room design 1" src={assets[34]}/>
+            <img className="p-1 rounded-lg" alt="room design 2" src={assets[35]}/>
           </div>
 
           <div className="lex flex-col lg:grid lg:grid-cols-3 border-b border-slate-500/25 pt-2 pb-2">
-            <img className="p-1 rounded-lg" src={assets[32]}/>
-            <img className="p-1 rounded-lg" src={assets[33]}/>
+            <img className="p-1 rounded-lg" alt="game level design 1" src={assets[32]}/>
+            <img className="p-1 rounded-lg" alt="game level design 2" src={assets[33]}/>
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
               <span className="font-bold">Game Level Design </span><br />
               <span>A friend of mine needed a loading screen modal designed for a VR game he was creating.</span>
@@ -42,15 +42,15 @@ function RenderSection() {
           </div>
 
           <div className="lex flex-col lg:grid lg:grid-cols-2 border-b border-slate-500/25 pt-2 pb-2">
-            <img className="p-1 rounded-lg" src={assets[36]}/>
-            <img className="p-1 rounded-lg" src={assets[37]}/>
+            <img className="p-1 rounded-lg" alt="abstract art design 1" src={assets[36]}/>
+            <img className="p-1 rounded-lg" alt="abstract art design 2" src={assets[37]}/>
             <div className="text-white flex-col flex justify-center items-center text-justify p-2">
               <span className="font-bold">Abstract Pillars </span><br />
               <span>I started with a futuristic style design and slowly moved towards it being a combination of nature and technology. I finally settled with a lighter scene illuminated through a fog by the moon.</span>
             </div>
-            <img className="p-1 rounded-lg" src={assets[39]}/>
-            <img className="p-1 rounded-lg" src={assets[40]}/>
-            <img className="p-1 rounded-lg" src={assets[41]}/>
+            <img className="p-1 rounded-lg" alt="abstract art design 3" src={assets[39]}/>
+            <img className="p-1 rounded-lg" alt="abstract art design 4" src={assets[40]}/>
+            <img className="p-1 rounded-lg" alt="abstract art design 5" src={assets[41]}/>
           </div>
 
         </div>
