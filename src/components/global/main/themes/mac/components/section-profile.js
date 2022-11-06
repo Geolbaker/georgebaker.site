@@ -1,14 +1,8 @@
-import {useState, useEffect} from 'react';
-import {BirthdayVersionCalc} from '../mainUtil.js';
+import {useState} from 'react';
 
 function PhotographySection() {
 
     const [active, setActive] = useState('MainProfile');
-
-    useEffect(()=>{
-      BirthdayVersionCalc();
-
-    });
 
     return (
     <div className="block sm:flex relative sm:absolute bottom-0 right-0 rounded-br-2xl contentBox" >

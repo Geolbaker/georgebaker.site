@@ -614,36 +614,3 @@ export const PongFunction = () => {
     var Pong = Object.assign({}, Game);
     Pong.initialize();
 }
-
-
-//
-// ██████╗ ██╗██████╗ ████████╗██╗  ██╗██████╗  █████╗ ██╗   ██╗
-// ██╔══██╗██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝
-// ██████╔╝██║██████╔╝   ██║   ███████║██║  ██║███████║ ╚████╔╝
-// ██╔══██╗██║██╔══██╗   ██║   ██╔══██║██║  ██║██╔══██║  ╚██╔╝
-// ██████╔╝██║██║  ██║   ██║   ██║  ██║██████╔╝██║  ██║   ██║
-// ╚═════╝ ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝
-//
-//  ██████╗ █████╗ ██╗      ██████╗
-// ██╔════╝██╔══██╗██║     ██╔════╝
-// ██║     ███████║██║     ██║
-// ██║     ██╔══██║██║     ██║
-// ╚██████╗██║  ██║███████╗╚██████╗
-//  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝
-//                                                              4
-
-
-export const BirthdayVersionCalc = () => {
-  //birthday in unix
-  var countdownDate = 934313330000;
-  //get current date
-  var now = new Date().getTime();
-  //convert difference into years and months
-  var numyears = (Math.floor((now - countdownDate) / 3153600000)/10);
-  //update the page
-  document.getElementById('ageVersion').innerHTML = 'V'+numyears;
-  document.getElementById('ageNormal').innerHTML = numyears.toFixed(0);
-  //update in other places
-  document.getElementById('daughterAge').innerHTML = ((numyears - 22.5) * 10).toFixed(0);
-
-}
