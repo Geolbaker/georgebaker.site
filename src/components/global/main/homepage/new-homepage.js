@@ -16,6 +16,11 @@ function NewHomepage() {
       }
     });
 
+    //where to go from here?
+    //add blocks that float around with the things withing
+    //add a ripplying background that changes colour and is interactible with the mouse
+    //have fun
+
   });
 
   return (
@@ -29,6 +34,7 @@ function NewHomepage() {
         <div className="tester opacity-[0.0001%] right-12 top-[50%] skills-block">Skills</div>
         <div className="tester opacity-[0.0001%] right-4 bottom-12 hobbies-block">Hobbies</div>
       </div>
+
   );
 }
 
