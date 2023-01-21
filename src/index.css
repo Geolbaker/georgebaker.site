@@ -47,6 +47,10 @@
     @apply w-screen h-screen absolute top-0 left-0 z-10 opacity-[10%]
   }
 
+  .work-bubble {
+    @apply absolute
+  }
+
 }
 
 * {

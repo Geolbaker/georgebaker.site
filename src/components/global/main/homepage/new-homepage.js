@@ -20,8 +20,43 @@ function NewHomepage() {
       }
     });
 
+    let clients_str = 'Lincoln Student Lettings, Lincoln Students Union, SUMS, University of Nottingham SU, Kent Union, Hull University Union, University of York Students Union, York St Johns Students’ Union, Northampton Student’s Union, Brookes Union, Loughborough Students’ Union, University of Westminster Students’ Union, University of Manchester Students’ Union, Northumbria Students’ Union, Bath Spa Students’ Union, Lincoln BIG, World Energy Council, Branston, APSS, LNAA, World Obesity Federation, AWID, SSBC, Coveris, World Obesity Day, INNES England, Optima';
+    let clients_arr = clients_str.split(', ');
+
+    // get window width and height
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+
+    // i stands for "index". you could also call this banana or haircut. it's a variable
+    for ( var i=0; i < clients_arr.length; i++ ) {
+
+        // shortcut! the current div in the list
+        var thisDiv = clients_arr[i];
+
+        // get random numbers for each element
+        let randomTop = getRandomNumber(0, winHeight);
+        let randomLeft = getRandomNumber(0, winWidth);
+
+        $( '.work-bubbles-init' ).append( `<div class="work-bubble work-bubble-` + i + `">` + clients_arr[i] + `</div>` );
+
+        // update top and left position
+        $( '.work-bubble-' + i ).css('top', randomTop + 'px');
+        $( '.work-bubble-' + i ).css('left', randomLeft + 'px');
+
+    }
+
+    // function that returns a random number between a min and max
+    function getRandomNumber(min, max) {
+
+      return Math.random() * (max - min) + min;
+
+    }
+
+    $( '.work-bubbles-init' ).append( `<div class="work-bubble">` + clients_arr[0] + `</div>` );
+
+
     //where to go from here?
-    //add blocks that float around with the things withing
+    //add blocks that float around with the things within
     //add a ripplying background that changes colour and is interactible with the mouse
     //have fun
 
@@ -38,85 +73,8 @@ function NewHomepage() {
         </div>
         <div className="tester  work-block">
           <img className="new-homepage-bg-img" src={WorkBackground} loading="lazy" />
-          <div className="">
-            <div className="work-bubble">
-              Lincoln Student Lettings
-            </div>
-            <div className="work-bubble">
-              Lincoln Students Union
-            </div>
-            <div className="work-bubble">
-              SUMS
-            </div>
-            <div className="work-bubble">
-              University of Nottingham SU
-            </div>
-            <div className="work-bubble">
-              Kent Union
-            </div>
-            <div className="work-bubble">
-              Hull University Union
-            </div>
-            <div className="work-bubble">
-              University of York Students Union
-            </div>
-            <div className="work-bubble">
-              York St Johns Students’ Union
-            </div>
-            <div className="work-bubble">
-              Northampton Student’s Union
-            </div>
-            <div className="work-bubble">
-              Brookes Union
-            </div>
-            <div className="work-bubble">
-              Loughborough Students’ Union
-            </div>
-            <div className="work-bubble">
-              University of Westminster Students’ Union
-            </div>
-            <div className="work-bubble">
-              University of Manchester Students’ Union
-            </div>
-            <div className="work-bubble">
-              Northumbria Students’ Union
-            </div>
-            <div className="work-bubble">
-              Bath Spa Students’ Union
-            </div>
-            <div className="work-bubble">
-              Lincoln BIG
-            </div>
-            <div className="work-bubble">
-              World Energy Council
-            </div>
-            <div className="work-bubble">
-              Branston
-            </div>
-            <div className="work-bubble">
-              APSS
-            </div>
-            <div className="work-bubble">
-              LNAA
-            </div>
-            <div className="work-bubble">
-              World Obesity Federation
-            </div>
-            <div className="work-bubble">
-              AWID
-            </div>
-            <div className="work-bubble">
-              SSBC
-            </div>
-            <div className="work-bubble">
-              Coveris
-            </div>
-            <div className="work-bubble">
-              World Obesity Day
-            </div>
-            <div className="work-bubble">
-              INNES England
-            </div>
+          <div className="work-bubbles-init">
+
           </div>
         </div>
         <div className="tester opacity-[0.0001%] skills-block">
