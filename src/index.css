@@ -48,7 +48,7 @@
   }
 
   .work-bubble {
-    @apply absolute
+    @apply absolute p-6 rounded-full
   }
 
 }
@@ -532,4 +532,14 @@ code {
     right: -2rem;
     padding-top: 1rem;
   }
+}
+
+.work-bubble {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at 50% 55%, rgba(240, 240, 240, 0.6), rgba(240, 240, 240, 0.6) 40%, rgba(225, 225, 225, 0.4) 60%, rgba(43, 43, 43, 0.2));
 }

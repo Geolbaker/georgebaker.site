@@ -22,37 +22,50 @@ function NewHomepage() {
 
     let clients_str = 'Lincoln Student Lettings, Lincoln Students Union, SUMS, University of Nottingham SU, Kent Union, Hull University Union, University of York Students Union, York St Johns Students’ Union, Northampton Student’s Union, Brookes Union, Loughborough Students’ Union, University of Westminster Students’ Union, University of Manchester Students’ Union, Northumbria Students’ Union, Bath Spa Students’ Union, Lincoln BIG, World Energy Council, Branston, APSS, LNAA, World Obesity Federation, AWID, SSBC, Coveris, World Obesity Day, INNES England, Optima';
     let clients_arr = clients_str.split(', ');
+    shuffle(clients_arr);
 
     // get window width and height
     var winWidth = window.innerWidth;
     var winHeight = window.innerHeight;
 
-    // i stands for "index". you could also call this banana or haircut. it's a variable
-    for ( var i=0; i < clients_arr.length; i++ ) {
+    $( document ).ready(getBubbles());
+    $( '.new-homepage-links' ).on( "mouseenter mouseleave", getBubbles());
 
-        // shortcut! the current div in the list
-        var thisDiv = clients_arr[i];
+    function getBubbles() {
+      for ( var i=0; i < 5; i++ ) {
 
-        // get random numbers for each element
-        let randomTop = getRandomNumber(0, winHeight);
-        let randomLeft = getRandomNumber(0, winWidth);
+          let randomTop = getRandomNumber(0, winHeight);
+          let randomLeft = getRandomNumber(0, winWidth);
 
-        $( '.work-bubbles-init' ).append( `<div class="work-bubble work-bubble-` + i + `">` + clients_arr[i] + `</div>` );
+          $( '.work-bubbles-init' ).append( `<div class="work-bubble work-bubble-` + i + `">` + clients_arr[i] + `</div>` );
 
-        // update top and left position
-        $( '.work-bubble-' + i ).css('top', randomTop + 'px');
-        $( '.work-bubble-' + i ).css('left', randomLeft + 'px');
+          $( '.work-bubble-' + i ).css('top', randomTop + 'px');
+          $( '.work-bubble-' + i ).css('left', randomLeft + 'px');
 
+      }
     }
 
-    // function that returns a random number between a min and max
     function getRandomNumber(min, max) {
-
       return Math.random() * (max - min) + min;
-
     }
 
-    $( '.work-bubbles-init' ).append( `<div class="work-bubble">` + clients_arr[0] + `</div>` );
+    function shuffle(array) {
+      let currentIndex = array.length,  randomIndex;
+
+      // While there remain elements to shuffle.
+      while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+
+      return array;
+    }
 
 
     //where to go from here?
@@ -71,7 +84,7 @@ function NewHomepage() {
             <div className="new-homepage-links" data-id="hobbies">Hobbies</div>
           </div>
         </div>
-        <div className="tester  work-block">
+        <div className="tester  work-block overflow-hidden">
           <img className="new-homepage-bg-img" src={WorkBackground} loading="lazy" />
           <div className="work-bubbles-init">
 
