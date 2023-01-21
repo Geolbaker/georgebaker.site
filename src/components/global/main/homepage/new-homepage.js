@@ -22,28 +22,50 @@ function NewHomepage() {
 
     let clients_str = 'Lincoln Student Lettings, Lincoln Students Union, SUMS, University of Nottingham SU, Kent Union, Hull University Union, University of York Students Union, York St Johns Students’ Union, Northampton Student’s Union, Brookes Union, Loughborough Students’ Union, University of Westminster Students’ Union, University of Manchester Students’ Union, Northumbria Students’ Union, Bath Spa Students’ Union, Lincoln BIG, World Energy Council, Branston, APSS, LNAA, World Obesity Federation, AWID, SSBC, Coveris, World Obesity Day, INNES England, Optima';
     let clients_arr = clients_str.split(', ');
+    let alreadyChosenClients = [];
     shuffle(clients_arr);
 
     // get window width and height
     var winWidth = window.innerWidth;
     var winHeight = window.innerHeight;
 
-    $( document ).ready(getBubbles());
-    $( '.new-homepage-links' ).on( "mouseenter mouseleave", getBubbles());
+    $( document ).ready(getWorkBubbles());
 
-    function getBubbles() {
-      for ( var i=0; i < 5; i++ ) {
+    //init for bubbles
+    function getWorkBubbles() {
+      for ( var i=0; i < 5; i++) {
+
+          // let randomClient = Math.floor(getRandomNumber(0, clients_arr.length));
+          // if (alreadyChosenClients.includes(randomClient)) {
+          //   console.log('similar')
+          //
+          // } else {
+          //   console.log('unique');
+          //   alreadyChosenClients.push(randomClient);
+          // }
 
           let randomTop = getRandomNumber(0, winHeight);
           let randomLeft = getRandomNumber(0, winWidth);
+
+
 
           $( '.work-bubbles-init' ).append( `<div class="work-bubble work-bubble-` + i + `">` + clients_arr[i] + `</div>` );
 
           $( '.work-bubble-' + i ).css('top', randomTop + 'px');
           $( '.work-bubble-' + i ).css('left', randomLeft + 'px');
-
       }
     }
+
+    //movement
+    setInterval(bubbleMovement, 1000);
+
+    function bubbleMovement() {
+      for ( var i=0; i < 5; i++) {
+        var temp = $( '.work-bubble-' + i );
+        temp.css('transform',  'translate(' + getRandomNumber(30, 60) + 'px, ' + getRandomNumber(30, 60)+ 'px)');
+      }
+    }
+
 
     function getRandomNumber(min, max) {
       return Math.random() * (max - min) + min;

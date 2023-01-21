@@ -48,7 +48,7 @@
   }
 
   .work-bubble {
-    @apply absolute p-6 rounded-full
+    @apply absolute p-6 rounded-full font-['Oswald'] transition-all duration-[1000ms]
   }
 
 }
