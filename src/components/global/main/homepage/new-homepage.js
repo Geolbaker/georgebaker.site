@@ -13,6 +13,8 @@ function NewHomepage() {
 
       if (type == 'work') {
         $( '.work-block' ).toggleClass('opacity-[0.0001%]');
+        $( '.text-wrapper-1' ).toggleClass('opacity-[0.0001%]');
+        $( '.text-wrapper-2' ).toggleClass('opacity-[0.0001%]');
       } else if (type == 'skills') {
         $( '.skills-block' ).toggleClass('opacity-[0.0001%]');
       } else if (type == 'hobbies') {
@@ -29,46 +31,14 @@ function NewHomepage() {
     var winWidth = window.innerWidth;
     var winHeight = window.innerHeight;
 
-    $( document ).ready(getWorkBubbles());
+    $( document ).ready(getWorkText());
 
-    //init for bubbles
-    function getWorkBubbles() {
-      for ( var i=0; i < 5; i++) {
-
-          // let randomClient = Math.floor(getRandomNumber(0, clients_arr.length));
-          // if (alreadyChosenClients.includes(randomClient)) {
-          //   console.log('similar')
-          //
-          // } else {
-          //   console.log('unique');
-          //   alreadyChosenClients.push(randomClient);
-          // }
-
-          let randomTop = getRandomNumber(0, winHeight);
-          let randomLeft = getRandomNumber(0, winWidth);
-
-
-
-          $( '.work-bubbles-init' ).append( `<div class="work-bubble work-bubble-` + i + `">` + clients_arr[i] + `</div>` );
-
-          $( '.work-bubble-' + i ).css('top', randomTop + 'px');
-          $( '.work-bubble-' + i ).css('left', randomLeft + 'px');
+    //init for work text
+    function getWorkText() {
+      for (let i = 0; i < clients_arr.length; i++) {
+        $( '.text-wrapper-1' ).append( `<div class="scrolling-text">` + clients_arr[i] + `</div>` );
+        $( '.text-wrapper-2' ).append( `<div class="scrolling-text">` + clients_arr[i] + `</div>` );
       }
-    }
-
-    //movement
-    setInterval(bubbleMovement, 1000);
-
-    function bubbleMovement() {
-      for ( var i=0; i < 5; i++) {
-        var temp = $( '.work-bubble-' + i );
-        temp.css('transform',  'translate(' + getRandomNumber(30, 60) + 'px, ' + getRandomNumber(30, 60)+ 'px)');
-      }
-    }
-
-
-    function getRandomNumber(min, max) {
-      return Math.random() * (max - min) + min;
     }
 
     function shuffle(array) {
@@ -89,33 +59,30 @@ function NewHomepage() {
       return array;
     }
 
-
-    //where to go from here?
-    //add blocks that float around with the things within
-    //add a ripplying background that changes colour and is interactible with the mouse
-    //have fun
-
   });
 
   return (
       <div className="h-screen w-screen">
-        <div className="w-screen h-screen flex flex-col justify-center items-start px-12">
-          <div className="group">
-            <div className="new-homepage-links" data-id="work">Who I've Worked With</div>
-            <div className="new-homepage-links" data-id="skills">Skills</div>
-            <div className="new-homepage-links" data-id="hobbies">Hobbies</div>
+          <div className="w-screen h-screen flex flex-col justify-center items-center px-12 grid grid-cols-2 overflow-hidden">
+            <div className="group">
+              <div className="new-homepage-links" data-id="work">Who I've Worked With</div>
+              <div className="new-homepage-links" data-id="skills">Skills</div>
+              <div className="new-homepage-links" data-id="hobbies">Hobbies</div>
+            </div>
+            <div className="marquee-wrapper">
+              <div className="text-wrapper opacity-[0.0001%] text-wrapper-1">
+              </div>
+              <div className="text-wrapper opacity-[0.0001%] text-wrapper-2 ">
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="tester  work-block overflow-hidden">
+        <div className="text-background opacity-[0.0001%] work-block">
           <img className="new-homepage-bg-img" src={WorkBackground} loading="lazy" />
-          <div className="work-bubbles-init">
-
-          </div>
         </div>
-        <div className="tester opacity-[0.0001%] skills-block">
+        <div className="text-background opacity-[0.0001%] skills-block">
           <img className="new-homepage-bg-img" src={SkillsBackground} loading="lazy" />
         </div>
-        <div className="tester opacity-[0.0001%] hobbies-block">
+        <div className="text-background opacity-[0.0001%] hobbies-block">
           <img className="new-homepage-bg-img" src={HobbiesBackground} loading="lazy" />
         </div>
       </div>
