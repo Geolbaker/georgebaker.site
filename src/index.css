@@ -51,6 +51,10 @@
     @apply text-right font-['Oswald']
   }
 
+  .marquee-wrapper {
+    @apply transition-all duration-500 absolute top-0 right-12
+  }
+
   .text-wrapper {
     @apply transition-all duration-500
   }
@@ -552,10 +556,4 @@ code {
 @keyframes vertical-marquee {
   from {transform: translateY(0%)}
   to {transform: translateY(-100%)}
-}
-.text-wrapper-1 {
-
-}
-.text-wrapper-2 {
-
 }

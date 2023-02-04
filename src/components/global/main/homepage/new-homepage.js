@@ -13,32 +13,58 @@ function NewHomepage() {
 
       if (type == 'work') {
         $( '.work-block' ).toggleClass('opacity-[0.0001%]');
-        $( '.text-wrapper-1' ).toggleClass('opacity-[0.0001%]');
-        $( '.text-wrapper-2' ).toggleClass('opacity-[0.0001%]');
+        $( '.marquee-wrapper__work' ).toggleClass('opacity-[0.0001%]');
       } else if (type == 'skills') {
         $( '.skills-block' ).toggleClass('opacity-[0.0001%]');
+        $( '.marquee-wrapper__skills' ).toggleClass('opacity-[0.0001%]');
       } else if (type == 'hobbies') {
         $( '.hobbies-block' ).toggleClass('opacity-[0.0001%]');
+        $( '.marquee-wrapper__hobbies' ).toggleClass('opacity-[0.0001%]');
       }
     });
 
-    let clients_str = 'Lincoln Student Lettings, Lincoln Students Union, SUMS, University of Nottingham SU, Kent Union, Hull University Union, University of York Students Union, York St Johns Students’ Union, Northampton Student’s Union, Brookes Union, Loughborough Students’ Union, University of Westminster Students’ Union, University of Manchester Students’ Union, Northumbria Students’ Union, Bath Spa Students’ Union, Lincoln BIG, World Energy Council, Branston, APSS, LNAA, World Obesity Federation, AWID, SSBC, Coveris, World Obesity Day, INNES England, Optima';
-    let clients_arr = clients_str.split(', ');
-    let alreadyChosenClients = [];
-    shuffle(clients_arr);
+    let work_str = 'Lincoln Student Lettings, Lincoln Students Union, SUMS, University of Nottingham SU, Kent Union, Hull University Union, University of York Students Union, York St Johns Students’ Union, Northampton Student’s Union, Brookes Union, Loughborough Students’ Union, University of Westminster Students’ Union, University of Manchester Students’ Union, Northumbria Students’ Union, Bath Spa Students’ Union, Lincoln BIG, World Energy Council, Branston, APSS, LNAA, World Obesity Federation, AWID, SSBC, Coveris, World Obesity Day, INNES England, Optima';
+    let skills_str = 'Wordpress, React, HTML, CSS, SASS, jQuery, PHP, Javascript, Tailwind, Bootstrap 5, Photoshop, YAML, Blade, Laravel, SEO, Expression Engine, Typescript';
+    let hobbies_str = 'Drawing, Mechanical Keyboards, Custom PC builds, Piano, Guitar, Reading, Coding, Weightlifting, Nutrition, Gardening, DIY, Architecture, Youtube';
 
-    // get window width and height
-    var winWidth = window.innerWidth;
-    var winHeight = window.innerHeight;
+
+
+    let work_arr = createArrFromString(work_str);
+    let skills_arr = createArrFromString(skills_str);
+    let hobbies_arr = createArrFromString(hobbies_str);
+
+    shuffle(work_arr);
+    shuffle(skills_arr);
+    shuffle(hobbies_arr);
 
     $( document ).ready(getWorkText());
+    $( document ).ready(getSkillsText());
+    $( document ).ready(getHobbiesText());
 
     //init for work text
-    function getWorkText() {
-      for (let i = 0; i < clients_arr.length; i++) {
-        $( '.text-wrapper-1' ).append( `<div class="scrolling-text">` + clients_arr[i] + `</div>` );
-        $( '.text-wrapper-2' ).append( `<div class="scrolling-text">` + clients_arr[i] + `</div>` );
+    function getWorkText(type) {
+      for (let i = 0; i < work_arr.length; i++) {
+        $( '.work-1' ).append( `<div class="scrolling-text">` + work_arr[i] + `</div>` );
+        $( '.work-2' ).append( `<div class="scrolling-text">` + work_arr[i] + `</div>` );
       }
+    }
+    //init for skills text
+    function getSkillsText(type) {
+      for (let i = 0; i < skills_arr.length; i++) {
+        $( '.skills-1' ).append( `<div class="scrolling-text">` + skills_arr[i] + `</div>` );
+        $( '.skills-2' ).append( `<div class="scrolling-text">` + skills_arr[i] + `</div>` );
+      }
+    }
+    //init for hobbies text
+    function getHobbiesText(type) {
+      for (let i = 0; i < hobbies_arr.length; i++) {
+        $( '.hobbies-1' ).append( `<div class="scrolling-text">` + hobbies_arr[i] + `</div>` );
+        $( '.hobbies-2' ).append( `<div class="scrolling-text">` + hobbies_arr[i] + `</div>` );
+      }
+    }
+
+    function createArrFromString(string) {
+      return string.split(', ');
     }
 
     function shuffle(array) {
@@ -69,10 +95,24 @@ function NewHomepage() {
               <div className="new-homepage-links" data-id="skills">Skills</div>
               <div className="new-homepage-links" data-id="hobbies">Hobbies</div>
             </div>
-            <div className="marquee-wrapper">
-              <div className="text-wrapper opacity-[0.0001%] text-wrapper-1">
+            <div className="marquee-wrapper marquee-wrapper__work opacity-[0.0001%]">
+              <div className="text-wrapper work-1">
               </div>
-              <div className="text-wrapper opacity-[0.0001%] text-wrapper-2 ">
+              <div className="text-wrapper work-2">
+              </div>
+            </div>
+
+            <div className="marquee-wrapper marquee-wrapper__skills opacity-[0.0001%]">
+              <div className="text-wrapper skills-1">
+              </div>
+              <div className="text-wrapper skills-2">
+              </div>
+            </div>
+
+            <div className="marquee-wrapper marquee-wrapper__hobbies opacity-[0.0001%]">
+              <div className="text-wrapper hobbies-1">
+              </div>
+              <div className="text-wrapper hobbies-2">
               </div>
             </div>
           </div>
