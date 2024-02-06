@@ -1,14 +1,4 @@
 import $ from 'jquery';
-import Website_1 from '../../../../../src/assets/websites/Website_1.webp';
-import Website_2 from '../../../../../src/assets/websites/Website_2.webp';
-import Website_3 from '../../../../../src/assets/websites/Website_3.webp';
-import Website_4 from '../../../../../src/assets/websites/Website_4.webp';
-import Website_5 from '../../../../../src/assets/websites/Website_5.webp';
-import Website_6 from '../../../../../src/assets/websites/Website_6.webp';
-import Website_7 from '../../../../../src/assets/websites/Website_7.webp';
-import Website_8 from '../../../../../src/assets/websites/Website_8.webp';
-import Website_9 from '../../../../../src/assets/websites/Website_9.webp';
-
 
 import {useEffect, useState} from 'react';
 
@@ -21,12 +11,10 @@ function Body() {
       var themeSubMenu = document.getElementById("themeSubMenu");
       var portfolioSubMenu = document.getElementById("portfolioSubMenu");
       var personalSubMenu = document.getElementById("personalSubMenu");
-      var hobbiesSubMenu = document.getElementById("hobbiesSubMenu");
       //main menu
       var themeMain = document.getElementById("themeMain");
       var portfolioMain = document.getElementById("portfolioMain");
       var personalMain = document.getElementById("personalMain");
-      var hobbiesMain = document.getElementById("hobbiesMain");
       var comingSoon = document.getElementById("comingSoon");
       //sections
       var portfolioSection = document.getElementById("portfolioSection");
@@ -40,12 +28,10 @@ function Body() {
 
       //intro animations
       introAnimation(portfolioMain, 200);
-      introAnimation(themeMain, 700);
-      introAnimation(personalMain, 1200);
-      introAnimation(hobbiesMain, 1700);
-      introAnimation(comingSoon, 2200);
-      introAnimation(socialIcons, 2700);
-      introAnimation(colorPalleteIcon, 2700);
+      introAnimation(themeMain, 300);
+      introAnimation(personalMain, 400);
+      introAnimation(socialIcons, 800);
+      introAnimation(colorPalleteIcon, 800);
       //function to load each section, all run at the same time which is why individual timeouts are required
       function introAnimation(a, time){
         setTimeout(
@@ -75,7 +61,6 @@ function Body() {
         themeSubMenu.classList.add("translate-x-[-20rem]");
         portfolioSubMenu.classList.add("translate-x-[-20rem]");
         personalSubMenu.classList.add("translate-x-[-20rem]");
-        hobbiesSubMenu.classList.add("translate-x-[-20rem]");
       }
       $("#themeMain").click(function(){
         subMenuReset();
@@ -88,10 +73,6 @@ function Body() {
       $("#personalMain").click(function(){
         subMenuReset();
         personalSubMenu.classList.remove("translate-x-[-20rem]");
-      })
-      $("#hobbiesMain").click(function(){
-        subMenuReset();
-        hobbiesSubMenu.classList.remove("translate-x-[-20rem]");
       })
 
       //Colour Pallete / Theme
@@ -172,13 +153,6 @@ function Body() {
                 Personal
                 <span className="dot-to-arrow"></span>
             </div>
-            <div id="hobbiesMain" className="link link-underline-25 link-emphasis group opacity-[0.0001] translate-y-[3rem] text-homepage-text">
-                Hobbies
-                <span className="dot-to-arrow"></span>
-            </div>
-            <div id="comingSoon" className="text-homepage-alt w-max transition-all duration-500 opacity-[0.0001] translate-y-[3rem]">
-                Coming Soon
-            </div>
           </div>
           <div className="container text-[2rem] w-[15rem] h-[10rem] md:h-auto overflow-hidden relative">
             <div id="themeSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
@@ -201,9 +175,6 @@ function Body() {
               <a href="https://www.goodreads.com/georgebaker" target="_blank" rel="noreferrer" className="link link-underline-25 link-emphasis text-homepage-text text-left">GoodReads</a>
 
             </div>
-            <div id="hobbiesSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
-              <button className="text-homepage-alt text-left" href="#">Coming Soon</button>
-            </div>
           </div>
         </div>
       </div>
@@ -216,7 +187,7 @@ function Body() {
       {/*End of Image Overlay*/}
 
       {/*Bottom Icons*/}
-      <div className="bottom-[12vh] right-[150px] flex absolute z-30">
+      <div className="bottom-[12vh] right-[200px] flex absolute z-30">
         <div id="socialIcons" className="fixed flex m-5 transition-all duration-500 opacity-[0.0001]">
           <a alt="Personal Codepen" href="https://codepen.io/geo1baker" target="_blank" rel="noreferrer" className="p-5">
             <svg width="16" height="16" className="bi bi-code-slash link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
@@ -226,6 +197,11 @@ function Body() {
           <a alt="Personal Github" href="https://github.com/Geolbaker" target="_blank" rel="noreferrer" className="p-5">
             <svg width="16" height="16" className="bi bi-github link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+          <a alt="Personal YouTube" href="https://youtube.com/@geolbaker" target="_blank" rel="noreferrer" className="p-5">
+            <svg width="16" height="16" className="bi bi-youtube link scale-[200%] hover:scale-[230%] fill-homepage-text" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
             </svg>
           </a>
         </div>
@@ -268,24 +244,13 @@ function Body() {
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">Websites</span>
             <div className="w-full h-full gap-8 grid grid-cols-1 sm:grid-cols-2 pb-12">
-              <img onClick={() => window.open('https://lincolnsulettings.co.uk/', '_blank')}
-              className="homepage-website-imgs link" src={Website_5} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://lincolnsu.com/freshers', '_blank')}
-              className="homepage-website-imgs link" src={Website_3} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://lincolnsu.com/housingblogs', '_blank')}
-              className="homepage-website-imgs link" src={Website_4} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://mynsu.co.uk/', '_blank')}
-              className="homepage-website-imgs link" src={Website_6} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://bathspasu.co.uk/gym', '_blank')}
-              className="homepage-website-imgs link" src={Website_1} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://lincolnsu.com/activities/varsity', '_blank')}
-              className="homepage-website-imgs link" src={Website_2} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://mynsu.co.uk/freshers-22', '_blank')}
-              className="homepage-website-imgs link" src={Website_7} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://quacklincoln.com/', '_blank')}
-              className="homepage-website-imgs link" src={Website_8} loading="lazy" alt=""/>
-              <img onClick={() => window.open('https://ulsuroles.co.uk/', '_blank')}
-              className="homepage-website-imgs link" src={Website_9} loading="lazy" alt=""/>
+
+              <a className="link link-underline-25" href="/">
+                <p className="!text-homepage-text">
+                  Testing
+                </p>
+              </a>
+
             </div>
 
           </div>
