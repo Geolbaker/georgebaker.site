@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+import WebsiteCardComponent from './website-cards.js'
+
 import {useEffect, useState} from 'react';
 
 function Body() {
@@ -172,7 +174,7 @@ function Body() {
             <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
               <button onClick={() => setActive('Personal')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">About Me</button>
               <button onClick={() => setActive('Documentary')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">Documentary</button>
-              <a href="https://www.goodreads.com/georgebaker" target="_blank" rel="noreferrer" className="link link-underline-25 link-emphasis text-homepage-text text-left">GoodReads</a>
+              <a href="https://www.goodreads.com/geolbaker" target="_blank" rel="noreferrer" className="link link-underline-25 link-emphasis text-homepage-text text-left">GoodReads</a>
 
             </div>
           </div>
@@ -239,17 +241,95 @@ function Body() {
       {/*Portfolio Section*/}
       <div className={`${active === 'Portfolio' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24 h-[20rem]" : "h-[0.0001rem] opacity-[0.0001] translate-y-[100vh] overflow-hidden"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
         <div id="portfolioSection" className=" transition-all duration-500 opacity-[0.0001] ">
-          <div className="container flex justify-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
+          <div className="container flex justify-center items-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">Websites</span>
-            <div className="w-full h-full gap-8 grid grid-cols-1 sm:grid-cols-2 pb-12">
+            <div className="w-full md:w-[90%] h-full gap-8 flex flex-col text-[1.3rem] !font-sans justify-center text-left pb-12 text-homepage-text ">
 
-              <a className="link link-underline-25" href="/">
-                <p className="!text-homepage-text">
-                  Testing
+              <div className="w-full h-full gap-8 flex pt-2 flex-col text-[1.3rem] !font-sans justify-center text-left pb-4 text-homepage-text ">
+                <p className="text-homepage-text">
+                  I've worked with various clients, businesses and charities over the years of me being a Web Designer and Web Developer. You can see some of them below.
                 </p>
-              </a>
+              </div>
+
+              <div className="w-full h-full gap-8 flex pt-2 flex-col text-[2rem] !font-['DM_Serif_Display'] justify-center text-left text-homepage-text ">
+                <p className="text-homepage-text">
+                  Optima Graphic Design
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+                <WebsiteCardComponent name="World Energy Council" tags={["Expression Engine", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="World Heart Federation" tags={["Wordpress", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="World Obesity Federation" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Nottingham City Council Early Help" tags={["Expression Engine", "Full Site Development"]} link=""/>
+                <WebsiteCardComponent name="Hobson Industries" tags={["Shopify", "Full Site Development"]} link=""/>
+                <WebsiteCardComponent name="Whisby Garden Centre" tags={["Wordpress", "Full Site Development", "PENDING"]} link=""/>
+                <WebsiteCardComponent name="ATC Instillations" tags={["Wordpress", "Full Site Development", "PENDING"]} link=""/>
+                <WebsiteCardComponent name="Batemans Brewery" tags={["Wordpress", "Full Site Development", "PENDING"]} link=""/>
+                <WebsiteCardComponent name="General Chiropractor Council" tags={["Expression Engine", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Coveris" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="LNAA" tags={["Wordpress", "Partial Full Site Development"]} link=""/>
+                <WebsiteCardComponent name="APSS" tags={["Expression Engine", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="World Obesity Day" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Inzpire" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="HPV Campaign" tags={["Expression Engine", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Uni Global Union" tags={["Wordpress", "Full Micro-Site Development"]} link=""/>
+                <WebsiteCardComponent name="Optima Graphic Design" tags={["Expression Engine", "Large Developments"]} link=""/>
+                <WebsiteCardComponent name="Lincoln BIG" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Branston" tags={["Expression Engine", "Large Developments"]} link=""/>
+                <WebsiteCardComponent name="Lindum Group" tags={["Wordpress", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="INNES England" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="IUF" tags={["Wordpress", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Lincoln College" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="World Stroke Organisation" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="World Stroke Academy" tags={["Wordpress", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="St Hughs School" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Gissing" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="MicronClean" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Lincolnshire Music Services" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="KBSA" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="England Golf" tags={["Wordpress", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Hutchinsons" tags={["Wordpress", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Cooke and Arkwright" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Allen Signs" tags={["Expression Engine", "Full Site Rebrand"]} link=""/>
+                <WebsiteCardComponent name="The Collection/Lincoln Museum" tags={["Expression Engine", "Full Site Rebrand"]} link=""/>
+                <WebsiteCardComponent name="Great Wood Farm" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Nerve Tumors" tags={["Expression Engine", "Large Development", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Equidem" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Delta Simons" tags={["Expression Engine", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Rulac" tags={["Expression Engine", "General Maintenance"]} link=""/>
+
+              </div>
+
+              <div className="w-full h-full gap-8 flex pt-2 flex-col text-[2rem] !font-['DM_Serif_Display'] justify-center text-left text-homepage-text ">
+                <p className="text-homepage-text">
+                  SUMS
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+                <WebsiteCardComponent name="Lincoln Student Lettings" tags={["SUMS", "Full Site Development"]} link=""/>
+                <WebsiteCardComponent name="Lincoln Students’ Union" tags={["SUMS", "Main InHouse Site", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="SUMS" tags={["SUMS", "Secondary InHouse Site", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Northumbria Students’ Union" tags={["SUMS", "Full Site Development", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="York St John Students’ Union" tags={["SUMS", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Northampton Student’s Union" tags={["SUMS", "Partial Full Site Development", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Bath Spa Students’ Union" tags={["SUMS", "Large Developments", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="University of Nottingham Students’ Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Kent Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Hull University Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="University of York Students’ Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Brookes Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="Loughborough Students’ Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="University of Westminster Students’ Union" tags={["SUMS", "General Maintenance"]} link=""/>
+                <WebsiteCardComponent name="University of Manchester Students’ Union" tags={["SUMS", "General Maintenance"]} link=""/>
+
+
+              </div>
 
             </div>
 
@@ -261,28 +341,38 @@ function Body() {
       {/*Personal Section*/}
       <div className={`${active === 'Personal' ? "translate-y-0 opacity-[100] pt-12 sm:pt-24 h-[20rem]" : "h-[0.0001rem] opacity-[0.0001] translate-y-[100vh] overflow-hidden h-0"} relative top-0 z-10 w-screen flex justify-center transition-all duration-[1s] `}>
         <div id="personalSection" className=" transition-all duration-500 opacity-[0.0001] ">
-          <div className="container flex justify-center items-center flex-col text-homepage-text p-4 sm:p-12 mb-12 sm:mb-4">
+          <div className="container flex justify-center items-center flex-col text-homepage-text p-4 sm:p-6 mb-12 sm:mb-4">
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">About Me</span>
-            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col text-[1.7rem] !font-sans justify-center text-left pb-12 text-homepage-text ">
+            <div className="w-full md:w-[90%] h-full gap-8 flex pt-4 flex-col text-[1.3rem] !font-sans justify-center text-left pb-12 text-homepage-text ">
               <p className="text-homepage-text">
-                I'm George.
-                By trade, I'm a Web Designer, with speciality experience in Web Development and SEO
+                I'm George Baker.
+                I'm a web developer, currently specialising in Wordpress, Expression Engine and Shopify.
               </p>
               <p className="text-homepage-text">
-                My spare time is spent tinkering with too many projects that are <span className="!text-[1rem]">(finally)</span> starting to see the light of day.</p>
-              <br/>
+                My spare time is spent tinkering with too many projects that are <span className="!text-[0.8rem]">(finally)</span> starting to see the light of day.
+              </p>
               <p className="text-homepage-text">My Hobbies:</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 !text-[1.5rem]">
-                <p className="text-homepage-text p-2">Designing Websites</p>
-                <p className="text-homepage-text p-2">Mechanical Keyboards</p>
-                <p className="text-homepage-text p-2">Custom PC's</p>
-                <p className="text-homepage-text p-2">Playing Piano</p>
-                <p className="text-homepage-text p-2">Reading</p>
-                <p className="text-homepage-text p-2">Coding</p>
-                <p className="text-homepage-text p-2">Fitness & Nutrition</p>
-                <p className="text-homepage-text p-2">Gardening & DIY</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 !text-[1.2rem]">
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Mechanical Keyboards</p>
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Piano & Guitar</p>
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Youtube</p>
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Reading</p>
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Fitness & Nutrition</p>
+                <p className="text-homepage-text p-2 pl-6 relative
+                 after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Gardening & DIY</p>
               </div>
             </div>
 
@@ -298,7 +388,14 @@ function Body() {
             <span className="text-[4rem] sm:text-[6rem] lg:text-[9rem] text-center relative after:content-[''] after:top-[3.5rem] sm:after:top-[5.5rem] lg:after:top-[8.5rem] after:left-0 after:w-full after:h-[4rem]
             after:bg-homepage-bg after:border-t-2 after:opacity-[85%] after:border-homepage-alt after:absolute after:transition-all after:duration-500
             transition-all duration-500">Documentary</span>
-            <div className="w-full md:w-[75%] h-full gap-8 flex pt-8 flex-col items-center text-[2rem] justify-center text-center pb-12 text-homepage-text ">
+
+
+            <div className="w-full md:w-[90%] h-full gap-8 flex pt-4 flex-col text-[1.3rem] !font-sans justify-center text-left pb-8 text-homepage-text ">
+              <p className="text-homepage-text">
+                Over the course of a good many months, I filmed footage and worked with my good friend Paice Lees to film a documentary about my experiences with Rooftopping and Urbex (Urban Exploration).
+              </p>
+            </div>
+            <div className="w-full md:w-[75%] h-full gap-8 flex flex-col items-center text-[2rem] justify-center text-center pb-12 text-homepage-text ">
               <iframe width="100%" height="500px" src="https://www.youtube.com/embed/X6_IaHQpMD0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
 
