@@ -112,16 +112,6 @@ function Body() {
           colourUpdate('rgb(23 63 53)', 'rgb(234 160 156)', 'rgb(64 142 123)');
           localStorage.removeItem('homepageTheme');
           localStorage.setItem('homepageTheme', homepageTheme);
-          homepageTheme = 3;
-        } else if (homepageTheme == 3) {
-          colourUpdate('rgb(255 250 243)', 'rgb(86 148 159)', 'rgb(240 233 223)');
-          localStorage.removeItem('homepageTheme');
-          localStorage.setItem('homepageTheme', homepageTheme);
-          homepageTheme = 4;
-        } else if (homepageTheme == 4) {
-          colourUpdate('rgb(123 156 152)', 'rgb(234 241 243)', 'rgb(114 144 141)');
-          localStorage.removeItem('homepageTheme');
-          localStorage.setItem('homepageTheme', homepageTheme);
           homepageTheme = 0;
         }
       }
@@ -174,7 +164,13 @@ function Body() {
             <div id="personalSubMenu" className="flex flex-col link translate-x-[-20rem] absolute top-0 ml-8">
               <button onClick={() => setActive('Personal')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">About Me</button>
               <button onClick={() => setActive('Documentary')} className="link link-underline-25 link-emphasis text-homepage-text text-left" href="#">Documentary</button>
-              <a href="https://www.goodreads.com/geolbaker" target="_blank" rel="noreferrer" className="link link-underline-25 link-emphasis text-homepage-text text-left">GoodReads</a>
+              <a href="https://www.goodreads.com/geolbaker" target="_blank" rel="noreferrer" className="link link-underline-25 link-emphasis text-homepage-text text-left">
+                GoodReads
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline font-[900] fill-homepage-text scale-[1.3] left-[12px] bottom-[3px] relative stroke-homepage-text link" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                </svg>
+              </a>
 
             </div>
           </div>
@@ -247,7 +243,7 @@ function Body() {
             transition-all duration-500">Websites</span>
             <div className="w-full md:w-[90%] h-full gap-8 flex flex-col text-[1.3rem] !font-sans justify-center text-left pb-12 text-homepage-text ">
 
-              <div className="w-full h-full gap-8 flex pt-2 flex-col text-[1.3rem] !font-sans justify-center text-left pb-4 text-homepage-text ">
+              <div className="w-full h-full gap-8 flex pt-4 flex-col text-[1.3rem] !font-sans justify-center text-left pb-4 text-homepage-text ">
                 <p className="text-homepage-text">
                   I've worked with various clients, businesses and charities over the years of me being a Web Designer and Web Developer. You can see some of them below.
                 </p>
@@ -353,27 +349,79 @@ function Body() {
               <p className="text-homepage-text">
                 My spare time is spent tinkering with too many projects that are <span className="!text-[0.8rem]">(finally)</span> starting to see the light of day.
               </p>
-              <p className="text-homepage-text">My Hobbies:</p>
+              <p className="text-homepage-text text-[2rem] !font-['DM_Serif_Display']">My Hobbies:</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 !text-[1.2rem]">
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
                  after:bg-homepage-text after:rotate-[45deg] after:absolute">Mechanical Keyboards</p>
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
-                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Piano & Guitar</p>
+                 after:bg-homepage-text after:rotate-[45deg] after:absolute">Piano, Guitar and Music</p>
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
                  after:bg-homepage-text after:rotate-[45deg] after:absolute">Youtube</p>
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
                  after:bg-homepage-text after:rotate-[45deg] after:absolute">Reading</p>
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
                  after:bg-homepage-text after:rotate-[45deg] after:absolute">Fitness & Nutrition</p>
+
                 <p className="text-homepage-text p-2 pl-6 relative
                  after:content-[''] after:top-[17px] after:left-[3px] after:rounded-[1px] after:h-[8px] after:w-[8px]
                  after:bg-homepage-text after:rotate-[45deg] after:absolute">Gardening & DIY</p>
+
               </div>
+
+
+              <p id="mechanical-keyboards" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               Mechanical Keyboards
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+              <p id="youtube" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               YouTube
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+              <p id="fitness-nutrition" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               Fitness & Nutrition
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+              <p id="piano-guitar-music" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               Piano, Guitar and Music
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+              <p id="reading" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               Reading
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+              <p id="gardening-diy" className="text-homepage-text text-[2rem] !font-['DM_Serif_Display'] pt-[45px]">
+               Gardening & DIY
+              </p>
+              <p className="text-homepage-text">
+
+              </p>
+
+
             </div>
 
           </div>
